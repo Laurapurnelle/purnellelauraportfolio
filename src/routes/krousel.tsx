@@ -142,19 +142,43 @@ function KrouselCaseStudy() {
               <li className="flex gap-3"><span className="bg-yellow border-brutal px-2">✦</span> Deux palettes, deux typographies, une marque mère.</li>
               <li className="flex gap-3"><span className="bg-yellow border-brutal px-2">✦</span> Animation diagonale au survol, micro-interaction signature.</li>
             </ul>
+            <a
+              href={SITE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-violet text-primary-foreground text-xs font-bold uppercase tracking-widest border-brutal-thick shadow-brutal hover-pop mt-4"
+            >
+              Voir le site live ↗
+            </a>
           </div>
           <div className="md:col-span-7">
-            <div className="bg-yellow border-brutal-thick p-3 shadow-brutal -rotate-1">
-              <img
-                src={p2}
-                alt="Maquette du split screen diagonal à 15°"
-                className="w-full h-auto object-cover border-brutal"
-                loading="lazy"
-              />
+            {/* PC Mockup */}
+            <div className="relative">
+              <div className="bg-foreground border-brutal-thick rounded-t-xl p-3 shadow-brutal-lg">
+                <div className="flex items-center gap-1.5 pb-2">
+                  <span className="w-2.5 h-2.5 rounded-full bg-destructive" />
+                  <span className="w-2.5 h-2.5 rounded-full bg-yellow" />
+                  <span className="w-2.5 h-2.5 rounded-full bg-green-500" />
+                  <span className="ml-3 flex-1 h-5 bg-background/10 rounded text-[10px] text-background/60 px-2 flex items-center font-mono">
+                    thekrousel.be
+                  </span>
+                </div>
+                <div className="bg-background border-brutal overflow-hidden">
+                  <img
+                    src={krouselHome}
+                    alt="Page d'accueil The K'Rousel : split screen Friterie / Traiteur"
+                    className="w-full h-auto object-cover block"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+              <div className="mx-auto w-1/3 h-3 bg-foreground" />
+              <div className="mx-auto w-2/3 h-2 bg-foreground rounded-b-lg border-brutal-thick" />
             </div>
           </div>
         </div>
       </section>
+
 
       {/* Copywriting */}
       <section className="px-6 py-24 bg-violet text-primary-foreground">
