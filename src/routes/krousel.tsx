@@ -223,7 +223,7 @@ function KrouselCaseStudy() {
           <div className="grid md:grid-cols-2 gap-8">
             <article className="border-brutal-thick bg-background hover-pop">
               <div className="bg-yellow border-b-[3px] border-foreground p-4">
-                <img src={p3} alt="Le K'Lorquet" className="w-full h-56 object-cover border-brutal" loading="lazy" />
+                <img src={burgerKlorquet} alt="Le K'Lorquet — burger au Blanc-Bleu Belge" className="w-full h-56 object-cover border-brutal" loading="lazy" />
               </div>
               <div className="p-6 space-y-3">
                 <div className="text-[10px] font-bold uppercase tracking-widest text-violet">Le signature</div>
@@ -242,7 +242,7 @@ function KrouselCaseStudy() {
 
             <article className="border-brutal-thick bg-background hover-pop">
               <div className="bg-violet border-b-[3px] border-foreground p-4">
-                <img src={p2} alt="Le Liégeois Noir" className="w-full h-56 object-cover border-brutal" loading="lazy" />
+                <img src={burgerLiegeois} alt="Le Liégeois Noir — burger au boudin noir" className="w-full h-56 object-cover border-brutal" loading="lazy" />
               </div>
               <div className="p-6 space-y-3">
                 <div className="text-[10px] font-bold uppercase tracking-widest text-violet">L'audacieux</div>
