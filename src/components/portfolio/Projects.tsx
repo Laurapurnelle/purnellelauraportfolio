@@ -4,11 +4,38 @@ import p3 from "@/assets/project-3.jpg";
 
 const projects = [
   {
-    title: "Bloom — App de bien-être",
-    category: "UI/UX · Mobile",
+    title: "The Carrousel",
+    category: "UI Design · Stratégie de contenu",
     year: "2025",
     description:
-      "Une application mobile qui accompagne les femmes dans leur quotidien, avec rituels personnalisés et journal d'émotions.",
+      "Conception d'une interface dynamique de carrousel éditorial, pensée pour mettre en valeur le contenu et fluidifier la navigation entre formats variés.",
+    image: p1,
+    tags: ["UI Design", "Prototypage", "Contenu"],
+  },
+  {
+    title: "Refonte de plateforme",
+    category: "UX · Architecture de l'information",
+    year: "2025",
+    description:
+      "Restructuration complète d'une plateforme web : optimisation de la hiérarchie, simplification des parcours utilisateurs et refonte du design system.",
+    image: p2,
+    tags: ["UX Research", "Wireframing", "Design System"],
+  },
+  {
+    title: "Design publicitaire",
+    category: "Direction artistique · Print",
+    year: "2024",
+    description:
+      "Création d'une série d'affiches synthétisant des messages de marque percutants, à travers une typographie forte et une palette graphique maîtrisée.",
+    image: p3,
+    tags: ["Affiche", "Typographie", "Branding"],
+  },
+  {
+    title: "Bloom — App de bien-être",
+    category: "UI/UX · Mobile",
+    year: "2024",
+    description:
+      "Application mobile accompagnant le quotidien de ses utilisateur·rice·s : rituels personnalisés, journal d'émotions et suivi d'objectifs.",
     image: p1,
     tags: ["UX Research", "Mobile", "Prototypage"],
   },
@@ -17,7 +44,7 @@ const projects = [
     category: "Web Design · E-commerce",
     year: "2024",
     description:
-      "Refonte complète du site marchand d'une créatrice de bijoux artisanaux. Univers raffiné et tunnel d'achat optimisé.",
+      "Refonte du site marchand d'une créatrice de bijoux artisanaux : tunnel d'achat optimisé et univers de marque retravaillé.",
     image: p2,
     tags: ["Webflow", "UI Design", "Branding"],
   },
@@ -26,7 +53,7 @@ const projects = [
     category: "Branding · Direction artistique",
     year: "2024",
     description:
-      "Création de l'identité visuelle d'une boutique fleuriste liégeoise : logo, papeterie, supports et guidelines.",
+      "Création de l'identité visuelle d'une boutique liégeoise : logo, papeterie, supports imprimés et guidelines complètes.",
     image: p3,
     tags: ["Branding", "Print", "Logo"],
   },
@@ -38,16 +65,16 @@ export function Projects() {
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-20">
           <div>
-            <span className="text-sm tracking-widest uppercase text-primary/80">
+            <span className="text-xs tracking-[0.25em] uppercase text-primary font-medium">
               02 — Projets
             </span>
             <h2 className="font-serif text-4xl md:text-5xl text-foreground mt-3">
-              Sélection de <span className="italic text-gradient">créations</span>
+              Sélection de <span className="italic text-gradient">réalisations</span>
             </h2>
           </div>
           <p className="text-muted-foreground max-w-sm">
-            Quelques projets récents, mêlant recherche utilisateur, design
-            d'interface et soin du détail.
+            Projets récents mêlant recherche utilisateur, design d'interface
+            et direction artistique.
           </p>
         </div>
 
@@ -60,8 +87,8 @@ export function Projects() {
               }`}
             >
               <div className="md:[direction:ltr] group relative">
-                <div className="absolute inset-0 -m-3 rounded-3xl bg-gradient-accent opacity-20 blur-2xl group-hover:opacity-40 transition-opacity" />
-                <div className="relative rounded-3xl overflow-hidden shadow-card border border-border/50 bg-card">
+                <div className="absolute inset-0 -m-3 rounded-2xl bg-gradient-accent opacity-10 blur-2xl group-hover:opacity-20 transition-opacity" />
+                <div className="relative rounded-2xl overflow-hidden shadow-card border border-border/60 bg-card">
                   <img
                     src={project.image}
                     alt={project.title}
@@ -74,7 +101,7 @@ export function Projects() {
               </div>
 
               <div className="md:[direction:ltr] space-y-5">
-                <div className="flex items-center gap-3 text-xs tracking-widest uppercase text-primary/70">
+                <div className="flex items-center gap-3 text-xs tracking-[0.25em] uppercase text-primary/80">
                   <span>{project.category}</span>
                   <span className="w-1 h-1 rounded-full bg-primary/40" />
                   <span>{project.year}</span>
@@ -89,7 +116,7 @@ export function Projects() {
                   {project.tags.map((t) => (
                     <span
                       key={t}
-                      className="text-xs px-3 py-1.5 rounded-full bg-secondary text-secondary-foreground"
+                      className="text-xs px-3 py-1.5 rounded-md bg-secondary text-secondary-foreground border border-border/60"
                     >
                       {t}
                     </span>
