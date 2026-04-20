@@ -31,60 +31,57 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
+  --color-violet: var(--violet);
+  --color-yellow: var(--yellow);
+  --color-ink: var(--ink);
   --color-cream: var(--cream);
-  --color-anthracite: var(--anthracite);
-  --color-petrol: var(--petrol);
-  --color-sage: var(--sage);
-  --font-serif: "Playfair Display", "Cormorant Garamond", Georgia, serif;
+  --font-display: "Archivo Black", "Syne", ui-sans-serif, system-ui, sans-serif;
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
 }
 
 :root {
-  --radius: 0.75rem;
+  --radius: 0.25rem;
 
-  /* Professional palette: off-white, anthracite, petrol blue, sage */
-  --background: oklch(0.98 0.004 90);           /* blanc cassé */
-  --foreground: oklch(0.22 0.015 240);          /* anthracite text */
+  /* Neobrutalism palette: off-white, electric violet, solar yellow, ink black */
+  --background: oklch(0.985 0.002 250);          /* #F8F9FA off-white */
+  --foreground: oklch(0.13 0 0);                 /* near-black ink */
 
-  --card: oklch(0.995 0.003 90);
-  --card-foreground: oklch(0.22 0.015 240);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.13 0 0);
 
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.22 0.015 240);
+  --popover-foreground: oklch(0.13 0 0);
 
-  --primary: oklch(0.38 0.055 220);             /* bleu pétrole profond */
-  --primary-foreground: oklch(0.98 0.004 90);
+  --primary: oklch(0.6 0.26 295);                /* #8B5CF6 electric violet */
+  --primary-foreground: oklch(0.985 0.002 250);
 
-  --secondary: oklch(0.93 0.008 230);           /* gris très clair bleuté */
-  --secondary-foreground: oklch(0.28 0.02 240);
+  --secondary: oklch(0.95 0.005 250);
+  --secondary-foreground: oklch(0.13 0 0);
 
-  --muted: oklch(0.95 0.005 230);
-  --muted-foreground: oklch(0.48 0.015 240);
+  --muted: oklch(0.95 0.005 250);
+  --muted-foreground: oklch(0.4 0.01 250);
 
-  --accent: oklch(0.55 0.06 200);               /* bleu pétrole accent */
-  --accent-foreground: oklch(0.98 0.004 90);
+  --accent: oklch(0.93 0.18 100);                /* #FDE047 solar yellow */
+  --accent-foreground: oklch(0.13 0 0);
 
-  --destructive: oklch(0.55 0.18 25);
-  --destructive-foreground: oklch(0.98 0 0);
+  --destructive: oklch(0.6 0.24 25);
+  --destructive-foreground: oklch(0.985 0 0);
 
-  --border: oklch(0.9 0.008 230);
-  --input: oklch(0.92 0.008 230);
-  --ring: oklch(0.5 0.06 220);
+  --border: oklch(0.13 0 0);                     /* black borders for brutalism */
+  --input: oklch(0.13 0 0);
+  --ring: oklch(0.6 0.26 295);
 
-  --cream: oklch(0.98 0.004 90);                /* blanc cassé */
-  --anthracite: oklch(0.28 0.015 240);          /* gris anthracite */
-  --petrol: oklch(0.38 0.055 220);              /* bleu pétrole */
-  --sage: oklch(0.72 0.04 160);                 /* vert sauge subtil */
+  --violet: oklch(0.6 0.26 295);
+  --yellow: oklch(0.93 0.18 100);
+  --ink: oklch(0.13 0 0);
+  --cream: oklch(0.985 0.002 250);
 
-  --gradient-hero: linear-gradient(135deg, oklch(0.98 0.004 90) 0%, oklch(0.94 0.012 220) 60%, oklch(0.88 0.025 210) 100%);
-  --gradient-soft: linear-gradient(180deg, oklch(0.98 0.004 90) 0%, oklch(0.95 0.008 220) 100%);
-  --gradient-accent: linear-gradient(135deg, oklch(0.45 0.06 215), oklch(0.32 0.05 230));
+  --shadow-brutal: 6px 6px 0 0 var(--ink);
+  --shadow-brutal-lg: 10px 10px 0 0 var(--ink);
+  --shadow-brutal-violet: 6px 6px 0 0 var(--violet);
+  --shadow-brutal-yellow: 6px 6px 0 0 var(--yellow);
 
-  --shadow-soft: 0 10px 40px -12px oklch(0.22 0.015 240 / 0.12);
-  --shadow-glow: 0 20px 60px -20px oklch(0.38 0.055 220 / 0.25);
-  --shadow-card: 0 2px 16px -6px oklch(0.22 0.015 240 / 0.08);
-
-  --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-pop: transform 0.15s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 @layer base {
@@ -104,35 +101,56 @@
   }
 
   h1, h2, h3, h4 {
-    font-family: var(--font-serif);
-    font-weight: 500;
-    letter-spacing: -0.01em;
+    font-family: var(--font-display);
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    line-height: 0.95;
+  }
+
+  ::selection {
+    background-color: var(--violet);
+    color: var(--cream);
   }
 }
 
-@utility text-gradient {
-  background: var(--gradient-accent);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+@utility shadow-brutal {
+  box-shadow: var(--shadow-brutal);
 }
 
-@utility bg-gradient-hero {
-  background: var(--gradient-hero);
+@utility shadow-brutal-lg {
+  box-shadow: var(--shadow-brutal-lg);
 }
 
-@utility bg-gradient-soft {
-  background: var(--gradient-soft);
+@utility shadow-brutal-violet {
+  box-shadow: var(--shadow-brutal-violet);
 }
 
-@utility shadow-soft {
-  box-shadow: var(--shadow-soft);
+@utility shadow-brutal-yellow {
+  box-shadow: var(--shadow-brutal-yellow);
 }
 
-@utility shadow-glow {
-  box-shadow: var(--shadow-glow);
+@utility border-brutal {
+  border: 2px solid var(--ink);
 }
 
-@utility shadow-card {
-  box-shadow: var(--shadow-card);
+@utility border-brutal-thick {
+  border: 3px solid var(--ink);
+}
+
+@utility hover-pop {
+  transition: var(--transition-pop);
+}
+
+@utility hover-pop:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 9px 9px 0 0 var(--ink);
+}
+
+@utility marquee-track {
+  animation: marquee 30s linear infinite;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
 }
