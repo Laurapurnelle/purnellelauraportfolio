@@ -139,11 +139,10 @@
 
 @utility hover-pop {
   transition: var(--transition-pop);
-}
-
-@utility hover-pop:hover {
-  transform: translate(-3px, -3px);
-  box-shadow: 9px 9px 0 0 var(--ink);
+  &:hover {
+    transform: translate(-3px, -3px);
+    box-shadow: 9px 9px 0 0 var(--ink);
+  }
 }
 
 @utility marquee-track {
