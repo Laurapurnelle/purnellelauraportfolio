@@ -37,13 +37,23 @@ function KrouselCaseStudy() {
           <Link to="/" className="font-display text-lg uppercase tracking-tight hover:text-violet">
             ← Laura Purnelle
           </Link>
-          <Link
-            to="/"
-            hash="contact"
-            className="hidden md:inline-flex items-center px-4 py-2 bg-foreground text-background text-xs font-bold uppercase tracking-widest border-brutal-thick hover-pop"
-          >
-            Travaillons ensemble
-          </Link>
+          <div className="flex items-center gap-3">
+            <a
+              href={SITE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center px-4 py-2 bg-violet text-primary-foreground text-xs font-bold uppercase tracking-widest border-brutal-thick hover-pop"
+            >
+              Voir le site ↗
+            </a>
+            <Link
+              to="/"
+              hash="contact"
+              className="hidden md:inline-flex items-center px-4 py-2 bg-foreground text-background text-xs font-bold uppercase tracking-widest border-brutal-thick hover-pop"
+            >
+              Travaillons ensemble
+            </Link>
+          </div>
         </div>
       </header>
 
