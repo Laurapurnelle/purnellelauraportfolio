@@ -1,42 +1,69 @@
 export function About() {
   return (
-    <section id="about" className="py-32 px-6 bg-gradient-soft">
-      <div className="max-w-5xl mx-auto grid md:grid-cols-5 gap-16 items-start">
-        <div className="md:col-span-2 space-y-4">
-          <span className="text-xs tracking-[0.25em] uppercase text-primary font-medium">
-            01 — À propos
+    <section id="about" className="relative py-32 px-6 bg-foreground text-background overflow-hidden">
+      {/* Marquee strip */}
+      <div className="absolute top-0 left-0 right-0 bg-yellow border-b-[3px] border-foreground overflow-hidden">
+        <div className="marquee-track flex whitespace-nowrap py-2">
+          {Array.from({ length: 2 }).map((_, i) => (
+            <div key={i} className="flex items-center gap-6 px-3 text-foreground font-display uppercase text-sm">
+              {Array.from({ length: 8 }).map((__, j) => (
+                <span key={j} className="flex items-center gap-6">
+                  UI Design
+                  <span className="w-2 h-2 bg-foreground rounded-full" />
+                  UX Research
+                  <span className="w-2 h-2 bg-foreground rounded-full" />
+                  Brand
+                  <span className="w-2 h-2 bg-foreground rounded-full" />
+                  Prototypage
+                  <span className="w-2 h-2 bg-foreground rounded-full" />
+                </span>
+              ))}
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="max-w-6xl mx-auto grid md:grid-cols-12 gap-12 items-start mt-12">
+        <div className="md:col-span-5 space-y-6">
+          <span className="inline-block text-xs font-bold tracking-[0.3em] uppercase text-yellow">
+            01 / À propos
           </span>
-          <h2 className="font-serif text-4xl md:text-5xl text-foreground leading-tight">
-            Une <span className="italic text-gradient">designer</span> au
-            service de l'expérience.
+          <h2 className="font-display text-5xl md:text-7xl uppercase leading-[0.9]">
+            Designer
+            <br />
+            <span className="text-violet">qui aime</span>
+            <br />
+            le détail.
           </h2>
         </div>
 
-        <div className="md:col-span-3 space-y-6 text-base md:text-lg leading-relaxed text-muted-foreground">
+        <div className="md:col-span-7 space-y-6 text-lg leading-relaxed">
           <p>
             Étudiante en alternance en{" "}
-            <span className="text-foreground font-medium">
-              UI/UX Design à l'IFAPME de Liège (2025 — 2027)
-            </span>
-            , je conçois des expériences numériques centrées sur l'utilisateur,
-            où la stratégie de marque et la logique d'usage se rejoignent.
+            <span className="bg-violet text-primary-foreground px-1.5 font-bold">
+              UI/UX Design à l'IFAPME Liège
+            </span>{" "}
+            (2025 → 2027), je conçois des expériences numériques où la
+            stratégie de marque rencontre la logique d'usage.
           </p>
-          <p>
-            Mon approche s'appuie sur la recherche, le prototypage itératif et
-            une attention constante portée à la cohérence visuelle. De la
-            refonte d'interface à la direction artistique, je travaille avec
-            des entrepreneur·e·s, des associations et des studios pour
-            construire des produits clairs, utiles et élégants.
+          <p className="text-background/80">
+            Mon terrain de jeu : la recherche utilisateur, le prototypage
+            haute fidélité et la direction artistique. J'aime quand un projet
+            a du caractère — pas juste un beau pixel.
           </p>
-          <div className="flex flex-wrap gap-10 pt-6">
+
+          <div className="grid grid-cols-3 gap-4 pt-8">
             {[
-              { num: "2025", label: "Début IFAPME" },
-              { num: "10+", label: "Projets réalisés" },
-              { num: "Liège", label: "Belgique" },
+              { num: "10+", label: "Projets" },
+              { num: "2027", label: "Diplôme" },
+              { num: "Liège", label: "BE" },
             ].map((s) => (
-              <div key={s.label}>
-                <p className="font-serif text-3xl text-primary">{s.num}</p>
-                <p className="text-sm text-muted-foreground mt-1">{s.label}</p>
+              <div
+                key={s.label}
+                className="bg-background text-foreground border-brutal-thick p-4 hover-pop"
+              >
+                <p className="font-display text-3xl md:text-4xl text-violet">{s.num}</p>
+                <p className="text-xs font-bold uppercase tracking-wider mt-1">{s.label}</p>
               </div>
             ))}
           </div>
