@@ -42,7 +42,7 @@ export function Navbar() {
         </ul>
         <a
           href="#contact"
-          className="hidden md:inline-flex items-center text-sm font-medium text-primary border-b border-primary/40 hover:border-primary transition-colors pb-0.5"
+          className="hidden md:inline-flex items-center px-5 py-2 rounded-md bg-primary text-primary-foreground text-sm font-medium hover:shadow-soft transition-all"
         >
           Travaillons ensemble
         </a>
