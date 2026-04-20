@@ -1,69 +1,72 @@
 export function Contact() {
   return (
-    <section id="contact" className="py-32 px-6 relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-hero opacity-50" />
-      <div className="absolute top-20 right-10 w-64 h-64 rounded-full bg-accent/15 blur-3xl" />
-      <div className="absolute bottom-10 left-10 w-72 h-72 rounded-full bg-primary/10 blur-3xl" />
+    <section
+      id="contact"
+      className="relative py-24 md:py-32 px-6 bg-violet text-primary-foreground overflow-hidden border-t-[3px] border-foreground"
+    >
+      {/* Decorative shapes */}
+      <div className="absolute top-10 right-10 w-28 h-28 bg-yellow border-brutal-thick rotate-12" />
+      <div className="absolute bottom-1/3 left-8 w-16 h-16 bg-foreground rounded-full hidden md:block" />
 
-      <div className="relative max-w-3xl mx-auto text-center space-y-8">
-        <span className="text-xs tracking-[0.25em] uppercase text-primary font-medium">
-          04 — Contact
-        </span>
-        <h2 className="font-serif text-4xl md:text-6xl text-foreground leading-tight">
-          Travaillons <span className="italic text-gradient">ensemble</span>
-        </h2>
-        <p className="text-lg text-muted-foreground max-w-xl mx-auto">
-          Vous avez un projet d'interface, une refonte ou une identité à
-          construire ? Écrivez-moi, je vous réponds sous 48h.
-        </p>
+      <div className="relative max-w-6xl mx-auto">
+        <div className="text-center space-y-4 mb-12">
+          <span className="inline-block text-xs font-bold tracking-[0.3em] uppercase bg-yellow text-foreground border-brutal px-3 py-1.5">
+            04 / Contact
+          </span>
+          <p className="text-lg md:text-xl font-medium max-w-xl mx-auto pt-4">
+            Un projet d'interface, une refonte ou une identité ?
+            <br />
+            Réponse sous 48h, promis.
+          </p>
+        </div>
 
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+        {/* Giant typography button */}
+        <a
+          href="mailto:hello@laurapurnelle.be"
+          aria-label="Envoyer un email à Laura Purnelle"
+          className="group block text-center my-8"
+        >
+          <span className="font-display uppercase leading-[0.85] tracking-tighter block text-[clamp(3rem,15vw,12rem)] text-primary-foreground transition-colors group-hover:text-yellow">
+            Travaillons
+          </span>
+          <span className="font-display uppercase leading-[0.85] tracking-tighter block text-[clamp(3rem,15vw,12rem)] -mt-2 md:-mt-4">
+            <span className="bg-yellow text-foreground px-3 md:px-6 inline-block border-brutal-thick shadow-brutal group-hover:translate-x-[-4px] group-hover:translate-y-[-4px] transition-transform">
+              ensemble
+            </span>
+            <span className="text-yellow group-hover:text-primary-foreground transition-colors">.</span>
+          </span>
+        </a>
+
+        <div className="flex flex-col md:flex-row items-center justify-center gap-4 mt-12">
           <a
             href="mailto:hello@laurapurnelle.be"
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-md bg-primary text-primary-foreground font-medium shadow-soft hover:shadow-glow transition-all hover:-translate-y-0.5"
+            className="inline-flex items-center gap-2 px-6 py-4 bg-background text-foreground text-sm font-bold uppercase tracking-widest border-brutal-thick hover-pop"
           >
-            hello@laurapurnelle.be
+            hello@laurapurnelle.be →
           </a>
           <a
             href="https://www.linkedin.com/"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-md border border-primary/30 text-primary font-medium hover:bg-primary/5 transition-all"
+            className="inline-flex items-center gap-2 px-6 py-4 bg-foreground text-background text-sm font-bold uppercase tracking-widest border-brutal-thick hover-pop"
           >
-            LinkedIn
-            <span aria-hidden>↗</span>
+            LinkedIn ↗
           </a>
         </div>
 
-        <div className="flex items-center justify-center flex-wrap gap-6 pt-12 text-sm text-muted-foreground">
-          <a
-            href="https://www.linkedin.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-primary transition-colors"
-          >
-            LinkedIn
-          </a>
-          <span className="w-1 h-1 rounded-full bg-primary/40" />
-          <a href="#" className="hover:text-primary transition-colors">
-            Behance
-          </a>
-          <span className="w-1 h-1 rounded-full bg-primary/40" />
-          <a href="#" className="hover:text-primary transition-colors">
-            Dribbble
-          </a>
-          <span className="w-1 h-1 rounded-full bg-primary/40" />
-          <a
-            href="mailto:hello@laurapurnelle.be"
-            className="hover:text-primary transition-colors"
-          >
-            Email
-          </a>
+        <div className="mt-20 pt-8 border-t-[3px] border-foreground flex flex-col md:flex-row items-center justify-between gap-4 text-xs font-bold uppercase tracking-widest">
+          <p>© {new Date().getFullYear()} Laura Purnelle</p>
+          <div className="flex items-center gap-4">
+            <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" className="hover:text-yellow transition-colors">
+              LinkedIn
+            </a>
+            <span className="w-1 h-1 bg-primary-foreground rounded-full" />
+            <a href="#" className="hover:text-yellow transition-colors">Behance</a>
+            <span className="w-1 h-1 bg-primary-foreground rounded-full" />
+            <a href="#" className="hover:text-yellow transition-colors">Dribbble</a>
+          </div>
+          <p>IFAPME Liège · 2025—2027</p>
         </div>
-
-        <footer className="pt-16 text-xs text-muted-foreground">
-          © {new Date().getFullYear()} Laura Purnelle — IFAPME Liège · Designer UI/UX
-        </footer>
       </div>
     </section>
   );

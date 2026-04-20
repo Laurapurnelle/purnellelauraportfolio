@@ -2,132 +2,230 @@ import p1 from "@/assets/project-1.jpg";
 import p2 from "@/assets/project-2.jpg";
 import p3 from "@/assets/project-3.jpg";
 
-const projects = [
+const others = [
   {
-    title: "The Carrousel",
-    category: "UI Design · Stratégie de contenu",
-    year: "2025",
-    description:
-      "Conception d'une interface dynamique de carrousel éditorial, pensée pour mettre en valeur le contenu et fluidifier la navigation entre formats variés.",
+    title: "Bloom",
+    category: "App mobile · Bien-être",
+    year: "2024",
     image: p1,
-    tags: ["UI Design", "Prototypage", "Contenu"],
+    accent: "bg-yellow",
+    rotate: "-rotate-1",
+    tags: ["UX Research", "Mobile"],
   },
   {
-    title: "Refonte de plateforme",
-    category: "UX · Architecture de l'information",
-    year: "2025",
-    description:
-      "Restructuration complète d'une plateforme web : optimisation de la hiérarchie, simplification des parcours utilisateurs et refonte du design system.",
+    title: "Atelier Camélia",
+    category: "E-shop · Bijouterie",
+    year: "2024",
     image: p2,
-    tags: ["UX Research", "Wireframing", "Design System"],
+    accent: "bg-violet",
+    rotate: "rotate-1",
+    tags: ["Webflow", "UI Design"],
   },
   {
-    title: "Design publicitaire",
-    category: "Direction artistique · Print",
+    title: "Maison Lila",
+    category: "Identité · Branding",
     year: "2024",
-    description:
-      "Création d'une série d'affiches synthétisant des messages de marque percutants, à travers une typographie forte et une palette graphique maîtrisée.",
     image: p3,
-    tags: ["Affiche", "Typographie", "Branding"],
-  },
-  {
-    title: "Bloom — App de bien-être",
-    category: "UI/UX · Mobile",
-    year: "2024",
-    description:
-      "Application mobile accompagnant le quotidien de ses utilisateur·rice·s : rituels personnalisés, journal d'émotions et suivi d'objectifs.",
-    image: p1,
-    tags: ["UX Research", "Mobile", "Prototypage"],
-  },
-  {
-    title: "Atelier Camélia — E-shop",
-    category: "Web Design · E-commerce",
-    year: "2024",
-    description:
-      "Refonte du site marchand d'une créatrice de bijoux artisanaux : tunnel d'achat optimisé et univers de marque retravaillé.",
-    image: p2,
-    tags: ["Webflow", "UI Design", "Branding"],
-  },
-  {
-    title: "Maison Lila — Identité",
-    category: "Branding · Direction artistique",
-    year: "2024",
-    description:
-      "Création de l'identité visuelle d'une boutique liégeoise : logo, papeterie, supports imprimés et guidelines complètes.",
-    image: p3,
-    tags: ["Branding", "Print", "Logo"],
+    accent: "bg-foreground",
+    rotate: "-rotate-1",
+    tags: ["Branding", "Print"],
   },
 ];
 
 export function Projects() {
   return (
-    <section id="projects" className="py-32 px-6">
-      <div className="max-w-6xl mx-auto">
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-20">
+    <section id="projects" className="py-32 px-6 bg-background relative">
+      {/* Header */}
+      <div className="max-w-6xl mx-auto mb-20">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
           <div>
-            <span className="text-xs tracking-[0.25em] uppercase text-primary font-medium">
-              02 — Projets
+            <span className="inline-block text-xs font-bold tracking-[0.3em] uppercase text-violet">
+              02 / Sélection
             </span>
-            <h2 className="font-serif text-4xl md:text-5xl text-foreground mt-3">
-              Sélection de <span className="italic text-gradient">réalisations</span>
+            <h2 className="font-display text-5xl md:text-7xl uppercase mt-3 leading-[0.9]">
+              Projets qui
+              <br />
+              <span className="bg-yellow px-2 inline-block">claquent.</span>
             </h2>
           </div>
-          <p className="text-muted-foreground max-w-sm">
-            Projets récents mêlant recherche utilisateur, design d'interface
-            et direction artistique.
+          <p className="text-foreground max-w-sm font-medium">
+            Six projets récents — recherche, design d'interface et direction
+            artistique.
           </p>
         </div>
+      </div>
 
-        <div className="space-y-24">
-          {projects.map((project, idx) => (
-            <article
-              key={project.title}
-              className={`grid md:grid-cols-2 gap-12 items-center ${
-                idx % 2 === 1 ? "md:[direction:rtl]" : ""
-              }`}
-            >
-              <div className="md:[direction:ltr] group relative">
-                <div className="absolute inset-0 -m-3 rounded-2xl bg-gradient-accent opacity-10 blur-2xl group-hover:opacity-20 transition-opacity" />
-                <div className="relative rounded-2xl overflow-hidden shadow-card border border-border/60 bg-card">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    width={800}
-                    height={600}
-                    loading="lazy"
-                    className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-                </div>
+      {/* FOCUS PROJECT — The K'rousel */}
+      <div className="max-w-7xl mx-auto mb-32">
+        <div className="relative bg-violet border-brutal-thick p-6 md:p-12 shadow-brutal-lg">
+          <div className="absolute -top-5 -left-3 bg-yellow border-brutal-thick px-4 py-1.5 -rotate-3 shadow-brutal">
+            <span className="font-display text-xs uppercase tracking-widest">★ Projet phare</span>
+          </div>
+
+          <div className="grid md:grid-cols-12 gap-8 items-center">
+            <div className="md:col-span-5 space-y-6 text-primary-foreground">
+              <div className="text-xs font-bold tracking-[0.3em] uppercase text-yellow">
+                UI Design · Stratégie de contenu · 2025
               </div>
+              <h3 className="font-display text-5xl md:text-7xl uppercase leading-[0.85]">
+                The
+                <br />
+                K'Rousel
+              </h3>
+              <p className="text-lg leading-relaxed text-primary-foreground/90">
+                Une interface dynamique de carrousel éditorial pensée pour
+                mettre en valeur le contenu et fluidifier la navigation entre
+                formats variés.
+              </p>
+              <div className="flex flex-wrap gap-2 pt-2">
+                {["UI Design", "Prototypage", "Motion", "Contenu"].map((t) => (
+                  <span
+                    key={t}
+                    className="text-xs font-bold uppercase tracking-wider px-3 py-1.5 bg-background text-foreground border-brutal"
+                  >
+                    {t}
+                  </span>
+                ))}
+              </div>
+              <a
+                href="#contact"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-yellow text-foreground text-sm font-bold uppercase tracking-widest border-brutal-thick hover-pop mt-4"
+              >
+                Voir l'étude →
+              </a>
+            </div>
 
-              <div className="md:[direction:ltr] space-y-5">
-                <div className="flex items-center gap-3 text-xs tracking-[0.25em] uppercase text-primary/80">
-                  <span>{project.category}</span>
-                  <span className="w-1 h-1 rounded-full bg-primary/40" />
-                  <span>{project.year}</span>
+            <div className="md:col-span-7 relative">
+              <div className="relative bg-background border-brutal-thick">
+                <img
+                  src={p1}
+                  alt="Mockup principal de The K'Rousel"
+                  width={1200}
+                  height={800}
+                  loading="lazy"
+                  className="w-full h-auto object-cover -translate-x-2 -translate-y-2 border-brutal-thick"
+                />
+              </div>
+              {/* Mini mockup overlap */}
+              <div className="hidden md:block absolute -bottom-10 -right-6 w-48 bg-background border-brutal-thick rotate-6 shadow-brutal">
+                <img
+                  src={p2}
+                  alt="Vue secondaire"
+                  width={400}
+                  height={300}
+                  loading="lazy"
+                  className="w-full h-auto object-cover"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Grid of others */}
+      <div className="max-w-6xl mx-auto">
+        <div className="flex items-end justify-between mb-10">
+          <h3 className="font-display text-3xl md:text-4xl uppercase">
+            + Autres projets
+          </h3>
+          <span className="text-sm font-bold uppercase tracking-widest text-muted-foreground">
+            03 → 06
+          </span>
+        </div>
+
+        {/* Refonte de plateforme — wide */}
+        <article className="bg-background border-brutal-thick mb-8 grid md:grid-cols-12 hover-pop">
+          <div className="md:col-span-7 border-b-[3px] md:border-b-0 md:border-r-[3px] border-foreground bg-yellow p-8 flex flex-col justify-between min-h-[280px]">
+            <div className="text-xs font-bold tracking-[0.3em] uppercase text-foreground">
+              UX · Architecture de l'information · 2025
+            </div>
+            <div>
+              <h4 className="font-display text-4xl md:text-5xl uppercase leading-[0.9]">
+                Refonte de
+                <br />
+                plateforme
+              </h4>
+              <p className="text-sm font-medium mt-4 max-w-md">
+                Restructuration complète : optimisation de la hiérarchie,
+                simplification des parcours et refonte du design system.
+              </p>
+            </div>
+          </div>
+          <div className="md:col-span-5 p-6 flex items-center justify-center bg-background">
+            <img
+              src={p2}
+              alt="Refonte de plateforme"
+              width={500}
+              height={400}
+              loading="lazy"
+              className="w-full h-auto object-cover border-brutal"
+            />
+          </div>
+        </article>
+
+        {/* Design publicitaire — wide */}
+        <article className="bg-foreground text-background border-brutal-thick mb-12 grid md:grid-cols-12 hover-pop">
+          <div className="md:col-span-5 p-6 flex items-center justify-center bg-violet border-r-[3px] border-foreground">
+            <img
+              src={p3}
+              alt="Design publicitaire"
+              width={500}
+              height={400}
+              loading="lazy"
+              className="w-full h-auto object-cover border-brutal"
+            />
+          </div>
+          <div className="md:col-span-7 p-8 flex flex-col justify-between min-h-[280px]">
+            <div className="text-xs font-bold tracking-[0.3em] uppercase text-yellow">
+              Direction artistique · Print · 2024
+            </div>
+            <div>
+              <h4 className="font-display text-4xl md:text-5xl uppercase leading-[0.9]">
+                Design
+                <br />
+                publicitaire
+              </h4>
+              <p className="text-sm font-medium mt-4 max-w-md text-background/85">
+                Série d'affiches synthétisant des messages de marque
+                percutants — typographie forte, palette maîtrisée.
+              </p>
+            </div>
+          </div>
+        </article>
+
+        {/* Dynamic 3-grid: Bloom, Camélia, Lila */}
+        <div className="grid md:grid-cols-3 gap-8">
+          {others.map((p) => (
+            <article
+              key={p.title}
+              className={`bg-background border-brutal-thick hover-pop ${p.rotate}`}
+            >
+              <div className={`${p.accent} border-b-[3px] border-foreground p-3`}>
+                <img
+                  src={p.image}
+                  alt={p.title}
+                  width={500}
+                  height={400}
+                  loading="lazy"
+                  className="w-full h-48 object-cover border-brutal"
+                />
+              </div>
+              <div className="p-5 space-y-3">
+                <div className="flex items-center justify-between text-[10px] font-bold uppercase tracking-widest">
+                  <span>{p.category}</span>
+                  <span className="text-muted-foreground">{p.year}</span>
                 </div>
-                <h3 className="font-serif text-3xl md:text-4xl text-foreground">
-                  {project.title}
-                </h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  {project.description}
-                </p>
-                <div className="flex flex-wrap gap-2 pt-2">
-                  {project.tags.map((t) => (
+                <h4 className="font-display text-2xl uppercase">{p.title}</h4>
+                <div className="flex flex-wrap gap-1.5">
+                  {p.tags.map((t) => (
                     <span
                       key={t}
-                      className="text-xs px-3 py-1.5 rounded-md bg-secondary text-secondary-foreground border border-border/60"
+                      className="text-[10px] font-bold uppercase tracking-wider px-2 py-1 bg-secondary border border-foreground"
                     >
                       {t}
                     </span>
                   ))}
                 </div>
-                <a
-                  href="#contact"
-                  className="inline-flex items-center gap-2 text-sm text-primary border-b border-primary/40 hover:border-primary pb-0.5 mt-4"
-                >
-                  Voir l'étude de cas <span aria-hidden>→</span>
-                </a>
               </div>
             </article>
           ))}

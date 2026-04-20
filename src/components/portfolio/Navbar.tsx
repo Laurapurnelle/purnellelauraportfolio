@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 const links = [
   { href: "#about", label: "À propos" },
   { href: "#projects", label: "Projets" },
-  { href: "#skills", label: "Compétences" },
+  { href: "#skills", label: "Skills" },
   { href: "#contact", label: "Contact" },
 ];
 
@@ -18,22 +18,28 @@ export function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled
-          ? "bg-background/80 backdrop-blur-lg border-b border-border/50 py-3"
-          : "bg-transparent py-6"
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled ? "py-3" : "py-5"
       }`}
     >
-      <nav className="max-w-6xl mx-auto px-6 flex items-center justify-between">
-        <a href="#hero" className="font-serif text-xl tracking-tight text-foreground">
-          Laura<span className="text-primary">.</span>
+      <nav
+        className={`max-w-6xl mx-auto px-4 md:px-6 flex items-center justify-between bg-background border-brutal-thick ${
+          scrolled ? "shadow-brutal" : ""
+        } px-5 py-3 transition-shadow`}
+      >
+        <a
+          href="#hero"
+          className="font-display text-xl md:text-2xl tracking-tight text-foreground flex items-center gap-1"
+        >
+          LAURA
+          <span className="inline-block w-2.5 h-2.5 bg-violet ml-0.5" />
         </a>
         <ul className="hidden md:flex items-center gap-8">
           {links.map((l) => (
             <li key={l.href}>
               <a
                 href={l.href}
-                className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                className="text-sm font-semibold uppercase tracking-wider text-foreground hover:text-violet transition-colors"
               >
                 {l.label}
               </a>
@@ -42,9 +48,9 @@ export function Navbar() {
         </ul>
         <a
           href="#contact"
-          className="hidden md:inline-flex items-center px-5 py-2 rounded-md bg-primary text-primary-foreground text-sm font-medium hover:shadow-soft transition-all"
+          className="hidden md:inline-flex items-center px-4 py-2 bg-violet text-primary-foreground text-sm font-bold uppercase tracking-wider border-brutal hover-pop"
         >
-          Travaillons ensemble
+          Contact →
         </a>
       </nav>
     </header>

@@ -1,62 +1,81 @@
-const groups = [
-  {
-    title: "Design",
-    items: ["UI Design", "UX Research", "Wireframing", "Prototypage haute fidélité", "Design System"],
-  },
-  {
-    title: "Outils",
-    items: ["Figma", "Adobe XD", "Illustrator", "Photoshop", "InDesign"],
-  },
-  {
-    title: "Méthodes",
-    items: ["Design Thinking", "Tests utilisateurs", "Accessibilité (WCAG)", "Atomic Design"],
-  },
-  {
-    title: "Web & Print",
-    items: ["HTML / CSS", "Webflow", "Framer", "Direction artistique", "Mise en page éditoriale"],
-  },
+import { useState } from "react";
+
+type Tag = { label: string; variant: "violet" | "yellow" | "ink" | "outline" };
+
+const tags: Tag[] = [
+  { label: "UI Design", variant: "violet" },
+  { label: "UX Research", variant: "ink" },
+  { label: "Wireframing", variant: "outline" },
+  { label: "Prototypage HF", variant: "yellow" },
+  { label: "Design System", variant: "violet" },
+  { label: "Figma", variant: "ink" },
+  { label: "Adobe XD", variant: "outline" },
+  { label: "Illustrator", variant: "yellow" },
+  { label: "Photoshop", variant: "outline" },
+  { label: "InDesign", variant: "violet" },
+  { label: "Webflow", variant: "ink" },
+  { label: "Framer", variant: "yellow" },
+  { label: "HTML / CSS", variant: "outline" },
+  { label: "Design Thinking", variant: "violet" },
+  { label: "Tests utilisateurs", variant: "ink" },
+  { label: "WCAG · A11y", variant: "yellow" },
+  { label: "Atomic Design", variant: "outline" },
+  { label: "Direction artistique", variant: "violet" },
+  { label: "Mise en page éditoriale", variant: "ink" },
+  { label: "Branding", variant: "yellow" },
 ];
 
+const variantClasses: Record<Tag["variant"], string> = {
+  violet: "bg-violet text-primary-foreground",
+  yellow: "bg-yellow text-foreground",
+  ink: "bg-foreground text-background",
+  outline: "bg-background text-foreground",
+};
+
 export function Skills() {
+  const [active, setActive] = useState<string | null>(null);
+
   return (
-    <section id="skills" className="py-32 px-6 bg-gradient-soft">
-      <div className="max-w-6xl mx-auto">
-        <div className="text-center max-w-2xl mx-auto mb-20 space-y-4">
-          <span className="text-xs tracking-[0.25em] uppercase text-primary font-medium">
-            03 — Compétences
+    <section id="skills" className="py-32 px-6 bg-background relative overflow-hidden">
+      {/* Decorative shapes */}
+      <div className="absolute top-20 right-12 w-20 h-20 bg-yellow border-brutal-thick rotate-12 hidden md:block" />
+      <div className="absolute bottom-20 left-12 w-12 h-12 bg-violet border-brutal-thick rounded-full hidden md:block" />
+
+      <div className="max-w-5xl mx-auto">
+        <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
+          <span className="inline-block text-xs font-bold tracking-[0.3em] uppercase text-violet">
+            03 / Compétences
           </span>
-          <h2 className="font-serif text-4xl md:text-5xl text-foreground">
-            Une boîte à outils <span className="italic text-gradient">rigoureuse</span>
+          <h2 className="font-display text-5xl md:text-7xl uppercase leading-[0.9]">
+            Stack &
+            <br />
+            <span className="text-violet">savoir-faire</span>
           </h2>
-          <p className="text-muted-foreground">
-            Des compétences techniques au service d'idées claires et de
-            produits utiles.
+          <p className="text-foreground font-medium pt-2">
+            Survole, clique, joue. Les outils du quotidien.
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {groups.map((g) => (
-            <div
-              key={g.title}
-              className="group p-8 rounded-xl bg-card border border-border/60 shadow-card hover:shadow-glow transition-all hover:-translate-y-1"
-            >
-              <div className="w-10 h-10 rounded-md bg-gradient-accent mb-6 opacity-90 group-hover:scale-110 transition-transform" />
-              <h3 className="font-serif text-2xl text-foreground mb-4">
-                {g.title}
-              </h3>
-              <ul className="space-y-2">
-                {g.items.map((item) => (
-                  <li
-                    key={item}
-                    className="text-sm text-muted-foreground flex items-center gap-2"
-                  >
-                    <span className="w-1 h-1 rounded-full bg-primary" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+        <div className="flex flex-wrap justify-center gap-3 md:gap-4">
+          {tags.map((t, i) => {
+            const isActive = active === t.label;
+            const baseRot = i % 4 === 0 ? "-rotate-2" : i % 4 === 2 ? "rotate-2" : "";
+            return (
+              <button
+                key={t.label}
+                onClick={() => setActive(isActive ? null : t.label)}
+                onMouseEnter={() => setActive(t.label)}
+                onMouseLeave={() => setActive(null)}
+                className={`${variantClasses[t.variant]} ${baseRot} border-brutal-thick px-5 py-3 text-sm md:text-base font-bold uppercase tracking-wider transition-all duration-150 ${
+                  isActive
+                    ? "translate-x-[-3px] translate-y-[-3px] shadow-brutal"
+                    : ""
+                }`}
+              >
+                {t.label}
+              </button>
+            );
+          })}
         </div>
       </div>
     </section>
