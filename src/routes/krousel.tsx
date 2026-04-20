@@ -1,7 +1,10 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import p1 from "@/assets/project-1.jpg";
-import p2 from "@/assets/project-2.jpg";
-import p3 from "@/assets/project-3.jpg";
+import krouselHome from "@/assets/krousel-home.png";
+import burgerKlorquet from "@/assets/burger-klorquet.jpg";
+import burgerLiegeois from "@/assets/burger-liegeois.jpg";
+
+const SITE_URL = "#"; // TODO: remplacer par l'URL réelle du site The K'Rousel
 
 export const Route = createFileRoute("/krousel")({
   head: () => ({
@@ -34,13 +37,23 @@ function KrouselCaseStudy() {
           <Link to="/" className="font-display text-lg uppercase tracking-tight hover:text-violet">
             ← Laura Purnelle
           </Link>
-          <Link
-            to="/"
-            hash="contact"
-            className="hidden md:inline-flex items-center px-4 py-2 bg-foreground text-background text-xs font-bold uppercase tracking-widest border-brutal-thick hover-pop"
-          >
-            Travaillons ensemble
-          </Link>
+          <div className="flex items-center gap-3">
+            <a
+              href={SITE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center px-4 py-2 bg-violet text-primary-foreground text-xs font-bold uppercase tracking-widest border-brutal-thick hover-pop"
+            >
+              Voir le site ↗
+            </a>
+            <Link
+              to="/"
+              hash="contact"
+              className="hidden md:inline-flex items-center px-4 py-2 bg-foreground text-background text-xs font-bold uppercase tracking-widest border-brutal-thick hover-pop"
+            >
+              Travaillons ensemble
+            </Link>
+          </div>
         </div>
       </header>
 
@@ -139,19 +152,43 @@ function KrouselCaseStudy() {
               <li className="flex gap-3"><span className="bg-yellow border-brutal px-2">✦</span> Deux palettes, deux typographies, une marque mère.</li>
               <li className="flex gap-3"><span className="bg-yellow border-brutal px-2">✦</span> Animation diagonale au survol, micro-interaction signature.</li>
             </ul>
+            <a
+              href={SITE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-violet text-primary-foreground text-xs font-bold uppercase tracking-widest border-brutal-thick shadow-brutal hover-pop mt-4"
+            >
+              Voir le site live ↗
+            </a>
           </div>
           <div className="md:col-span-7">
-            <div className="bg-yellow border-brutal-thick p-3 shadow-brutal -rotate-1">
-              <img
-                src={p2}
-                alt="Maquette du split screen diagonal à 15°"
-                className="w-full h-auto object-cover border-brutal"
-                loading="lazy"
-              />
+            {/* PC Mockup */}
+            <div className="relative">
+              <div className="bg-foreground border-brutal-thick rounded-t-xl p-3 shadow-brutal-lg">
+                <div className="flex items-center gap-1.5 pb-2">
+                  <span className="w-2.5 h-2.5 rounded-full bg-destructive" />
+                  <span className="w-2.5 h-2.5 rounded-full bg-yellow" />
+                  <span className="w-2.5 h-2.5 rounded-full bg-green-500" />
+                  <span className="ml-3 flex-1 h-5 bg-background/10 rounded text-[10px] text-background/60 px-2 flex items-center font-mono">
+                    thekrousel.be
+                  </span>
+                </div>
+                <div className="bg-background border-brutal overflow-hidden">
+                  <img
+                    src={krouselHome}
+                    alt="Page d'accueil The K'Rousel : split screen Friterie / Traiteur"
+                    className="w-full h-auto object-cover block"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+              <div className="mx-auto w-1/3 h-3 bg-foreground" />
+              <div className="mx-auto w-2/3 h-2 bg-foreground rounded-b-lg border-brutal-thick" />
             </div>
           </div>
         </div>
       </section>
+
 
       {/* Copywriting */}
       <section className="px-6 py-24 bg-violet text-primary-foreground">
@@ -196,7 +233,7 @@ function KrouselCaseStudy() {
           <div className="grid md:grid-cols-2 gap-8">
             <article className="border-brutal-thick bg-background hover-pop">
               <div className="bg-yellow border-b-[3px] border-foreground p-4">
-                <img src={p3} alt="Le K'Lorquet" className="w-full h-56 object-cover border-brutal" loading="lazy" />
+                <img src={burgerKlorquet} alt="Le K'Lorquet — burger au Blanc-Bleu Belge" className="w-full h-56 object-cover border-brutal" loading="lazy" />
               </div>
               <div className="p-6 space-y-3">
                 <div className="text-[10px] font-bold uppercase tracking-widest text-violet">Le signature</div>
@@ -215,7 +252,7 @@ function KrouselCaseStudy() {
 
             <article className="border-brutal-thick bg-background hover-pop">
               <div className="bg-violet border-b-[3px] border-foreground p-4">
-                <img src={p2} alt="Le Liégeois Noir" className="w-full h-56 object-cover border-brutal" loading="lazy" />
+                <img src={burgerLiegeois} alt="Le Liégeois Noir — burger au boudin noir" className="w-full h-56 object-cover border-brutal" loading="lazy" />
               </div>
               <div className="p-6 space-y-3">
                 <div className="text-[10px] font-bold uppercase tracking-widest text-violet">L'audacieux</div>
