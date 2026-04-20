@@ -1,3 +1,4 @@
+import { Link } from "@tanstack/react-router";
 import p1 from "@/assets/project-1.jpg";
 import p2 from "@/assets/project-2.jpg";
 import p3 from "@/assets/project-3.jpg";
@@ -59,26 +60,44 @@ export function Projects() {
       <div className="max-w-7xl mx-auto mb-32">
         <div className="relative bg-violet border-brutal-thick p-6 md:p-12 shadow-brutal-lg">
           <div className="absolute -top-5 -left-3 bg-yellow border-brutal-thick px-4 py-1.5 -rotate-3 shadow-brutal">
-            <span className="font-display text-xs uppercase tracking-widest">★ Projet phare</span>
+            <span className="font-display text-xs uppercase tracking-widest">★ Featured Project</span>
           </div>
 
-          <div className="grid md:grid-cols-12 gap-8 items-center">
-            <div className="md:col-span-5 space-y-6 text-primary-foreground">
+          <div className="grid md:grid-cols-12 gap-10 items-center">
+            <div className="md:col-span-6 space-y-6 text-primary-foreground">
               <div className="text-xs font-bold tracking-[0.3em] uppercase text-yellow">
                 UI Design · Stratégie de contenu · 2025
               </div>
-              <h3 className="font-display text-5xl md:text-7xl uppercase leading-[0.85]">
-                The
-                <br />
-                K'Rousel
+              <h3
+                className="uppercase text-primary-foreground"
+                style={{
+                  fontFamily: "var(--font-serif)",
+                  fontWeight: 900,
+                  fontSize: "clamp(3rem, 8vw, 7rem)",
+                  lineHeight: 0.85,
+                  letterSpacing: "-0.02em",
+                }}
+              >
+                The K'Rousel
               </h3>
-              <p className="text-lg leading-relaxed text-primary-foreground/90">
-                Une interface dynamique de carrousel éditorial pensée pour
-                mettre en valeur le contenu et fluidifier la navigation entre
-                formats variés.
+              <p
+                className="italic text-primary-foreground/95"
+                style={{
+                  fontFamily: "var(--font-serif)",
+                  fontWeight: 400,
+                  fontSize: "clamp(1.25rem, 2.2vw, 1.875rem)",
+                  lineHeight: 1.2,
+                }}
+              >
+                L'art de la friterie & l'élégance traiteur.
+              </p>
+              <p className="text-base leading-relaxed text-primary-foreground/85 max-w-lg">
+                Une identité hybride pour Kassandra Lorquet, ancrée à Liège — entre
+                friterie itinérante et traiteur haut de gamme. Split screen diagonal
+                à 15°, copywriting sourcé, savoir-faire assumé.
               </p>
               <div className="flex flex-wrap gap-2 pt-2">
-                {["UI Design", "Prototypage", "Motion", "Contenu"].map((t) => (
+                {["UI Design", "Direction artistique", "Copywriting", "Branding"].map((t) => (
                   <span
                     key={t}
                     className="text-xs font-bold uppercase tracking-wider px-3 py-1.5 bg-background text-foreground border-brutal"
@@ -87,15 +106,15 @@ export function Projects() {
                   </span>
                 ))}
               </div>
-              <a
-                href="#contact"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-yellow text-foreground text-sm font-bold uppercase tracking-widest border-brutal-thick hover-pop mt-4"
+              <Link
+                to="/krousel"
+                className="inline-flex items-center gap-2 px-6 py-4 bg-yellow text-foreground text-sm font-bold uppercase tracking-widest border-brutal-thick hover-pop mt-4"
               >
-                Voir l'étude →
-              </a>
+                Découvrir l'étude de cas →
+              </Link>
             </div>
 
-            <div className="md:col-span-7 relative">
+            <div className="md:col-span-6 relative">
               <div className="relative bg-background border-brutal-thick">
                 <img
                   src={p1}
@@ -106,7 +125,6 @@ export function Projects() {
                   className="w-full h-auto object-cover -translate-x-2 -translate-y-2 border-brutal-thick"
                 />
               </div>
-              {/* Mini mockup overlap */}
               <div className="hidden md:block absolute -bottom-10 -right-6 w-48 bg-background border-brutal-thick rotate-6 shadow-brutal">
                 <img
                   src={p2}
