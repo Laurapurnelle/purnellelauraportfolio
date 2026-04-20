@@ -1,7 +1,10 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import p1 from "@/assets/project-1.jpg";
-import p2 from "@/assets/project-2.jpg";
-import p3 from "@/assets/project-3.jpg";
+import krouselHome from "@/assets/krousel-home.png";
+import burgerKlorquet from "@/assets/burger-klorquet.jpg";
+import burgerLiegeois from "@/assets/burger-liegeois.jpg";
+
+const SITE_URL = "#"; // TODO: remplacer par l'URL réelle du site The K'Rousel
 
 export const Route = createFileRoute("/krousel")({
   head: () => ({
