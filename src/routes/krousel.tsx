@@ -1,6 +1,9 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import p1 from "@/assets/project-1.jpg";
 import krouselHome from "@/assets/krousel-home.png";
+import krouselSplit from "@/assets/krousel-split.png";
+import friterieFull from "@/assets/krousel-friterie-full.jpg";
+import traiteurFull from "@/assets/krousel-traiteur-full.jpg";
 import burgerKlorquet from "@/assets/burger-klorquet.jpg";
 import burgerLiegeois from "@/assets/burger-liegeois.jpg";
 
