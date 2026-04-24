@@ -2,7 +2,7 @@ export function About() {
   return (
     <section id="about" className="relative py-32 px-6 bg-foreground text-background overflow-hidden">
       {/* Marquee strip */}
-      <div className="absolute top-0 left-0 right-0 bg-yellow border-b-[3px] border-foreground overflow-hidden">
+      <div className="absolute top-0 left-0 right-0 bg-[var(--lime)] border-b-[3px] border-foreground overflow-hidden">
         <div className="marquee-track flex whitespace-nowrap py-2">
           {Array.from({ length: 2 }).map((_, i) => (
             <div key={i} className="flex items-center gap-6 px-3 text-foreground font-display uppercase text-sm">

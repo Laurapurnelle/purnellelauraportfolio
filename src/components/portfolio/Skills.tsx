@@ -39,9 +39,10 @@ export function Skills() {
 
   return (
     <section id="skills" className="py-32 px-6 bg-background relative overflow-hidden">
-      {/* Decorative shapes */}
-      <div className="absolute top-20 right-12 w-20 h-20 bg-yellow border-brutal-thick rotate-12 hidden md:block" />
-      <div className="absolute bottom-20 left-12 w-12 h-12 bg-violet border-brutal-thick rounded-full hidden md:block" />
+      {/* Decorative blob shapes */}
+      <div className="absolute top-20 right-12 w-28 h-28 bg-[var(--lime)] border-brutal-thick blob-1 hidden md:block" />
+      <div className="absolute bottom-20 left-12 w-20 h-20 bg-[var(--magenta)] border-brutal-thick blob-flower hidden md:block" />
+      <div className="absolute top-1/2 left-8 w-12 h-12 bg-[var(--lavender)] border-brutal blob-2 hidden lg:block" />
 
       <div className="max-w-5xl mx-auto">
         <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
