@@ -42,7 +42,7 @@ export function Contact() {
 
           {/* Giant typography button */}
           <a
-            href="mailto:hello@laurapurnelle.be"
+            href="mailto:laurapurnelle@outlook.com"
             aria-label="Envoyer un email à Laura Purnelle"
             className="group block text-center my-8"
           >
@@ -65,13 +65,20 @@ export function Contact() {
 
           <div className="flex flex-col md:flex-row items-center justify-center gap-4 mt-12">
             <a
-              href="mailto:hello@laurapurnelle.be"
+              href="mailto:laurapurnelle@outlook.com"
               className="inline-flex items-center gap-2 px-6 py-4 bg-background text-foreground text-sm font-bold uppercase tracking-widest border-brutal-thick hover-pop rounded-full"
             >
-              hello@laurapurnelle.be →
+              laurapurnelle@outlook.com →
             </a>
             <a
-              href="https://www.linkedin.com/"
+              href="tel:+32493875201"
+              className="inline-flex items-center gap-2 px-6 py-4 text-sm font-bold uppercase tracking-widest border-brutal-thick hover-pop rounded-full"
+              style={{ background: "var(--lime)", color: "var(--ink)" }}
+            >
+              +32 493 87 52 01
+            </a>
+            <a
+              href="https://www.linkedin.com/in/laura-purnelle-9a1608213/"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-6 py-4 bg-foreground text-background text-sm font-bold uppercase tracking-widest border-brutal-thick hover-pop rounded-full"
@@ -83,17 +90,17 @@ export function Contact() {
           <div
             className="mt-20 pt-8 border-t-[3px] border-foreground flex flex-col md:flex-row items-center justify-between gap-4 text-xs font-bold uppercase tracking-widest"
           >
-            <p>© {new Date().getFullYear()} Laura Purnelle</p>
+            <p>© {new Date().getFullYear()} Laura Purnelle · Liège</p>
             <div className="flex items-center gap-4">
-              <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--lime)] transition-colors">
+              <a href="https://www.linkedin.com/in/laura-purnelle-9a1608213/" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--lime)] transition-colors">
                 LinkedIn
               </a>
               <span className="w-1 h-1 bg-[var(--cream)] rounded-full" />
-              <a href="#" className="hover:text-[var(--lime)] transition-colors">Behance</a>
+              <a href="mailto:laurapurnelle@outlook.com" className="hover:text-[var(--lime)] transition-colors">Email</a>
               <span className="w-1 h-1 bg-[var(--cream)] rounded-full" />
-              <a href="#" className="hover:text-[var(--lime)] transition-colors">Dribbble</a>
+              <a href="tel:+32493875201" className="hover:text-[var(--lime)] transition-colors">Téléphone</a>
             </div>
-            <p>IFAPME Liège · 2025—2027</p>
+            <p>IFAPME Château Massart · 2025—2027</p>
           </div>
         </div>
 
