@@ -231,9 +231,11 @@ function KrouselCaseStudy() {
           </h2>
 
           <div className="grid md:grid-cols-2 gap-8">
-            <article className="border-brutal-thick bg-background hover-pop">
+            <article className="border-brutal-thick bg-background hover-pop overflow-hidden">
               <div className="bg-yellow border-b-[3px] border-foreground p-4">
-                <img src={burgerKlorquet} alt="Le K'Lorquet — burger au Blanc-Bleu Belge" className="w-full h-56 object-cover border-brutal" loading="lazy" />
+                <div className="overflow-hidden border-brutal-square blob-1 shadow-brutal">
+                  <img src={burgerKlorquet} alt="Le K'Lorquet — burger au Blanc-Bleu Belge" className="w-full h-56 object-cover block" loading="lazy" />
+                </div>
               </div>
               <div className="p-6 space-y-3">
                 <div className="text-[10px] font-bold uppercase tracking-widest text-violet">Le signature</div>
@@ -250,9 +252,11 @@ function KrouselCaseStudy() {
               </div>
             </article>
 
-            <article className="border-brutal-thick bg-background hover-pop">
+            <article className="border-brutal-thick bg-background hover-pop overflow-hidden">
               <div className="bg-violet border-b-[3px] border-foreground p-4">
-                <img src={burgerLiegeois} alt="Le Liégeois Noir — burger au boudin noir" className="w-full h-56 object-cover border-brutal" loading="lazy" />
+                <div className="overflow-hidden border-brutal-square blob-2 shadow-brutal">
+                  <img src={burgerLiegeois} alt="Le Liégeois Noir — burger au boudin noir" className="w-full h-56 object-cover block" loading="lazy" />
+                </div>
               </div>
               <div className="p-6 space-y-3">
                 <div className="text-[10px] font-bold uppercase tracking-widest text-violet">L'audacieux</div>

@@ -58,8 +58,8 @@ export function Projects() {
 
       {/* FOCUS PROJECT — The K'rousel */}
       <div className="max-w-7xl mx-auto mb-32">
-        <div className="relative border-brutal-thick p-6 pt-8 md:p-12 md:pt-12 shadow-brutal-lg overflow-hidden" style={{ background: "var(--lavender)" }}>
-          <div className="absolute top-4 right-4 md:top-6 md:right-6 border-brutal-thick px-4 py-1.5 rotate-3 shadow-brutal rounded-full z-10" style={{ background: "var(--magenta)", color: "var(--cream)" }}>
+        <div className="relative border-brutal-thick p-6 pt-10 md:p-12 md:pt-14 shadow-brutal-lg overflow-visible" style={{ background: "var(--lavender)" }}>
+          <div className="absolute -top-5 right-3 md:-top-6 md:right-6 border-brutal-thick px-4 py-1.5 rotate-3 shadow-brutal rounded-full z-20" style={{ background: "var(--magenta)", color: "var(--cream)" }}>
             <span className="font-display text-xs uppercase tracking-widest whitespace-nowrap">★ Featured Project</span>
           </div>
 
