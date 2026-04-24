@@ -71,7 +71,7 @@ export function Journey() {
       <WavyDivider color="var(--cream)" />
       <section
         id="parcours"
-        className="relative py-24 md:py-32 px-6 overflow-hidden"
+        className="relative pt-16 md:pt-20 pb-24 md:pb-32 px-6 overflow-hidden"
         style={{ background: "var(--cream)", color: "var(--ink)" }}
       >
         {/* Decor */}

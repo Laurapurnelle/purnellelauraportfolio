@@ -47,12 +47,12 @@ export function Contact() {
             className="group block text-center my-8"
           >
             <span
-              className="font-display uppercase leading-[0.85] tracking-tighter block text-[clamp(3rem,15vw,12rem)] transition-colors"
+              className="font-display uppercase leading-[0.9] tracking-tight block text-[clamp(2.25rem,11vw,9rem)] transition-colors"
               style={{ color: "var(--cream)" }}
             >
               Travaillons
             </span>
-            <span className="font-display uppercase leading-[0.85] tracking-tighter block text-[clamp(3rem,15vw,12rem)] -mt-2 md:-mt-4">
+            <span className="font-display uppercase leading-[0.9] tracking-tight block text-[clamp(2.25rem,11vw,9rem)] mt-2 md:mt-3">
               <span
                 className="px-3 md:px-6 inline-block border-brutal-thick shadow-brutal group-hover:translate-x-[-4px] group-hover:translate-y-[-4px] transition-transform rounded-3xl"
                 style={{ background: "var(--lime)", color: "var(--ink)" }}
