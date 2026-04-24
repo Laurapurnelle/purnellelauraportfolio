@@ -13,8 +13,8 @@ export function About() {
       >
         {/* Sprinkled stars */}
         <Star color="var(--ink)" size={22} className="absolute top-16 left-[10%] -rotate-12" />
-        <Star color="var(--lime)" size={18} className="absolute top-20 right-[15%]" />
-        <Star color="var(--cream)" size={16} className="absolute bottom-24 left-[8%] rotate-12" />
+        <Star color="var(--magenta)" size={18} className="absolute top-20 right-[15%]" />
+        <Star color="var(--ink)" size={16} className="absolute bottom-24 left-[8%] rotate-12" />
         <Star color="var(--magenta)" size={26} className="absolute bottom-32 right-[12%]" />
 
         {/* Side stickers */}
