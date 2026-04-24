@@ -64,12 +64,12 @@ export function Projects() {
           </div>
 
           <div className="grid md:grid-cols-12 gap-10 items-center">
-            <div className="md:col-span-6 space-y-6 text-primary-foreground">
-              <div className="text-xs font-bold tracking-[0.3em] uppercase text-yellow">
+            <div className="md:col-span-6 space-y-6 text-foreground">
+              <div className="text-xs font-bold tracking-[0.3em] uppercase" style={{ color: "var(--magenta)" }}>
                 UI Design · Stratégie de contenu · 2025
               </div>
               <h3
-                className="uppercase text-primary-foreground"
+                className="uppercase text-foreground"
                 style={{
                   fontFamily: "var(--font-serif)",
                   fontWeight: 900,
@@ -81,7 +81,7 @@ export function Projects() {
                 The K'Rousel
               </h3>
               <p
-                className="italic text-primary-foreground/95"
+                className="italic text-foreground/85"
                 style={{
                   fontFamily: "var(--font-serif)",
                   fontWeight: 400,
@@ -91,7 +91,7 @@ export function Projects() {
               >
                 L'art de la friterie & l'élégance traiteur.
               </p>
-              <p className="text-base leading-relaxed text-primary-foreground/85 max-w-lg">
+              <p className="text-base leading-relaxed text-foreground/80 max-w-lg">
                 Une identité hybride pour Kassandra Lorquet, ancrée à Liège — entre
                 friterie itinérante et traiteur haut de gamme. Split screen diagonal
                 à 15°, copywriting sourcé, savoir-faire assumé.
@@ -108,24 +108,25 @@ export function Projects() {
               </div>
               <Link
                 to="/krousel"
-                className="inline-flex items-center gap-2 px-6 py-4 bg-yellow text-foreground text-sm font-bold uppercase tracking-widest border-brutal-thick hover-pop mt-4"
+                className="inline-flex items-center gap-2 px-6 py-4 text-sm font-bold uppercase tracking-widest border-brutal-thick hover-pop mt-4 rounded-full"
+                style={{ background: "var(--magenta)", color: "var(--cream)" }}
               >
                 Découvrir l'étude de cas →
               </Link>
             </div>
 
             <div className="md:col-span-6 relative">
-              <div className="relative bg-background border-brutal-thick">
+              <div className="relative bg-background border-brutal-thick overflow-hidden">
                 <img
                   src={p1}
                   alt="Mockup principal de The K'Rousel"
                   width={1200}
                   height={800}
                   loading="lazy"
-                  className="w-full h-auto object-cover -translate-x-2 -translate-y-2 border-brutal-thick"
+                  className="w-full h-auto object-cover"
                 />
               </div>
-              <div className="hidden md:block absolute -bottom-10 -right-6 w-48 bg-background border-brutal-thick rotate-6 shadow-brutal">
+              <div className="hidden md:block absolute -bottom-10 -right-6 w-48 bg-background border-brutal-thick rotate-6 shadow-brutal overflow-hidden">
                 <img
                   src={p2}
                   alt="Vue secondaire"
