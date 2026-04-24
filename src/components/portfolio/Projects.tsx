@@ -185,7 +185,8 @@ export function Projects() {
               width={500}
               height={400}
               loading="lazy"
-              className="w-full h-auto object-cover border-brutal-square rounded-3xl"
+              className="w-full h-auto object-cover border-brutal-square shadow-brutal"
+              style={{ borderRadius: "58% 42% 50% 50% / 45% 55% 45% 55%" }}
             />
           </div>
         </article>
@@ -199,7 +200,8 @@ export function Projects() {
               width={500}
               height={400}
               loading="lazy"
-              className="w-full h-auto object-cover border-brutal-square rounded-3xl"
+              className="w-full h-auto object-cover border-brutal-square shadow-brutal"
+              style={{ borderRadius: "45% 55% 60% 40% / 55% 45% 55% 45%" }}
             />
           </div>
           <div className="md:col-span-7 p-8 flex flex-col justify-between min-h-[280px]">
@@ -227,14 +229,15 @@ export function Projects() {
               key={p.title}
               className={`bg-background border-brutal-thick hover-pop overflow-hidden ${p.rotate}`}
             >
-              <div className={`${p.accent} border-b-[3px] border-foreground p-3`}>
+              <div className={`${p.accent} border-b-[3px] border-foreground p-4`}>
                 <img
                   src={p.image}
                   alt={p.title}
                   width={500}
                   height={400}
                   loading="lazy"
-                  className="w-full h-48 object-cover border-brutal-square rounded-2xl"
+                  className="w-full h-48 object-cover border-brutal-square shadow-brutal"
+                  style={{ borderRadius: "55% 45% 60% 40% / 50% 60% 40% 50%" }}
                 />
               </div>
               <div className="p-5 space-y-3">
