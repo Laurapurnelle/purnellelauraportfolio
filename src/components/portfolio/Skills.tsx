@@ -5,18 +5,26 @@ type Tag = { label: string; variant: "magenta" | "lime" | "orange" | "lavender" 
 
 // Soft / méthodo — réellement abordés en formation UX/UI
 const skills: Tag[] = [
-  { label: "UX Research", variant: "magenta" },
-  { label: "Wireframing", variant: "ink" },
-  { label: "Prototypage", variant: "lime" },
-  { label: "User flows", variant: "outline" },
-  { label: "Tests utilisateurs", variant: "orange" },
-  { label: "Design System", variant: "lavender" },
-  { label: "Atomic Design", variant: "magenta" },
-  { label: "WCAG · A11y", variant: "lime" },
-  { label: "Direction artistique", variant: "ink" },
-  { label: "Branding", variant: "orange" },
-  { label: "Mise en page éditoriale", variant: "lavender" },
+  { label: "UI Design", variant: "magenta" },
+  { label: "UX Research", variant: "ink" },
+  { label: "Wireframing", variant: "outline" },
+  { label: "Prototypage HF", variant: "lime" },
+  { label: "Design System", variant: "orange" },
+  { label: "Figma", variant: "ink" },
+  { label: "Adobe XD", variant: "lavender" },
+  { label: "Illustrator", variant: "lime" },
+  { label: "Photoshop", variant: "outline" },
+  { label: "InDesign", variant: "magenta" },
+  { label: "Webflow", variant: "ink" },
+  { label: "Framer", variant: "orange" },
+  { label: "HTML / CSS", variant: "lavender" },
   { label: "Design Thinking", variant: "magenta" },
+  { label: "Tests utilisateurs", variant: "ink" },
+  { label: "WCAG · A11y", variant: "lime" },
+  { label: "Atomic Design", variant: "outline" },
+  { label: "Direction artistique", variant: "orange" },
+  { label: "Mise en page éditoriale", variant: "ink" },
+  { label: "Branding", variant: "lavender" },
 ];
 
 // Outils — niveaux issus du CV
