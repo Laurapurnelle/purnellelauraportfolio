@@ -160,34 +160,44 @@ export function Projects() {
           </span>
         </div>
 
-        {/* Refonte de plateforme — wide */}
+        {/* PTB — Digitaliser l'activisme */}
         <article className="bg-background border-brutal-thick mb-8 grid md:grid-cols-12 hover-pop overflow-hidden">
-          <div className="md:col-span-7 border-b-[3px] md:border-b-0 md:border-r-[3px] border-foreground p-8 flex flex-col justify-between min-h-[280px]" style={{ background: "var(--lime)" }}>
-            <div className="text-xs font-bold tracking-[0.3em] uppercase text-foreground">
-              UX · Architecture de l'information · 2025
+          <div
+            className="md:col-span-7 border-b-[3px] md:border-b-0 md:border-r-[3px] border-foreground p-8 flex flex-col justify-between min-h-[280px]"
+            style={{ background: "var(--ptb-red)", color: "var(--cream)" }}
+          >
+            <div className="text-xs font-bold tracking-[0.3em] uppercase" style={{ opacity: 0.9 }}>
+              UX Mobile-first · Engagement civique · 2025
             </div>
             <div>
               <h4 className="font-display text-4xl md:text-5xl uppercase leading-[0.9]">
-                Refonte de
+                PTB : Digitaliser
                 <br />
-                plateforme
+                l'activisme
               </h4>
-              <p className="text-sm font-medium mt-4 max-w-md">
-                Restructuration complète : optimisation de la hiérarchie,
-                simplification des parcours et refonte du design system.
+              <p className="text-sm font-medium mt-4 max-w-md" style={{ opacity: 0.95 }}>
+                Une refonte mobile-first axée sur l'accessibilité et
+                l'engagement citoyen.
               </p>
+              <Link
+                to="/projets/ptb"
+                className="inline-flex items-center gap-2 mt-5 px-5 py-3 text-xs font-bold uppercase tracking-widest border-brutal-thick hover-pop rounded-full"
+                style={{ background: "var(--cream)", color: "var(--ptb-red)" }}
+              >
+                Voir l'étude de cas →
+              </Link>
             </div>
           </div>
           <div className="md:col-span-5 p-6 flex items-center justify-center bg-background">
-            <img
-              src={p2}
-              alt="Refonte de plateforme"
-              width={500}
-              height={400}
-              loading="lazy"
-              className="w-full h-auto object-cover border-brutal-square shadow-brutal"
-              style={{ borderRadius: "58% 42% 50% 50% / 45% 55% 45% 55%" }}
-            />
+            <div
+              className="relative w-full aspect-[4/5] max-w-[260px] border-brutal-square shadow-brutal flex items-center justify-center"
+              style={{
+                background: "var(--ptb-red)",
+                borderRadius: "58% 42% 50% 50% / 45% 55% 45% 55%",
+              }}
+            >
+              <span className="font-display text-8xl md:text-9xl" style={{ color: "var(--cream)" }}>★</span>
+            </div>
           </div>
         </article>
 
