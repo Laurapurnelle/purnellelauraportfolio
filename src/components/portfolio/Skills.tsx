@@ -3,27 +3,29 @@ import { FlowerSticker, Star } from "./FlowerFrame";
 
 type Tag = { label: string; variant: "magenta" | "lime" | "orange" | "lavender" | "ink" | "outline" };
 
-const tags: Tag[] = [
-  { label: "UI Design", variant: "magenta" },
-  { label: "UX Research", variant: "ink" },
-  { label: "Wireframing", variant: "outline" },
-  { label: "Prototypage HF", variant: "lime" },
-  { label: "Design System", variant: "orange" },
-  { label: "Figma", variant: "ink" },
-  { label: "Adobe XD", variant: "lavender" },
-  { label: "Illustrator", variant: "lime" },
-  { label: "Photoshop", variant: "outline" },
-  { label: "InDesign", variant: "magenta" },
-  { label: "Webflow", variant: "ink" },
-  { label: "Framer", variant: "orange" },
-  { label: "HTML / CSS", variant: "lavender" },
-  { label: "Design Thinking", variant: "magenta" },
-  { label: "Tests utilisateurs", variant: "ink" },
+// Soft / méthodo — réellement abordés en formation UX/UI
+const skills: Tag[] = [
+  { label: "UX Research", variant: "magenta" },
+  { label: "Wireframing", variant: "ink" },
+  { label: "Prototypage", variant: "lime" },
+  { label: "User flows", variant: "outline" },
+  { label: "Tests utilisateurs", variant: "orange" },
+  { label: "Design System", variant: "lavender" },
+  { label: "Atomic Design", variant: "magenta" },
   { label: "WCAG · A11y", variant: "lime" },
-  { label: "Atomic Design", variant: "outline" },
-  { label: "Direction artistique", variant: "orange" },
-  { label: "Mise en page éditoriale", variant: "ink" },
-  { label: "Branding", variant: "lavender" },
+  { label: "Direction artistique", variant: "ink" },
+  { label: "Branding", variant: "orange" },
+  { label: "Mise en page éditoriale", variant: "lavender" },
+  { label: "Design Thinking", variant: "magenta" },
+];
+
+// Outils — niveaux issus du CV
+type Software = { name: string; level: number; color: string };
+const softwares: Software[] = [
+  { name: "Figma", level: 2, color: "var(--magenta)" },
+  { name: "Adobe Illustrator", level: 2, color: "var(--orange)" },
+  { name: "Adobe Photoshop", level: 3, color: "var(--lime)" },
+  { name: "Google AI Essentials", level: 3, color: "var(--lavender)" },
 ];
 
 const variantClasses: Record<Tag["variant"], string> = {
@@ -60,12 +62,13 @@ export function Skills() {
             <span className="text-violet">savoir-faire</span>
           </h2>
           <p className="text-foreground font-medium pt-2">
-            Survole, clique, joue. Les outils du quotidien.
+            Méthodes apprises à l'IFAPME · outils en progression continue.
           </p>
         </div>
 
-        <div className="flex flex-wrap justify-center gap-3 md:gap-4">
-          {tags.map((t, i) => {
+        {/* Méthodes / savoir-faire */}
+        <div className="flex flex-wrap justify-center gap-3 md:gap-4 mb-20">
+          {skills.map((t, i) => {
             const isActive = active === t.label;
             const baseRot = i % 4 === 0 ? "-rotate-2" : i % 4 === 2 ? "rotate-2" : "";
             return (
@@ -75,15 +78,46 @@ export function Skills() {
                 onMouseEnter={() => setActive(t.label)}
                 onMouseLeave={() => setActive(null)}
                 className={`${variantClasses[t.variant]} ${baseRot} border-brutal-thick px-5 py-3 text-sm md:text-base font-bold uppercase tracking-wider transition-all duration-150 rounded-full ${
-                  isActive
-                    ? "translate-x-[-3px] translate-y-[-3px] shadow-brutal"
-                    : ""
+                  isActive ? "translate-x-[-3px] translate-y-[-3px] shadow-brutal" : ""
                 }`}
               >
                 {t.label}
               </button>
             );
           })}
+        </div>
+
+        {/* Outils avec niveaux */}
+        <div className="border-brutal-thick rounded-3xl p-6 md:p-10 shadow-brutal" style={{ background: "var(--cream)" }}>
+          <div className="flex items-center justify-between mb-8 flex-wrap gap-3">
+            <h3 className="font-display text-2xl md:text-3xl uppercase">Outils ★</h3>
+            <span className="text-xs font-bold uppercase tracking-widest opacity-70">
+              Niveau actuel — 2025
+            </span>
+          </div>
+          <ul className="space-y-5">
+            {softwares.map((s) => (
+              <li key={s.name} className="flex items-center gap-4">
+                <span className="font-bold uppercase tracking-wider text-sm md:text-base flex-1 min-w-0 truncate">
+                  {s.name}
+                </span>
+                <div className="flex items-center gap-2">
+                  {Array.from({ length: 5 }).map((_, i) => (
+                    <span
+                      key={i}
+                      className="w-4 h-4 md:w-5 md:h-5 rounded-full border-[2px] border-foreground"
+                      style={{
+                        background: i < s.level ? s.color : "transparent",
+                      }}
+                    />
+                  ))}
+                </div>
+              </li>
+            ))}
+          </ul>
+          <p className="mt-6 text-xs italic opacity-70">
+            En formation continue · IFAPME Château Massart 2025—2027
+          </p>
         </div>
       </div>
     </section>

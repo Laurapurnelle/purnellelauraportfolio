@@ -31,7 +31,7 @@ export function Hero() {
           style={{ background: "var(--lime)" }}
         >
           <span className="font-display text-[10px] uppercase tracking-widest leading-tight">
-            ★ LIÈGE ★<br />2025
+            ★ LIÈGE ★<br />2025—27
           </span>
         </div>
       </div>
@@ -44,7 +44,7 @@ export function Hero() {
             style={{ background: "var(--lime)" }}
           >
             <span className="w-2 h-2 bg-foreground rounded-full animate-pulse" />
-            Disponible · Liège · 2025
+            Alternance / Stage · Dispo → juin 2027
           </div>
 
           <h1 className="font-display text-foreground uppercase">
@@ -60,20 +60,21 @@ export function Hero() {
                 className="text-[var(--cream)] px-3 py-0.5 inline-block rounded-full -rotate-2"
                 style={{ background: "var(--magenta)" }}
               >
-                UI/UX
-              </span>
+                UX/UI
+              </span>{" "}
+              à Liège
             </span>
           </h1>
 
           <p className="text-lg md:text-2xl font-sans font-medium text-foreground max-w-xl leading-snug">
-            Je crée des interfaces qui marquent
+            Transformer des problématiques complexes en
             <span
               className="px-2 mx-1 rounded-md inline-block -rotate-1"
               style={{ background: "var(--orange)", color: "var(--cream)" }}
             >
-              les esprits
+              expériences fluides
             </span>
-            , pas juste les écrans.
+            , esthétiques et accessibles.
           </p>
 
           <div className="flex flex-wrap items-center gap-4 pt-2">
@@ -138,7 +139,7 @@ export function Hero() {
                 <span key={j} className="flex items-center gap-6">
                   Travaillons ensemble
                   <Star color="var(--cream)" size={16} />
-                  Disponible 2025
+                  Dispo jusqu'en juin 2027
                   <Star color="var(--lime)" size={16} />
                   Liège · Belgique
                   <Star color="var(--cream)" size={16} />
