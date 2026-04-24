@@ -40,6 +40,7 @@
   --color-lavender: var(--lavender);
   --color-ink: var(--ink);
   --color-cream: var(--cream);
+  --color-ptb-red: var(--ptb-red);
   --font-display: "Archivo Black", "Syne", ui-sans-serif, system-ui, sans-serif;
   --font-serif: "Fraunces", ui-serif, Georgia, serif;
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
@@ -87,6 +88,7 @@
   --lavender: oklch(0.86 0.06 295);              /* #D6CFF8 lavender */
   --ink: oklch(0.28 0.025 25);                   /* soft aubergine ink */
   --cream: oklch(0.96 0.025 80);                 /* #FBEFD9 warm cream */
+  --ptb-red: oklch(0.55 0.24 28);                /* #E60012 PTB red */
 
   --shadow-brutal: 6px 6px 0 0 var(--ink);
   --shadow-brutal-lg: 10px 10px 0 0 var(--ink);
