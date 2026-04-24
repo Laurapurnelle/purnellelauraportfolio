@@ -1,33 +1,35 @@
 import { useState } from "react";
 
-type Tag = { label: string; variant: "violet" | "yellow" | "ink" | "outline" };
+type Tag = { label: string; variant: "magenta" | "lime" | "orange" | "lavender" | "ink" | "outline" };
 
 const tags: Tag[] = [
-  { label: "UI Design", variant: "violet" },
+  { label: "UI Design", variant: "magenta" },
   { label: "UX Research", variant: "ink" },
   { label: "Wireframing", variant: "outline" },
-  { label: "Prototypage HF", variant: "yellow" },
-  { label: "Design System", variant: "violet" },
+  { label: "Prototypage HF", variant: "lime" },
+  { label: "Design System", variant: "orange" },
   { label: "Figma", variant: "ink" },
-  { label: "Adobe XD", variant: "outline" },
-  { label: "Illustrator", variant: "yellow" },
+  { label: "Adobe XD", variant: "lavender" },
+  { label: "Illustrator", variant: "lime" },
   { label: "Photoshop", variant: "outline" },
-  { label: "InDesign", variant: "violet" },
+  { label: "InDesign", variant: "magenta" },
   { label: "Webflow", variant: "ink" },
-  { label: "Framer", variant: "yellow" },
-  { label: "HTML / CSS", variant: "outline" },
-  { label: "Design Thinking", variant: "violet" },
+  { label: "Framer", variant: "orange" },
+  { label: "HTML / CSS", variant: "lavender" },
+  { label: "Design Thinking", variant: "magenta" },
   { label: "Tests utilisateurs", variant: "ink" },
-  { label: "WCAG · A11y", variant: "yellow" },
+  { label: "WCAG · A11y", variant: "lime" },
   { label: "Atomic Design", variant: "outline" },
-  { label: "Direction artistique", variant: "violet" },
+  { label: "Direction artistique", variant: "orange" },
   { label: "Mise en page éditoriale", variant: "ink" },
-  { label: "Branding", variant: "yellow" },
+  { label: "Branding", variant: "lavender" },
 ];
 
 const variantClasses: Record<Tag["variant"], string> = {
-  violet: "bg-violet text-primary-foreground",
-  yellow: "bg-yellow text-foreground",
+  magenta: "bg-[var(--magenta)] text-[var(--cream)]",
+  lime: "bg-[var(--lime)] text-foreground",
+  orange: "bg-[var(--orange)] text-[var(--cream)]",
+  lavender: "bg-[var(--lavender)] text-foreground",
   ink: "bg-foreground text-background",
   outline: "bg-background text-foreground",
 };
