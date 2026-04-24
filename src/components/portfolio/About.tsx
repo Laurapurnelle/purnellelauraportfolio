@@ -58,7 +58,7 @@ export function About() {
               (2025 → 2027), je conçois des expériences numériques où la
               stratégie de marque rencontre la logique d'usage.
             </p>
-            <p style={{ color: "color-mix(in oklab, var(--cream) 85%, transparent)" }}>
+            <p style={{ color: "color-mix(in oklab, var(--ink) 75%, transparent)" }}>
               Mon terrain de jeu : la recherche utilisateur, le prototypage
               haute fidélité et la direction artistique. J'aime quand un projet
               a du caractère — pas juste un beau pixel.
@@ -67,12 +67,12 @@ export function About() {
             <div className="grid grid-cols-3 gap-4 pt-8">
               {[
                 { num: "10+", label: "Projets", bg: "var(--cream)", txt: "var(--magenta)" },
-                { num: "2027", label: "Diplôme", bg: "var(--lime)", txt: "var(--ink)" },
-                { num: "Liège", label: "BE", bg: "var(--magenta)", txt: "var(--cream)" },
+                { num: "2027", label: "Diplôme", bg: "var(--magenta)", txt: "var(--cream)" },
+                { num: "Liège", label: "BE", bg: "var(--orange)", txt: "var(--cream)" },
               ].map((s) => (
                 <div
                   key={s.label}
-                  className="border-brutal-thick p-4 hover-pop rounded-2xl"
+                  className="border-brutal-thick p-4 hover-pop blob-flower"
                   style={{ background: s.bg, color: "var(--ink)" }}
                 >
                   <p className="font-display text-3xl md:text-4xl" style={{ color: s.txt }}>
@@ -113,7 +113,7 @@ export function About() {
         </div>
       </section>
 
-      <WavyDivider color="var(--orange)" flip />
+      <WavyDivider color="var(--lime)" flip />
     </>
   );
 }
