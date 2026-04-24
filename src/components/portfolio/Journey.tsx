@@ -101,7 +101,7 @@ export function Journey() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-10 md:gap-16">
+          <div className="max-w-2xl mx-auto">
             {/* Formation */}
             <div>
               <div className="flex items-center gap-3 mb-6">
@@ -113,22 +113,6 @@ export function Journey() {
               </div>
               <div className="space-y-5">
                 {formation.map((item, i) => (
-                  <TimelineCard key={item.title} item={item} index={i} />
-                ))}
-              </div>
-            </div>
-
-            {/* Expériences */}
-            <div>
-              <div className="flex items-center gap-3 mb-6">
-                <span className="font-display text-2xl md:text-3xl uppercase">
-                  Expériences
-                </span>
-                <span className="flex-1 h-[3px] bg-foreground" />
-                <Star color="var(--orange)" size={22} />
-              </div>
-              <div className="space-y-5">
-                {experiences.map((item, i) => (
                   <TimelineCard key={item.title} item={item} index={i} />
                 ))}
               </div>
