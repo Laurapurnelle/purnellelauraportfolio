@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { FlowerSticker, Star } from "./FlowerFrame";
 
 type Tag = { label: string; variant: "magenta" | "lime" | "orange" | "lavender" | "ink" | "outline" };
 
@@ -39,10 +40,14 @@ export function Skills() {
 
   return (
     <section id="skills" className="py-32 px-6 bg-background relative overflow-hidden">
-      {/* Decorative blob shapes */}
-      <div className="absolute top-20 right-12 w-28 h-28 bg-[var(--lime)] border-brutal-thick blob-1 hidden md:block" />
-      <div className="absolute bottom-20 left-12 w-20 h-20 bg-[var(--magenta)] border-brutal-thick blob-flower hidden md:block" />
-      <div className="absolute top-1/2 left-8 w-12 h-12 bg-[var(--lavender)] border-brutal blob-2 hidden lg:block" />
+      {/* Decorative blobs, flowers & stars */}
+      <div className="absolute top-20 right-12 w-32 h-32 border-brutal-thick blob-1 hidden md:block" style={{ background: "var(--lime)" }} />
+      <div className="absolute bottom-20 left-12 w-24 h-24 border-brutal-thick blob-flower hidden md:block" style={{ background: "var(--magenta)" }} />
+      <FlowerSticker color="var(--orange)" size={64} className="absolute top-1/3 left-[5%] hidden md:block -rotate-12" />
+      <FlowerSticker color="var(--magenta)" size={48} className="absolute bottom-1/3 right-[6%] hidden md:block rotate-6" />
+      <Star color="var(--orange)" size={26} className="absolute top-12 left-1/3 -rotate-12" />
+      <Star color="var(--magenta)" size={20} className="absolute bottom-12 right-1/4" />
+      <Star color="var(--lime)" size={18} className="absolute top-1/2 right-12 hidden lg:block" />
 
       <div className="max-w-5xl mx-auto">
         <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
