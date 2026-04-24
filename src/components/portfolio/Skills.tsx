@@ -74,7 +74,7 @@ export function Skills() {
                 onClick={() => setActive(isActive ? null : t.label)}
                 onMouseEnter={() => setActive(t.label)}
                 onMouseLeave={() => setActive(null)}
-                className={`${variantClasses[t.variant]} ${baseRot} border-brutal-thick px-5 py-3 text-sm md:text-base font-bold uppercase tracking-wider transition-all duration-150 ${
+                className={`${variantClasses[t.variant]} ${baseRot} border-brutal-thick px-5 py-3 text-sm md:text-base font-bold uppercase tracking-wider transition-all duration-150 rounded-full ${
                   isActive
                     ? "translate-x-[-3px] translate-y-[-3px] shadow-brutal"
                     : ""
