@@ -49,7 +49,7 @@ export function Skills() {
   const [active, setActive] = useState<string | null>(null);
 
   return (
-    <section id="skills" className="py-32 px-6 bg-background relative overflow-hidden">
+    <section id="skills" className="pt-32 pb-16 md:pb-20 px-6 bg-background relative overflow-hidden">
       {/* Decorative blobs, flowers & stars */}
       <div className="absolute top-20 right-12 w-32 h-32 border-brutal-thick blob-1 hidden md:block" style={{ background: "var(--lime)" }} />
       <div className="absolute bottom-20 left-12 w-24 h-24 border-brutal-thick blob-flower hidden md:block" style={{ background: "var(--magenta)" }} />
