@@ -9,7 +9,7 @@ const others = [
     category: "App mobile · Bien-être",
     year: "2024",
     image: p1,
-    accent: "bg-yellow",
+    accent: "bg-[var(--lime)]",
     rotate: "-rotate-1",
     tags: ["UX Research", "Mobile"],
   },
@@ -18,7 +18,7 @@ const others = [
     category: "E-shop · Bijouterie",
     year: "2024",
     image: p2,
-    accent: "bg-violet",
+    accent: "bg-[var(--magenta)]",
     rotate: "rotate-1",
     tags: ["Webflow", "UI Design"],
   },
@@ -27,7 +27,7 @@ const others = [
     category: "Identité · Branding",
     year: "2024",
     image: p3,
-    accent: "bg-foreground",
+    accent: "bg-[var(--orange)]",
     rotate: "-rotate-1",
     tags: ["Branding", "Print"],
   },
@@ -40,13 +40,13 @@ export function Projects() {
       <div className="max-w-6xl mx-auto mb-20">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
           <div>
-            <span className="inline-block text-xs font-bold tracking-[0.3em] uppercase text-violet">
-              02 / Sélection
+            <span className="inline-block text-xs font-bold tracking-[0.3em] uppercase" style={{ color: "var(--magenta)" }}>
+              ★ 02 / Sélection
             </span>
             <h2 className="font-display text-5xl md:text-7xl uppercase mt-3 leading-[0.9]">
               Projets qui
               <br />
-              <span className="bg-yellow px-2 inline-block">claquent.</span>
+              <span className="px-3 inline-block rounded-full -rotate-1" style={{ background: "var(--lime)" }}>claquent.</span>
             </h2>
           </div>
           <p className="text-foreground max-w-sm font-medium">
@@ -58,18 +58,18 @@ export function Projects() {
 
       {/* FOCUS PROJECT — The K'rousel */}
       <div className="max-w-7xl mx-auto mb-32">
-        <div className="relative bg-violet border-brutal-thick p-6 md:p-12 shadow-brutal-lg">
-          <div className="absolute -top-5 -left-3 bg-yellow border-brutal-thick px-4 py-1.5 -rotate-3 shadow-brutal">
+        <div className="relative border-brutal-thick p-6 md:p-12 shadow-brutal-lg overflow-hidden" style={{ background: "var(--lime)" }}>
+          <div className="absolute -top-5 -left-3 border-brutal-thick px-4 py-1.5 -rotate-3 shadow-brutal rounded-full" style={{ background: "var(--magenta)", color: "var(--cream)" }}>
             <span className="font-display text-xs uppercase tracking-widest">★ Featured Project</span>
           </div>
 
           <div className="grid md:grid-cols-12 gap-10 items-center">
-            <div className="md:col-span-6 space-y-6 text-primary-foreground">
-              <div className="text-xs font-bold tracking-[0.3em] uppercase text-yellow">
+            <div className="md:col-span-6 space-y-6 text-foreground">
+              <div className="text-xs font-bold tracking-[0.3em] uppercase" style={{ color: "var(--magenta)" }}>
                 UI Design · Stratégie de contenu · 2025
               </div>
               <h3
-                className="uppercase text-primary-foreground"
+                className="uppercase text-foreground"
                 style={{
                   fontFamily: "var(--font-serif)",
                   fontWeight: 900,
@@ -81,7 +81,7 @@ export function Projects() {
                 The K'Rousel
               </h3>
               <p
-                className="italic text-primary-foreground/95"
+                className="italic text-foreground/85"
                 style={{
                   fontFamily: "var(--font-serif)",
                   fontWeight: 400,
@@ -91,7 +91,7 @@ export function Projects() {
               >
                 L'art de la friterie & l'élégance traiteur.
               </p>
-              <p className="text-base leading-relaxed text-primary-foreground/85 max-w-lg">
+              <p className="text-base leading-relaxed text-foreground/80 max-w-lg">
                 Une identité hybride pour Kassandra Lorquet, ancrée à Liège — entre
                 friterie itinérante et traiteur haut de gamme. Split screen diagonal
                 à 15°, copywriting sourcé, savoir-faire assumé.
@@ -108,24 +108,25 @@ export function Projects() {
               </div>
               <Link
                 to="/krousel"
-                className="inline-flex items-center gap-2 px-6 py-4 bg-yellow text-foreground text-sm font-bold uppercase tracking-widest border-brutal-thick hover-pop mt-4"
+                className="inline-flex items-center gap-2 px-6 py-4 text-sm font-bold uppercase tracking-widest border-brutal-thick hover-pop mt-4 rounded-full"
+                style={{ background: "var(--magenta)", color: "var(--cream)" }}
               >
                 Découvrir l'étude de cas →
               </Link>
             </div>
 
             <div className="md:col-span-6 relative">
-              <div className="relative bg-background border-brutal-thick">
+              <div className="relative bg-background border-brutal-thick overflow-hidden">
                 <img
                   src={p1}
                   alt="Mockup principal de The K'Rousel"
                   width={1200}
                   height={800}
                   loading="lazy"
-                  className="w-full h-auto object-cover -translate-x-2 -translate-y-2 border-brutal-thick"
+                  className="w-full h-auto object-cover"
                 />
               </div>
-              <div className="hidden md:block absolute -bottom-10 -right-6 w-48 bg-background border-brutal-thick rotate-6 shadow-brutal">
+              <div className="hidden md:block absolute -bottom-10 -right-6 w-48 bg-background border-brutal-thick rotate-6 shadow-brutal overflow-hidden">
                 <img
                   src={p2}
                   alt="Vue secondaire"
@@ -152,8 +153,8 @@ export function Projects() {
         </div>
 
         {/* Refonte de plateforme — wide */}
-        <article className="bg-background border-brutal-thick mb-8 grid md:grid-cols-12 hover-pop">
-          <div className="md:col-span-7 border-b-[3px] md:border-b-0 md:border-r-[3px] border-foreground bg-yellow p-8 flex flex-col justify-between min-h-[280px]">
+        <article className="bg-background border-brutal-thick mb-8 grid md:grid-cols-12 hover-pop overflow-hidden">
+          <div className="md:col-span-7 border-b-[3px] md:border-b-0 md:border-r-[3px] border-foreground p-8 flex flex-col justify-between min-h-[280px]" style={{ background: "var(--lime)" }}>
             <div className="text-xs font-bold tracking-[0.3em] uppercase text-foreground">
               UX · Architecture de l'information · 2025
             </div>
@@ -176,25 +177,25 @@ export function Projects() {
               width={500}
               height={400}
               loading="lazy"
-              className="w-full h-auto object-cover border-brutal"
+              className="w-full h-auto object-cover border-brutal-square rounded-3xl"
             />
           </div>
         </article>
 
         {/* Design publicitaire — wide */}
-        <article className="bg-foreground text-background border-brutal-thick mb-12 grid md:grid-cols-12 hover-pop">
-          <div className="md:col-span-5 p-6 flex items-center justify-center bg-violet border-r-[3px] border-foreground">
+        <article className="bg-foreground text-background border-brutal-thick mb-12 grid md:grid-cols-12 hover-pop overflow-hidden">
+          <div className="md:col-span-5 p-6 flex items-center justify-center border-r-[3px] border-foreground" style={{ background: "var(--magenta)" }}>
             <img
               src={p3}
               alt="Design publicitaire"
               width={500}
               height={400}
               loading="lazy"
-              className="w-full h-auto object-cover border-brutal"
+              className="w-full h-auto object-cover border-brutal-square rounded-3xl"
             />
           </div>
           <div className="md:col-span-7 p-8 flex flex-col justify-between min-h-[280px]">
-            <div className="text-xs font-bold tracking-[0.3em] uppercase text-yellow">
+            <div className="text-xs font-bold tracking-[0.3em] uppercase" style={{ color: "var(--lime)" }}>
               Direction artistique · Print · 2024
             </div>
             <div>
@@ -216,7 +217,7 @@ export function Projects() {
           {others.map((p) => (
             <article
               key={p.title}
-              className={`bg-background border-brutal-thick hover-pop ${p.rotate}`}
+              className={`bg-background border-brutal-thick hover-pop overflow-hidden ${p.rotate}`}
             >
               <div className={`${p.accent} border-b-[3px] border-foreground p-3`}>
                 <img
@@ -225,7 +226,7 @@ export function Projects() {
                   width={500}
                   height={400}
                   loading="lazy"
-                  className="w-full h-48 object-cover border-brutal"
+                  className="w-full h-48 object-cover border-brutal-square rounded-2xl"
                 />
               </div>
               <div className="p-5 space-y-3">

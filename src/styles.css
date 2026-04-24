@@ -46,7 +46,7 @@
 }
 
 :root {
-  --radius: 1.25rem;
+  --radius: 2rem;
 
   /* INKLO playful palette: cream bg, magenta + orange + lime + lavender accents, ink */
   --background: oklch(0.97 0.012 95);            /* #F4F1E6 warm cream */
@@ -151,9 +151,15 @@
 
 @utility border-brutal {
   border: 2px solid var(--ink);
+  border-radius: 999px;
 }
 
 @utility border-brutal-thick {
+  border: 3px solid var(--ink);
+  border-radius: 1.5rem;
+}
+
+@utility border-brutal-square {
   border: 3px solid var(--ink);
 }
 

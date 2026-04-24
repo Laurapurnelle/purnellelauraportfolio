@@ -3,18 +3,18 @@ import { FlowerSticker, Star, WavyDivider } from "./FlowerFrame";
 export function About() {
   return (
     <>
-      {/* Wavy divider going INTO the orange section */}
-      <WavyDivider color="var(--orange)" />
+      {/* Wavy divider going INTO the lime section */}
+      <WavyDivider color="var(--lime)" />
 
       <section
         id="about"
         className="relative py-24 md:py-32 px-6 overflow-hidden"
-        style={{ background: "var(--orange)", color: "var(--cream)" }}
+        style={{ background: "var(--lime)", color: "var(--ink)" }}
       >
         {/* Sprinkled stars */}
-        <Star color="var(--cream)" size={22} className="absolute top-16 left-[10%] -rotate-12" />
-        <Star color="var(--lime)" size={18} className="absolute top-20 right-[15%]" />
-        <Star color="var(--cream)" size={16} className="absolute bottom-24 left-[8%] rotate-12" />
+        <Star color="var(--ink)" size={22} className="absolute top-16 left-[10%] -rotate-12" />
+        <Star color="var(--magenta)" size={18} className="absolute top-20 right-[15%]" />
+        <Star color="var(--ink)" size={16} className="absolute bottom-24 left-[8%] rotate-12" />
         <Star color="var(--magenta)" size={26} className="absolute bottom-32 right-[12%]" />
 
         {/* Side stickers */}
@@ -58,7 +58,7 @@ export function About() {
               (2025 → 2027), je conçois des expériences numériques où la
               stratégie de marque rencontre la logique d'usage.
             </p>
-            <p style={{ color: "color-mix(in oklab, var(--cream) 85%, transparent)" }}>
+            <p style={{ color: "color-mix(in oklab, var(--ink) 75%, transparent)" }}>
               Mon terrain de jeu : la recherche utilisateur, le prototypage
               haute fidélité et la direction artistique. J'aime quand un projet
               a du caractère — pas juste un beau pixel.
@@ -67,12 +67,12 @@ export function About() {
             <div className="grid grid-cols-3 gap-4 pt-8">
               {[
                 { num: "10+", label: "Projets", bg: "var(--cream)", txt: "var(--magenta)" },
-                { num: "2027", label: "Diplôme", bg: "var(--lime)", txt: "var(--ink)" },
-                { num: "Liège", label: "BE", bg: "var(--magenta)", txt: "var(--cream)" },
+                { num: "2027", label: "Diplôme", bg: "var(--magenta)", txt: "var(--cream)" },
+                { num: "Liège", label: "BE", bg: "var(--orange)", txt: "var(--cream)" },
               ].map((s) => (
                 <div
                   key={s.label}
-                  className="border-brutal-thick p-4 hover-pop rounded-2xl"
+                  className="border-brutal-thick p-4 hover-pop blob-flower"
                   style={{ background: s.bg, color: "var(--ink)" }}
                 >
                   <p className="font-display text-3xl md:text-4xl" style={{ color: s.txt }}>
@@ -113,7 +113,7 @@ export function About() {
         </div>
       </section>
 
-      <WavyDivider color="var(--orange)" flip />
+      <WavyDivider color="var(--lime)" flip />
     </>
   );
 }
