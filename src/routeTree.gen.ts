@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as KrouselRouteImport } from './routes/krousel'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ProjetsPtbRouteImport } from './routes/projets.ptb'
 
 const KrouselRoute = KrouselRouteImport.update({
   id: '/krousel',
@@ -22,31 +23,40 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ProjetsPtbRoute = ProjetsPtbRouteImport.update({
+  id: '/projets/ptb',
+  path: '/projets/ptb',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/krousel': typeof KrouselRoute
+  '/projets/ptb': typeof ProjetsPtbRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/krousel': typeof KrouselRoute
+  '/projets/ptb': typeof ProjetsPtbRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/krousel': typeof KrouselRoute
+  '/projets/ptb': typeof ProjetsPtbRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/krousel'
+  fullPaths: '/' | '/krousel' | '/projets/ptb'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/krousel'
-  id: '__root__' | '/' | '/krousel'
+  to: '/' | '/krousel' | '/projets/ptb'
+  id: '__root__' | '/' | '/krousel' | '/projets/ptb'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   KrouselRoute: typeof KrouselRoute
+  ProjetsPtbRoute: typeof ProjetsPtbRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -65,12 +75,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/projets/ptb': {
+      id: '/projets/ptb'
+      path: '/projets/ptb'
+      fullPath: '/projets/ptb'
+      preLoaderRoute: typeof ProjetsPtbRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   KrouselRoute: KrouselRoute,
+  ProjetsPtbRoute: ProjetsPtbRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
