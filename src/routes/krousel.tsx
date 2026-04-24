@@ -1,6 +1,9 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import p1 from "@/assets/project-1.jpg";
-import krouselHome from "@/assets/krousel-home.png";
+
+import krouselSplit from "@/assets/krousel-split.png";
+import friterieFull from "@/assets/krousel-friterie-full.jpg";
+import traiteurFull from "@/assets/krousel-traiteur-full.jpg";
 import burgerKlorquet from "@/assets/burger-klorquet.jpg";
 import burgerLiegeois from "@/assets/burger-liegeois.jpg";
 
@@ -162,39 +165,124 @@ function KrouselCaseStudy() {
             </a>
           </div>
           <div className="md:col-span-7">
-            {/* PC Mockup */}
+            {/* Mockup iMac */}
             <div className="relative">
-              <div className="bg-foreground border-brutal-thick rounded-t-xl p-3 shadow-brutal-lg">
-                <div className="flex items-center gap-1.5 pb-2">
-                  <span className="w-2.5 h-2.5 rounded-full bg-destructive" />
-                  <span className="w-2.5 h-2.5 rounded-full bg-yellow" />
-                  <span className="w-2.5 h-2.5 rounded-full bg-green-500" />
-                  <span className="ml-3 flex-1 h-5 bg-background/10 rounded text-[10px] text-background/60 px-2 flex items-center font-mono">
-                    thekrousel.be
+              {/* Écran */}
+              <div className="bg-foreground rounded-[18px] p-3 md:p-4 shadow-brutal-lg border-brutal-thick">
+                {/* Barre titre macOS */}
+                <div className="flex items-center gap-1.5 pb-2.5">
+                  <span className="w-3 h-3 rounded-full bg-destructive" />
+                  <span className="w-3 h-3 rounded-full bg-yellow" />
+                  <span className="w-3 h-3 rounded-full bg-green-500" />
+                  <span className="ml-3 flex-1 h-6 bg-background/10 rounded-md text-[10px] text-background/70 px-3 flex items-center font-mono">
+                    🔒 thekrousel.be
                   </span>
                 </div>
-                <div className="bg-background border-brutal overflow-hidden">
+                <div className="bg-background rounded-md overflow-hidden border border-foreground/20">
                   <img
-                    src={krouselHome}
+                    src={krouselSplit}
                     alt="Page d'accueil The K'Rousel : split screen Friterie / Traiteur"
                     className="w-full h-auto object-cover block"
                     loading="lazy"
                   />
                 </div>
               </div>
-              <div className="mx-auto w-1/3 h-3 bg-foreground" />
-              <div className="mx-auto w-2/3 h-2 bg-foreground rounded-b-lg border-brutal-thick" />
+              {/* Pied iMac */}
+              <div className="mx-auto mt-1 w-1/4 h-4 bg-foreground rounded-b-md" />
+              <div className="mx-auto w-1/2 h-2.5 bg-foreground/80 rounded-full" />
+              <div className="mx-auto mt-1 w-3/5 h-3 bg-foreground rounded-full shadow-brutal" />
             </div>
           </div>
         </div>
       </section>
 
+      {/* Aperçu des deux univers — long screenshots scrollables */}
+      <section className="px-6 py-24 bg-[var(--cream,theme(colors.background))] relative overflow-hidden">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-14">
+            <div className="text-xs font-bold uppercase tracking-[0.3em] text-violet mb-4">
+              03 / Showcase
+            </div>
+            <h2
+              className="leading-[0.95]"
+              style={{ fontFamily: "var(--font-serif)", fontWeight: 700, fontSize: "clamp(2.25rem, 4.5vw, 4rem)" }}
+            >
+              Deux univers,<br />une exécution sur mesure.
+            </h2>
+            <p className="mt-5 text-foreground/70 max-w-2xl mx-auto italic" style={{ fontFamily: "var(--font-serif)" }}>
+              Faites défiler chaque écran à votre rythme — chaque page a été pensée pour son public.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-10">
+            {/* Friterie */}
+            <div className="space-y-4">
+              <div className="flex items-center justify-between">
+                <span className="font-display uppercase tracking-widest text-sm bg-yellow border-brutal px-3 py-1 -rotate-1 inline-block">
+                  ▸ Friterie & Food Truck
+                </span>
+                <span className="text-[10px] font-bold uppercase tracking-widest text-foreground/50">
+                  Scroll ↓
+                </span>
+              </div>
+              <div className="bg-foreground rounded-[14px] p-2 shadow-brutal-lg border-brutal-thick">
+                <div className="flex items-center gap-1 pb-1.5 px-1">
+                  <span className="w-2 h-2 rounded-full bg-destructive" />
+                  <span className="w-2 h-2 rounded-full bg-yellow" />
+                  <span className="w-2 h-2 rounded-full bg-green-500" />
+                </div>
+                <div className="bg-background rounded-md overflow-y-auto overflow-x-hidden h-[520px] border border-foreground/10 scroll-smooth">
+                  <img
+                    src={friterieFull}
+                    alt="Maquette complète de la page Friterie : carte, menu et localisation"
+                    className="w-full h-auto block"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+              <p className="text-sm text-foreground/70 leading-relaxed">
+                Carte complète, classiques du fritkot belge, sauces & localisation du food truck en direct.
+              </p>
+            </div>
+
+            {/* Traiteur */}
+            <div className="space-y-4">
+              <div className="flex items-center justify-between">
+                <span className="font-display uppercase tracking-widest text-sm bg-violet text-primary-foreground border-brutal px-3 py-1 rotate-1 inline-block">
+                  ▸ Traiteur & Privatisation
+                </span>
+                <span className="text-[10px] font-bold uppercase tracking-widest text-foreground/50">
+                  Scroll ↓
+                </span>
+              </div>
+              <div className="bg-foreground rounded-[14px] p-2 shadow-brutal-lg border-brutal-thick">
+                <div className="flex items-center gap-1 pb-1.5 px-1">
+                  <span className="w-2 h-2 rounded-full bg-destructive" />
+                  <span className="w-2 h-2 rounded-full bg-yellow" />
+                  <span className="w-2 h-2 rounded-full bg-green-500" />
+                </div>
+                <div className="bg-background rounded-md overflow-y-auto overflow-x-hidden h-[520px] border border-foreground/10 scroll-smooth">
+                  <img
+                    src={traiteurFull}
+                    alt="Maquette complète de la page Traiteur : philosophie, menus, témoignages"
+                    className="w-full h-auto block"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+              <p className="text-sm text-foreground/70 leading-relaxed">
+                Menus sur mesure, témoignages clients & formulaire de devis pour événements privés.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Copywriting */}
       <section className="px-6 py-24 bg-violet text-primary-foreground">
         <div className="max-w-5xl mx-auto">
           <div className="text-xs font-bold uppercase tracking-[0.3em] text-yellow mb-6">
-            03 / Copywriting
+            04 / Copywriting
           </div>
           <h2
             className="leading-[0.95] mb-10"
@@ -221,7 +309,7 @@ function KrouselCaseStudy() {
       <section className="px-6 py-24">
         <div className="max-w-6xl mx-auto">
           <div className="text-xs font-bold uppercase tracking-[0.3em] text-violet mb-4">
-            04 / Détails techniques
+            05 / Détails techniques
           </div>
           <h2
             className="leading-[0.95] mb-12"
