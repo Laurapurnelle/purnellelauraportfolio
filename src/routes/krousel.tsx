@@ -282,7 +282,7 @@ function KrouselCaseStudy() {
       <section className="px-6 py-24 bg-violet text-primary-foreground">
         <div className="max-w-5xl mx-auto">
           <div className="text-xs font-bold uppercase tracking-[0.3em] text-yellow mb-6">
-            03 / Copywriting
+            04 / Copywriting
           </div>
           <h2
             className="leading-[0.95] mb-10"
@@ -309,7 +309,7 @@ function KrouselCaseStudy() {
       <section className="px-6 py-24">
         <div className="max-w-6xl mx-auto">
           <div className="text-xs font-bold uppercase tracking-[0.3em] text-violet mb-4">
-            04 / Détails techniques
+            05 / Détails techniques
           </div>
           <h2
             className="leading-[0.95] mb-12"
