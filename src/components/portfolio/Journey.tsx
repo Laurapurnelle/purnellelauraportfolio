@@ -42,31 +42,6 @@ const formation: Item[] = [
   },
 ];
 
-const experiences: Item[] = [
-  {
-    date: "2025",
-    title: "Vendeuse en boulangerie",
-    org: "Le Matin Hutois",
-    desc: "Conseil et service client, maintien d'un espace de vente accueillant et soigné.",
-    color: "var(--lime)",
-  },
-  {
-    date: "2024",
-    title: "Vendeuse",
-    org: "Hangar 86",
-    desc: "Conseil client, mise en valeur des produits et observation des besoins.",
-    color: "var(--orange)",
-    textColor: "var(--cream)",
-  },
-  {
-    date: "2023 — 2024",
-    title: "Employée administrative",
-    org: "Carrefour",
-    desc: "Gestion de dossiers, encodage de données et coordination entre services.",
-    color: "var(--magenta)",
-    textColor: "var(--cream)",
-  },
-];
 
 function TimelineCard({ item, index }: { item: Item; index: number }) {
   const rot = index % 2 === 0 ? "-rotate-1" : "rotate-1";
@@ -126,7 +101,7 @@ export function Journey() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-10 md:gap-16">
+          <div className="max-w-2xl mx-auto">
             {/* Formation */}
             <div>
               <div className="flex items-center gap-3 mb-6">
@@ -138,22 +113,6 @@ export function Journey() {
               </div>
               <div className="space-y-5">
                 {formation.map((item, i) => (
-                  <TimelineCard key={item.title} item={item} index={i} />
-                ))}
-              </div>
-            </div>
-
-            {/* Expériences */}
-            <div>
-              <div className="flex items-center gap-3 mb-6">
-                <span className="font-display text-2xl md:text-3xl uppercase">
-                  Expériences
-                </span>
-                <span className="flex-1 h-[3px] bg-foreground" />
-                <Star color="var(--orange)" size={22} />
-              </div>
-              <div className="space-y-5">
-                {experiences.map((item, i) => (
                   <TimelineCard key={item.title} item={item} index={i} />
                 ))}
               </div>
