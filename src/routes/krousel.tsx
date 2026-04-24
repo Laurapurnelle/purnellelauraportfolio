@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import p1 from "@/assets/project-1.jpg";
 
-import krouselSplit from "@/assets/krousel-split.png";
+import krouselMockup from "@/assets/krousel-mockup.png";
 import friterieFull from "@/assets/krousel-friterie-full.jpg";
 import traiteurFull from "@/assets/krousel-traiteur-full.jpg";
 import burgerKlorquet from "@/assets/burger-klorquet.jpg";
@@ -165,32 +165,14 @@ function KrouselCaseStudy() {
             </a>
           </div>
           <div className="md:col-span-7">
-            {/* Mockup iMac */}
+            {/* Mockup MacBook + iPhone réaliste */}
             <div className="relative">
-              {/* Écran */}
-              <div className="bg-foreground rounded-[18px] p-3 md:p-4 shadow-brutal-lg border-brutal-thick">
-                {/* Barre titre macOS */}
-                <div className="flex items-center gap-1.5 pb-2.5">
-                  <span className="w-3 h-3 rounded-full bg-destructive" />
-                  <span className="w-3 h-3 rounded-full bg-yellow" />
-                  <span className="w-3 h-3 rounded-full bg-green-500" />
-                  <span className="ml-3 flex-1 h-6 bg-background/10 rounded-md text-[10px] text-background/70 px-3 flex items-center font-mono">
-                    🔒 thekrousel.be
-                  </span>
-                </div>
-                <div className="bg-background rounded-md overflow-hidden border border-foreground/20">
-                  <img
-                    src={krouselSplit}
-                    alt="Page d'accueil The K'Rousel : split screen Friterie / Traiteur"
-                    className="w-full h-auto object-cover block"
-                    loading="lazy"
-                  />
-                </div>
-              </div>
-              {/* Pied iMac */}
-              <div className="mx-auto mt-1 w-1/4 h-4 bg-foreground rounded-b-md" />
-              <div className="mx-auto w-1/2 h-2.5 bg-foreground/80 rounded-full" />
-              <div className="mx-auto mt-1 w-3/5 h-3 bg-foreground rounded-full shadow-brutal" />
+              <img
+                src={krouselMockup}
+                alt="Aperçu du site The K'Rousel sur MacBook et iPhone — split screen Friterie & Traiteur"
+                className="w-full h-auto object-contain block drop-shadow-2xl"
+                loading="lazy"
+              />
             </div>
           </div>
         </div>
