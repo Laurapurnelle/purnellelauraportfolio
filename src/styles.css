@@ -50,7 +50,7 @@
 
   /* INKLO playful palette: cream bg, magenta + orange + lime + lavender accents, ink */
   --background: oklch(0.97 0.012 95);            /* #F4F1E6 warm cream */
-  --foreground: oklch(0.18 0.01 30);             /* #1A1A1A ink */
+  --foreground: oklch(0.28 0.025 25);            /* warm aubergine ink, softer than #1A1A1A */
 
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.18 0.01 30);
@@ -85,7 +85,7 @@
   --orange: oklch(0.72 0.21 50);                 /* #F25823 fire orange */
   --lime: oklch(0.85 0.22 130);                  /* #BCDE3F lime punch */
   --lavender: oklch(0.86 0.06 295);              /* #D6CFF8 lavender */
-  --ink: oklch(0.18 0.01 30);                    /* #1A1A1A */
+  --ink: oklch(0.28 0.025 25);                   /* soft aubergine ink */
   --cream: oklch(0.96 0.025 80);                 /* #FBEFD9 warm cream */
 
   --shadow-brutal: 6px 6px 0 0 var(--ink);
