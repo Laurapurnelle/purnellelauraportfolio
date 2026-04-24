@@ -1,27 +1,48 @@
 import heroPortrait from "@/assets/hero-portrait.jpg";
+import { FlowerFrame, FlowerSticker, Star } from "./FlowerFrame";
 
 export function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center pt-32 pb-20 overflow-hidden bg-background"
+      className="relative min-h-screen flex items-center pt-32 pb-32 overflow-hidden"
+      style={{ background: "var(--cream)" }}
     >
-      {/* Decorative organic shapes */}
-      <div className="absolute top-32 right-8 w-32 h-32 bg-[var(--lime)] border-brutal-thick blob-1 hidden md:block" />
-      <div className="absolute bottom-20 left-8 w-20 h-20 bg-[var(--magenta)] border-brutal-thick blob-2 hidden md:block" />
-      <div className="absolute top-1/4 left-1/3 w-16 h-16 bg-[var(--orange)] border-brutal blob-flower hidden lg:block" />
-      <div className="absolute bottom-1/3 right-1/4 w-3 h-3 bg-foreground rounded-full hidden lg:block" />
+      {/* Sprinkled stars & blobs */}
+      <Star color="var(--magenta)" size={28} className="absolute top-32 left-[8%] -rotate-12" />
+      <Star color="var(--orange)" size={20} className="absolute top-44 left-[14%] rotate-6" />
+      <Star color="var(--magenta)" size={18} className="absolute top-[20%] right-[12%]" />
+      <Star color="var(--orange)" size={32} className="absolute bottom-32 left-[6%]" />
+      <Star color="var(--magenta)" size={22} className="absolute bottom-44 right-[8%] rotate-12" />
+
+      <div
+        className="absolute -top-10 -right-10 w-56 h-56 hidden md:block opacity-90"
+        style={{ background: "var(--pink)", borderRadius: "var(--blob-1)" }}
+      />
+      <div
+        className="absolute bottom-10 -left-12 w-48 h-48 hidden md:block opacity-80"
+        style={{ background: "var(--orange)", borderRadius: "var(--blob-2)" }}
+      />
+
       {/* Spinning sticker */}
-      <div className="absolute top-28 left-1/2 -translate-x-1/2 md:left-auto md:right-1/3 hidden md:block spin-slow">
-        <div className="w-24 h-24 rounded-full bg-[var(--lavender)] border-brutal-thick flex items-center justify-center">
-          <span className="font-display text-[10px] uppercase tracking-widest">★ 2025 ★</span>
+      <div className="absolute top-28 right-[6%] hidden md:block spin-slow">
+        <div
+          className="w-24 h-24 rounded-full border-brutal-thick flex items-center justify-center text-center"
+          style={{ background: "var(--lime)" }}
+        >
+          <span className="font-display text-[10px] uppercase tracking-widest leading-tight">
+            ★ LIÈGE ★<br />2025
+          </span>
         </div>
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-6 w-full grid md:grid-cols-12 gap-8 items-center">
-        {/* Left — text, asymmetric span */}
+      <div className="relative max-w-7xl mx-auto px-6 w-full grid md:grid-cols-12 gap-10 items-center">
+        {/* Left — text */}
         <div className="md:col-span-7 space-y-8">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-yellow border-brutal text-xs font-bold uppercase tracking-widest">
+          <div
+            className="inline-flex items-center gap-2 px-4 py-2 border-brutal-thick text-xs font-bold uppercase tracking-widest rounded-full"
+            style={{ background: "var(--lime)" }}
+          >
             <span className="w-2 h-2 bg-foreground rounded-full animate-pulse" />
             Disponible · Liège · 2025
           </div>
@@ -31,52 +52,69 @@ export function Hero() {
               Laura
             </span>
             <span className="block text-[clamp(2.5rem,8vw,7rem)] leading-[0.85] -mt-1">
-              Purnelle<span className="text-violet">.</span>
+              Purnelle<span style={{ color: "var(--magenta)" }}>.</span>
             </span>
             <span className="block mt-4 text-[clamp(1rem,2.2vw,1.75rem)] font-sans font-bold tracking-tight normal-case">
-              Designer <span className="bg-violet text-primary-foreground px-2 inline-block">UI/UX</span>
+              Designer{" "}
+              <span
+                className="text-[var(--cream)] px-3 py-0.5 inline-block rounded-full -rotate-2"
+                style={{ background: "var(--magenta)" }}
+              >
+                UI/UX
+              </span>
             </span>
           </h1>
 
           <p className="text-lg md:text-2xl font-sans font-medium text-foreground max-w-xl leading-snug">
             Je crée des interfaces qui marquent
-            <span className="bg-yellow px-1 mx-1">les esprits</span>,
-            pas juste les écrans.
+            <span
+              className="px-2 mx-1 rounded-md inline-block -rotate-1"
+              style={{ background: "var(--orange)", color: "var(--cream)" }}
+            >
+              les esprits
+            </span>
+            , pas juste les écrans.
           </p>
 
           <div className="flex flex-wrap items-center gap-4 pt-2">
             <a
               href="#projects"
-              className="inline-flex items-center gap-2 px-6 py-4 bg-foreground text-background text-sm font-bold uppercase tracking-widest border-brutal-thick hover-pop"
+              className="inline-flex items-center gap-2 px-6 py-4 text-sm font-bold uppercase tracking-widest border-brutal-thick hover-pop rounded-full"
+              style={{ background: "var(--magenta)", color: "var(--cream)" }}
             >
               Voir les projets →
             </a>
             <a
               href="#contact"
-              className="inline-flex items-center gap-2 px-6 py-4 bg-background text-foreground text-sm font-bold uppercase tracking-widest border-brutal-thick hover-pop"
+              className="inline-flex items-center gap-2 px-6 py-4 bg-background text-foreground text-sm font-bold uppercase tracking-widest border-brutal-thick hover-pop rounded-full"
             >
               Me contacter
             </a>
           </div>
         </div>
 
-        {/* Right — portrait card, organic blob frame */}
-        <div className="md:col-span-5 relative md:mt-12">
-          <div className="relative bg-[var(--magenta)] border-brutal-thick blob-1 overflow-hidden">
+        {/* Right — portrait inside flower frame */}
+        <div className="md:col-span-5 relative md:mt-8">
+          <FlowerFrame color="var(--magenta)" className="aspect-[4/5] w-full max-w-md mx-auto">
             <img
               src={heroPortrait}
               alt="Portrait de Laura Purnelle, designer UI/UX"
               width={1024}
               height={1280}
-              className="w-full h-auto object-cover -translate-x-2 -translate-y-2 blob-1"
+              className="w-full h-full object-cover"
             />
-          </div>
+          </FlowerFrame>
 
           {/* Floating sticker badges */}
-          <div className="absolute -top-6 -left-6 bg-[var(--lime)] border-brutal-thick px-4 py-2 -rotate-6 shadow-brutal blob-3">
-            <p className="font-display text-sm uppercase">UI · UX</p>
-          </div>
-          <div className="absolute -bottom-6 -right-4 bg-[var(--lavender)] border-brutal-thick px-4 py-3 rotate-3 shadow-brutal">
+          <FlowerSticker
+            color="var(--orange)"
+            size={70}
+            className="absolute -top-6 -left-4 -rotate-12"
+          />
+          <div
+            className="absolute -bottom-4 -right-2 border-brutal-thick px-4 py-3 rotate-3 shadow-brutal rounded-2xl"
+            style={{ background: "var(--lavender)" }}
+          >
             <p className="text-xs uppercase tracking-widest font-bold text-foreground/70">
               IFAPME Liège
             </p>
@@ -84,6 +122,30 @@ export function Hero() {
               2025 — 2027
             </p>
           </div>
+          <Star color="var(--magenta)" size={26} className="absolute top-1/2 -right-4 rotate-12" />
+        </div>
+      </div>
+
+      {/* Bottom marquee strip — pink */}
+      <div
+        className="absolute bottom-0 left-0 right-0 border-t-[3px] border-foreground overflow-hidden"
+        style={{ background: "var(--magenta)" }}
+      >
+        <div className="marquee-track flex whitespace-nowrap py-3 text-[var(--cream)] font-display uppercase tracking-widest">
+          {Array.from({ length: 2 }).map((_, i) => (
+            <span key={i} className="flex items-center gap-6 px-4 text-sm md:text-base">
+              {Array.from({ length: 8 }).map((__, j) => (
+                <span key={j} className="flex items-center gap-6">
+                  Travaillons ensemble
+                  <Star color="var(--cream)" size={16} />
+                  Disponible 2025
+                  <Star color="var(--lime)" size={16} />
+                  Liège · Belgique
+                  <Star color="var(--cream)" size={16} />
+                </span>
+              ))}
+            </span>
+          ))}
         </div>
       </div>
     </section>
