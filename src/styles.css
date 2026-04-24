@@ -33,6 +33,10 @@
   --color-ring: var(--ring);
   --color-violet: var(--violet);
   --color-yellow: var(--yellow);
+  --color-magenta: var(--magenta);
+  --color-orange: var(--orange);
+  --color-lime: var(--lime);
+  --color-lavender: var(--lavender);
   --color-ink: var(--ink);
   --color-cream: var(--cream);
   --font-display: "Archivo Black", "Syne", ui-sans-serif, system-ui, sans-serif;
@@ -41,48 +45,60 @@
 }
 
 :root {
-  --radius: 0.25rem;
+  --radius: 1.25rem;
 
-  /* Neobrutalism palette: off-white, electric violet, solar yellow, ink black */
-  --background: oklch(0.985 0.002 250);          /* #F8F9FA off-white */
-  --foreground: oklch(0.13 0 0);                 /* near-black ink */
+  /* INKLO playful palette: cream bg, magenta + orange + lime + lavender accents, ink */
+  --background: oklch(0.97 0.012 95);            /* #F4F1E6 warm cream */
+  --foreground: oklch(0.18 0.01 30);             /* #1A1A1A ink */
 
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.13 0 0);
+  --card-foreground: oklch(0.18 0.01 30);
 
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.13 0 0);
+  --popover-foreground: oklch(0.18 0.01 30);
 
-  --primary: oklch(0.6 0.26 295);                /* #8B5CF6 electric violet */
-  --primary-foreground: oklch(0.985 0.002 250);
+  --primary: oklch(0.62 0.31 0);                 /* #ED0086 magenta */
+  --primary-foreground: oklch(0.97 0.012 95);
 
-  --secondary: oklch(0.95 0.005 250);
-  --secondary-foreground: oklch(0.13 0 0);
+  --secondary: oklch(0.92 0.04 300);             /* lavender soft */
+  --secondary-foreground: oklch(0.18 0.01 30);
 
-  --muted: oklch(0.95 0.005 250);
-  --muted-foreground: oklch(0.4 0.01 250);
+  --muted: oklch(0.93 0.015 95);
+  --muted-foreground: oklch(0.42 0.02 30);
 
-  --accent: oklch(0.93 0.18 100);                /* #FDE047 solar yellow */
-  --accent-foreground: oklch(0.13 0 0);
+  --accent: oklch(0.85 0.22 130);                /* #BCDE3F lime */
+  --accent-foreground: oklch(0.18 0.01 30);
 
-  --destructive: oklch(0.6 0.24 25);
-  --destructive-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.65 0.24 30);
+  --destructive-foreground: oklch(0.97 0 0);
 
-  --border: oklch(0.13 0 0);                     /* black borders for brutalism */
-  --input: oklch(0.13 0 0);
-  --ring: oklch(0.6 0.26 295);
+  --border: oklch(0.18 0.01 30);
+  --input: oklch(0.18 0.01 30);
+  --ring: oklch(0.62 0.31 0);
 
-  --violet: oklch(0.6 0.26 295);
-  --yellow: oklch(0.93 0.18 100);
-  --ink: oklch(0.13 0 0);
-  --cream: oklch(0.985 0.002 250);
+  /* Brand tokens — keep violet/yellow names mapped to new palette so existing components inherit the vibe */
+  --violet: oklch(0.62 0.31 0);                  /* #ED0086 hot magenta (was electric violet) */
+  --yellow: oklch(0.85 0.22 130);                /* #BCDE3F lime punch (was solar yellow) */
+  --magenta: oklch(0.62 0.31 0);                 /* #ED0086 */
+  --orange: oklch(0.68 0.22 40);                 /* #F25823 fire orange */
+  --lime: oklch(0.85 0.22 130);                  /* #BCDE3F */
+  --lavender: oklch(0.86 0.06 295);              /* #D6CFF8 lavender */
+  --ink: oklch(0.18 0.01 30);                    /* #1A1A1A */
+  --cream: oklch(0.97 0.012 95);                 /* #F4F1E6 */
 
   --shadow-brutal: 6px 6px 0 0 var(--ink);
   --shadow-brutal-lg: 10px 10px 0 0 var(--ink);
-  --shadow-brutal-violet: 6px 6px 0 0 var(--violet);
-  --shadow-brutal-yellow: 6px 6px 0 0 var(--yellow);
+  --shadow-brutal-violet: 6px 6px 0 0 var(--magenta);
+  --shadow-brutal-yellow: 6px 6px 0 0 var(--lime);
+  --shadow-brutal-orange: 6px 6px 0 0 var(--orange);
 
   --transition-pop: transform 0.15s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Organic blob shapes (inspired by Stella Social / Spark & Marnee) */
+  --blob-1: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  --blob-2: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  --blob-3: 50% 50% 30% 70% / 50% 50% 70% 30%;
+  --flower: 40% 60% 60% 40% / 60% 30% 70% 40%;
 }
 
 @layer base {
@@ -150,7 +166,43 @@
   animation: marquee 30s linear infinite;
 }
 
+@utility blob-1 {
+  border-radius: var(--blob-1);
+}
+
+@utility blob-2 {
+  border-radius: var(--blob-2);
+}
+
+@utility blob-3 {
+  border-radius: var(--blob-3);
+}
+
+@utility blob-flower {
+  border-radius: var(--flower);
+}
+
+@utility shadow-brutal-orange {
+  box-shadow: var(--shadow-brutal-orange);
+}
+
+@utility wavy-divider {
+  --wave-color: var(--magenta);
+  -webkit-mask-image: radial-gradient(circle at 12px 0, transparent 12px, black 12.5px);
+          mask-image: radial-gradient(circle at 12px 0, transparent 12px, black 12.5px);
+  -webkit-mask-size: 24px 24px;
+          mask-size: 24px 24px;
+}
+
 @keyframes marquee {
   from { transform: translateX(0); }
   to { transform: translateX(-50%); }
+}
+
+@keyframes spin-slow {
+  to { transform: rotate(360deg); }
+}
+
+@utility spin-slow {
+  animation: spin-slow 20s linear infinite;
 }
