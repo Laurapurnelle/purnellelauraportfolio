@@ -31,7 +31,7 @@ export function Contact() {
               className="inline-block text-xs font-bold tracking-[0.3em] uppercase border-brutal px-4 py-2 rounded-full"
               style={{ background: "var(--lime)", color: "var(--ink)" }}
             >
-              ★ 04 / Contact ★
+              ★ 05 / Contact ★
             </span>
             <p className="text-lg md:text-xl font-medium max-w-xl mx-auto pt-4">
               Un projet d'interface, une refonte ou une identité ?

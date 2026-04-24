@@ -4,22 +4,23 @@ import { Hero } from "@/components/portfolio/Hero";
 import { About } from "@/components/portfolio/About";
 import { Projects } from "@/components/portfolio/Projects";
 import { Skills } from "@/components/portfolio/Skills";
+import { Journey } from "@/components/portfolio/Journey";
 import { Contact } from "@/components/portfolio/Contact";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Laura Purnelle — Designer UI/UX à Liège" },
+      { title: "Laura Purnelle — Designer UX/UI à Liège" },
       {
         name: "description",
         content:
-          "Portfolio de Laura Purnelle, designer UI/UX junior basée à Liège. Interfaces sensibles, expériences utilisateurs soignées et identités visuelles raffinées.",
+          "Portfolio de Laura Purnelle, designer UX/UI en alternance à l'IFAPME Château Massart (Liège). Disponible jusqu'en juin 2027 pour un stage ou une alternance longue durée.",
       },
-      { property: "og:title", content: "Laura Purnelle — Designer UI/UX" },
+      { property: "og:title", content: "Laura Purnelle — Designer UX/UI" },
       {
         property: "og:description",
         content:
-          "Designer UI/UX junior à Liège. Interfaces qui ont du cœur, du sens et un brin de poésie.",
+          "Designer UX/UI à Liège — transformer des problématiques complexes en expériences fluides, esthétiques et accessibles.",
       },
     ],
   }),
@@ -34,6 +35,7 @@ function Index() {
       <About />
       <Projects />
       <Skills />
+      <Journey />
       <Contact />
     </main>
   );
