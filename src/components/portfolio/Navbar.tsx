@@ -23,7 +23,7 @@ export function Navbar() {
       }`}
     >
       <nav
-        className={`max-w-6xl mx-auto px-4 md:px-6 flex items-center justify-between bg-background border-brutal-thick ${
+        className={`max-w-6xl mx-auto px-4 md:px-6 flex items-center justify-between bg-background border-brutal-thick rounded-full ${
           scrolled ? "shadow-brutal" : ""
         } px-5 py-3 transition-shadow`}
       >
@@ -32,14 +32,17 @@ export function Navbar() {
           className="font-display text-xl md:text-2xl tracking-tight text-foreground flex items-center gap-1"
         >
           LAURA
-          <span className="inline-block w-2.5 h-2.5 bg-violet ml-0.5" />
+          <span
+            className="inline-block w-2.5 h-2.5 ml-0.5 rounded-full"
+            style={{ background: "var(--magenta)" }}
+          />
         </a>
         <ul className="hidden md:flex items-center gap-8">
           {links.map((l) => (
             <li key={l.href}>
               <a
                 href={l.href}
-                className="text-sm font-semibold uppercase tracking-wider text-foreground hover:text-violet transition-colors"
+                className="text-sm font-semibold uppercase tracking-wider text-foreground hover:text-[var(--magenta)] transition-colors"
               >
                 {l.label}
               </a>
@@ -48,7 +51,8 @@ export function Navbar() {
         </ul>
         <a
           href="#contact"
-          className="hidden md:inline-flex items-center px-4 py-2 bg-violet text-primary-foreground text-sm font-bold uppercase tracking-wider border-brutal hover-pop"
+          className="hidden md:inline-flex items-center px-4 py-2 text-sm font-bold uppercase tracking-wider border-brutal hover-pop rounded-full"
+          style={{ background: "var(--magenta)", color: "var(--cream)" }}
         >
           Contact →
         </a>
