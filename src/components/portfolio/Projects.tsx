@@ -40,13 +40,13 @@ export function Projects() {
       <div className="max-w-6xl mx-auto mb-20">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
           <div>
-            <span className="inline-block text-xs font-bold tracking-[0.3em] uppercase text-violet">
-              02 / Sélection
+            <span className="inline-block text-xs font-bold tracking-[0.3em] uppercase" style={{ color: "var(--magenta)" }}>
+              ★ 02 / Sélection
             </span>
             <h2 className="font-display text-5xl md:text-7xl uppercase mt-3 leading-[0.9]">
               Projets qui
               <br />
-              <span className="bg-yellow px-2 inline-block">claquent.</span>
+              <span className="px-3 inline-block rounded-full -rotate-1" style={{ background: "var(--lime)" }}>claquent.</span>
             </h2>
           </div>
           <p className="text-foreground max-w-sm font-medium">
@@ -153,8 +153,8 @@ export function Projects() {
         </div>
 
         {/* Refonte de plateforme — wide */}
-        <article className="bg-background border-brutal-thick mb-8 grid md:grid-cols-12 hover-pop">
-          <div className="md:col-span-7 border-b-[3px] md:border-b-0 md:border-r-[3px] border-foreground bg-yellow p-8 flex flex-col justify-between min-h-[280px]">
+        <article className="bg-background border-brutal-thick mb-8 grid md:grid-cols-12 hover-pop overflow-hidden">
+          <div className="md:col-span-7 border-b-[3px] md:border-b-0 md:border-r-[3px] border-foreground p-8 flex flex-col justify-between min-h-[280px]" style={{ background: "var(--lime)" }}>
             <div className="text-xs font-bold tracking-[0.3em] uppercase text-foreground">
               UX · Architecture de l'information · 2025
             </div>
@@ -177,25 +177,25 @@ export function Projects() {
               width={500}
               height={400}
               loading="lazy"
-              className="w-full h-auto object-cover border-brutal"
+              className="w-full h-auto object-cover border-brutal-square rounded-3xl"
             />
           </div>
         </article>
 
         {/* Design publicitaire — wide */}
-        <article className="bg-foreground text-background border-brutal-thick mb-12 grid md:grid-cols-12 hover-pop">
-          <div className="md:col-span-5 p-6 flex items-center justify-center bg-violet border-r-[3px] border-foreground">
+        <article className="bg-foreground text-background border-brutal-thick mb-12 grid md:grid-cols-12 hover-pop overflow-hidden">
+          <div className="md:col-span-5 p-6 flex items-center justify-center border-r-[3px] border-foreground" style={{ background: "var(--magenta)" }}>
             <img
               src={p3}
               alt="Design publicitaire"
               width={500}
               height={400}
               loading="lazy"
-              className="w-full h-auto object-cover border-brutal"
+              className="w-full h-auto object-cover border-brutal-square rounded-3xl"
             />
           </div>
           <div className="md:col-span-7 p-8 flex flex-col justify-between min-h-[280px]">
-            <div className="text-xs font-bold tracking-[0.3em] uppercase text-yellow">
+            <div className="text-xs font-bold tracking-[0.3em] uppercase" style={{ color: "var(--lime)" }}>
               Direction artistique · Print · 2024
             </div>
             <div>
@@ -217,7 +217,7 @@ export function Projects() {
           {others.map((p) => (
             <article
               key={p.title}
-              className={`bg-background border-brutal-thick hover-pop ${p.rotate}`}
+              className={`bg-background border-brutal-thick hover-pop overflow-hidden ${p.rotate}`}
             >
               <div className={`${p.accent} border-b-[3px] border-foreground p-3`}>
                 <img
@@ -226,7 +226,7 @@ export function Projects() {
                   width={500}
                   height={400}
                   loading="lazy"
-                  className="w-full h-48 object-cover border-brutal"
+                  className="w-full h-48 object-cover border-brutal-square rounded-2xl"
                 />
               </div>
               <div className="p-5 space-y-3">
