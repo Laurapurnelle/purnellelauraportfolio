@@ -4,9 +4,10 @@ export function Contact() {
       id="contact"
       className="relative py-24 md:py-32 px-6 bg-violet text-primary-foreground overflow-hidden border-t-[3px] border-foreground"
     >
-      {/* Decorative shapes */}
-      <div className="absolute top-10 right-10 w-28 h-28 bg-yellow border-brutal-thick rotate-12" />
-      <div className="absolute bottom-1/3 left-8 w-16 h-16 bg-foreground rounded-full hidden md:block" />
+      {/* Decorative blob shapes */}
+      <div className="absolute top-10 right-10 w-32 h-32 bg-[var(--lime)] border-brutal-thick blob-1" />
+      <div className="absolute bottom-1/3 left-8 w-20 h-20 bg-[var(--orange)] border-brutal-thick blob-flower hidden md:block" />
+      <div className="absolute top-1/2 right-1/4 w-14 h-14 bg-[var(--lavender)] border-brutal blob-2 hidden lg:block" />
 
       <div className="relative max-w-6xl mx-auto">
         <div className="text-center space-y-4 mb-12">
