@@ -53,22 +53,27 @@ export function About() {
                 className="px-2 font-bold rounded-md inline-block -rotate-1"
                 style={{ background: "var(--magenta)", color: "var(--cream)" }}
               >
-                UI/UX Design à l'IFAPME Liège
+                UX/UI Design à l'IFAPME Château Massart
               </span>{" "}
-              (2025 → 2027), je conçois des expériences numériques où la
-              stratégie de marque rencontre la logique d'usage.
+              (2025 → 2027), je mets ma créativité et mon regard centré sur
+              l'humain au service de vos projets.
             </p>
             <p style={{ color: "color-mix(in oklab, var(--ink) 75%, transparent)" }}>
-              Mon terrain de jeu : la recherche utilisateur, le prototypage
-              haute fidélité et la direction artistique. J'aime quand un projet
-              a du caractère — pas juste un beau pixel.
+              Mon objectif : transformer des problématiques complexes en
+              expériences fluides, esthétiques et accessibles. Recherche
+              utilisateur, prototypage haute fidélité, direction artistique —
+              j'aime quand un projet a du caractère, pas juste un beau pixel.
+            </p>
+            <p style={{ color: "color-mix(in oklab, var(--ink) 75%, transparent)" }}>
+              Prête à m'investir sur le long terme pour grandir avec votre
+              équipe — alternance ou stage longue durée.
             </p>
 
             <div className="grid grid-cols-3 gap-4 pt-8">
               {[
-                { num: "10+", label: "Projets", bg: "var(--cream)", txt: "var(--magenta)" },
-                { num: "2027", label: "Diplôme", bg: "var(--magenta)", txt: "var(--cream)" },
-                { num: "Liège", label: "BE", bg: "var(--orange)", txt: "var(--cream)" },
+                { num: "2027", label: "Diplôme UX/UI", bg: "var(--cream)", txt: "var(--magenta)" },
+                { num: "FR · EN", label: "Langues", bg: "var(--magenta)", txt: "var(--cream)" },
+                { num: "Liège", label: "& alentours", bg: "var(--orange)", txt: "var(--cream)" },
               ].map((s) => (
                 <div
                   key={s.label}
