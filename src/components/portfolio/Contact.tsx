@@ -28,10 +28,10 @@ export function Contact() {
         <div className="relative max-w-6xl mx-auto">
           <div className="text-center space-y-4 mb-12">
             <span
-              className="inline-block text-xs font-bold tracking-[0.3em] uppercase border-brutal px-4 py-2 rounded-full"
+              className="inline-block text-xs font-bold tracking-[0.3em] uppercase border-brutal-thick px-3 py-1.5 rounded-full"
               style={{ background: "var(--lime)", color: "var(--ink)" }}
             >
-              ★ 05 / Contact ★
+              ★ 05 / Contact
             </span>
             <p className="text-lg md:text-xl font-medium max-w-xl mx-auto pt-4">
               Un projet d'interface, une refonte ou une identité ?
@@ -100,7 +100,7 @@ export function Contact() {
               <span className="w-1 h-1 bg-[var(--cream)] rounded-full" />
               <a href="tel:+32493875201" className="hover:text-[var(--lime)] transition-colors">Téléphone</a>
             </div>
-            <p>IFAPME Château Massart · 2025—2027</p>
+            <p>IFAPME Château Massart · 2025 · 2027</p>
           </div>
         </div>
 

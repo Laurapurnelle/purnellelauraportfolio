@@ -139,7 +139,7 @@ export function Hero() {
               IFAPME Liège
             </p>
             <p className="font-display text-base text-foreground">
-              2025 — 2027
+              2025 · 2027
             </p>
           </div>
           <Star color="var(--magenta)" size={26} className="absolute top-1/2 -right-4 rotate-12" />

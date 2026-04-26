@@ -1,9 +1,34 @@
+import { useState, useEffect, useRef } from "react";
 import { FlowerSticker, Star, WavyDivider } from "./FlowerFrame";
 
+const stats = [
+  { num: "2027", label: "Diplôme UX/UI", bg: "var(--cream)", txt: "var(--magenta)" },
+  { num: "FR · EN", label: "Langues", bg: "var(--magenta)", txt: "var(--cream)" },
+  { num: "✈", label: "Liège · Canada", bg: "var(--orange)", txt: "var(--cream)" },
+];
+
 export function About() {
+  const statsRef = useRef<HTMLDivElement>(null);
+  const [statsVisible, setStatsVisible] = useState(false);
+
+  useEffect(() => {
+    const el = statsRef.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setStatsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.2 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <>
-      {/* Wavy divider going INTO the lime section */}
       <WavyDivider color="var(--lime)" />
 
       <section
@@ -17,17 +42,8 @@ export function About() {
         <Star color="var(--ink)" size={16} className="absolute bottom-24 left-[8%] rotate-12" />
         <Star color="var(--magenta)" size={26} className="absolute bottom-32 right-[12%]" />
 
-        {/* Side stickers */}
-        <FlowerSticker
-          color="var(--magenta)"
-          size={60}
-          className="absolute top-12 right-[6%] hidden md:block rotate-12"
-        />
-        <FlowerSticker
-          color="var(--lime)"
-          size={48}
-          className="absolute bottom-16 left-[6%] hidden md:block -rotate-6"
-        />
+        <FlowerSticker color="var(--magenta)" size={60} className="absolute top-12 right-[6%] hidden md:block rotate-12" />
+        <FlowerSticker color="var(--lime)" size={48} className="absolute bottom-16 left-[6%] hidden md:block -rotate-6" />
 
         <div className="max-w-6xl mx-auto grid md:grid-cols-12 gap-12 items-start">
           <div className="md:col-span-5 space-y-6">
@@ -55,31 +71,38 @@ export function About() {
               >
                 UI/UX Design à l'IFAPME Liège
               </span>{" "}
-              (2025 → 2027), je conçois des expériences numériques où la
+              (2025 · 2027), je conçois des expériences numériques où la
               stratégie de marque rencontre la logique d'usage.
             </p>
             <p style={{ color: "color-mix(in oklab, var(--ink) 75%, transparent)" }}>
               Mon terrain de jeu : la recherche utilisateur, le prototypage
               haute fidélité et la direction artistique. J'aime quand un projet
-              a du caractère — pas juste un beau pixel. Actuellement en route
+              a du caractère, pas juste un beau pixel. Actuellement en route
               vers le{" "}
               <strong style={{ color: "var(--magenta)" }}>Canada</strong>
               , je cherche à collaborer avec des équipes qui croient que le
               design peut vraiment changer les choses.
             </p>
 
-            <div className="grid grid-cols-3 gap-4 pt-8">
-              {[
-                { num: "2027", label: "Diplôme UX/UI", bg: "var(--cream)", txt: "var(--magenta)" },
-                { num: "FR · EN", label: "Langues", bg: "var(--magenta)", txt: "var(--cream)" },
-                { num: "Liège →", label: "Canada", bg: "var(--orange)", txt: "var(--cream)" },
-              ].map((s) => (
+            {/* Animated stat pills */}
+            <div ref={statsRef} className="grid grid-cols-3 gap-4 pt-8">
+              {stats.map((s, i) => (
                 <div
                   key={s.label}
                   className="border-brutal-thick p-4 blob-flower"
-                  style={{ background: s.bg, color: "var(--ink)" }}
+                  style={{
+                    background: s.bg,
+                    color: "var(--ink)",
+                    transition: "opacity 0.55s ease, transform 0.55s ease",
+                    transitionDelay: `${i * 130}ms`,
+                    opacity: statsVisible ? 1 : 0,
+                    transform: statsVisible ? "translateY(0) scale(1)" : "translateY(28px) scale(0.96)",
+                  }}
                 >
-                  <p className="font-display text-3xl md:text-4xl" style={{ color: s.txt }}>
+                  <p
+                    className="font-display text-3xl md:text-4xl"
+                    style={{ color: s.txt }}
+                  >
                     {s.num}
                   </p>
                   <p className="text-xs font-bold uppercase tracking-wider mt-1">
@@ -91,7 +114,7 @@ export function About() {
           </div>
         </div>
 
-        {/* Bottom marquee — cream on orange */}
+        {/* Bottom marquee */}
         <div
           aria-hidden="true"
           className="absolute bottom-0 left-0 right-0 overflow-hidden border-t-[3px] border-foreground"

@@ -1,6 +1,5 @@
 import { FlowerSticker, Star, WavyDivider } from "./FlowerFrame";
 
-
 type Item = {
   date: string;
   title: string;
@@ -12,10 +11,10 @@ type Item = {
 
 const formation: Item[] = [
   {
-    date: "2025 — 2027",
+    date: "2025 · 2027",
     title: "Formation UX/UI Design",
     org: "IFAPME · Château Massart",
-    desc: "Alternance — Recherche utilisateur, prototypage, design system, accessibilité.",
+    desc: "Alternance · Recherche utilisateur, prototypage, design system, accessibilité.",
     color: "var(--magenta)",
     textColor: "var(--cream)",
   },
@@ -36,13 +35,12 @@ const formation: Item[] = [
   {
     date: "2019",
     title: "Certificat d'Étude Secondaire",
-    org: "Institut de la Providence — Herve",
+    org: "Institut de la Providence, Herve",
     desc: "Enseignement secondaire général.",
     color: "var(--orange)",
     textColor: "var(--cream)",
   },
 ];
-
 
 function TimelineCard({ item, index }: { item: Item; index: number }) {
   const rot = index % 2 === 0 ? "-rotate-1" : "rotate-1";
@@ -85,12 +83,13 @@ export function Journey() {
         />
 
         <div className="relative max-w-6xl mx-auto">
-          <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
+          {/* Section header — left-aligned, consistent */}
+          <div className="mb-16 space-y-4">
             <span
-              className="inline-block text-xs font-bold tracking-[0.3em] uppercase border-brutal px-4 py-2 rounded-full"
+              className="inline-block text-xs font-bold tracking-[0.3em] uppercase border-brutal-thick px-3 py-1.5 rounded-full"
               style={{ background: "var(--magenta)", color: "var(--cream)" }}
             >
-              ★ 04 / Parcours ★
+              ★ 04 / Parcours
             </span>
             <h2 className="font-display text-5xl md:text-7xl uppercase leading-[0.9]">
               D'où je
@@ -103,13 +102,9 @@ export function Journey() {
           </div>
 
           <div className="max-w-2xl mx-auto">
-            {/* Formation */}
             <div>
               <div className="flex items-center gap-3 mb-6">
-                <span className="font-display text-2xl md:text-3xl uppercase">
-                  Formation
-                </span>
-                <span className="flex-1 h-[3px] bg-foreground" />
+                <span className="font-display text-2xl md:text-3xl uppercase">Formation</span>
                 <Star color="var(--magenta)" size={22} />
               </div>
               <div className="space-y-5">
@@ -121,7 +116,10 @@ export function Journey() {
           </div>
 
           {/* Langues */}
-          <div className="mt-20 border-brutal-thick rounded-3xl p-6 md:p-8 shadow-brutal max-w-2xl mx-auto" style={{ background: "var(--background)" }}>
+          <div
+            className="mt-20 border-brutal-thick rounded-3xl p-6 md:p-8 shadow-brutal max-w-2xl mx-auto"
+            style={{ background: "var(--background)" }}
+          >
             <div className="flex items-center justify-between mb-5 flex-wrap gap-3">
               <h3 className="font-display text-2xl uppercase">Langues</h3>
               <Star color="var(--magenta)" size={18} />
@@ -133,9 +131,7 @@ export function Journey() {
               ].map((l) => (
                 <li key={l.lang}>
                   <div className="flex items-center justify-between mb-1.5">
-                    <span className="font-bold uppercase tracking-wider text-sm">
-                      {l.lang}
-                    </span>
+                    <span className="font-bold uppercase tracking-wider text-sm">{l.lang}</span>
                     <span className="text-xs font-bold uppercase opacity-70">
                       {l.level === 100 ? "Natif" : "Intermédiaire"}
                     </span>

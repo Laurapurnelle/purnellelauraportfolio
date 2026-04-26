@@ -5,7 +5,6 @@ const links = [
   { href: "#projects", label: "Projets" },
   { href: "#skills", label: "Skills" },
   { href: "#parcours", label: "Parcours" },
-  { href: "#contact", label: "Contact" },
 ];
 
 export function Navbar() {
@@ -76,36 +75,15 @@ export function Navbar() {
           aria-label={mobileOpen ? "Fermer le menu" : "Ouvrir le menu"}
           style={{ background: mobileOpen ? "var(--magenta)" : "var(--background)" }}
         >
-          <span
-            className="block w-5 h-[2px] transition-all duration-200"
-            style={{
-              background: mobileOpen ? "var(--cream)" : "var(--foreground)",
-              transform: mobileOpen ? "rotate(45deg) translateY(7px)" : undefined,
-            }}
-          />
-          <span
-            className="block w-5 h-[2px] transition-all duration-200"
-            style={{
-              background: mobileOpen ? "var(--cream)" : "var(--foreground)",
-              opacity: mobileOpen ? 0 : 1,
-            }}
-          />
-          <span
-            className="block w-5 h-[2px] transition-all duration-200"
-            style={{
-              background: mobileOpen ? "var(--cream)" : "var(--foreground)",
-              transform: mobileOpen ? "rotate(-45deg) translateY(-7px)" : undefined,
-            }}
-          />
+          <span className="block w-5 h-[2px] transition-all duration-200" style={{ background: mobileOpen ? "var(--cream)" : "var(--foreground)", transform: mobileOpen ? "rotate(45deg) translateY(7px)" : undefined }} />
+          <span className="block w-5 h-[2px] transition-all duration-200" style={{ background: mobileOpen ? "var(--cream)" : "var(--foreground)", opacity: mobileOpen ? 0 : 1 }} />
+          <span className="block w-5 h-[2px] transition-all duration-200" style={{ background: mobileOpen ? "var(--cream)" : "var(--foreground)", transform: mobileOpen ? "rotate(-45deg) translateY(-7px)" : undefined }} />
         </button>
       </nav>
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div
-          id="mobile-menu"
-          className="md:hidden max-w-6xl mx-auto mt-2 px-4"
-        >
+        <div id="mobile-menu" className="md:hidden max-w-6xl mx-auto mt-2 px-4">
           <div className="bg-background border-brutal-thick rounded-3xl p-4 shadow-brutal">
             <ul className="flex flex-col gap-1" role="list">
               {links.map((l) => (
