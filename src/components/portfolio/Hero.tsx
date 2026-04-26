@@ -44,14 +44,14 @@ export function Hero() {
             style={{ background: "var(--lime)" }}
           >
             <span className="w-2 h-2 bg-foreground rounded-full animate-pulse" />
-            Alternance / Stage · Dispo → juin 2027
+            Disponible · Liège → Canada
           </div>
 
           <h1 className="font-display text-foreground uppercase">
-            <span className="block text-[clamp(2.5rem,8vw,7rem)] leading-[0.85]">
+            <span className="block text-[clamp(4rem,8vw,7rem)] leading-[0.85]">
               Laura
             </span>
-            <span className="block text-[clamp(2.5rem,8vw,7rem)] leading-[0.85] -mt-1">
+            <span className="block text-[clamp(4rem,8vw,7rem)] leading-[0.85] -mt-1">
               Purnelle<span style={{ color: "var(--magenta)" }}>.</span>
             </span>
             <span className="block mt-4 text-[clamp(1rem,2.2vw,1.75rem)] font-sans font-bold tracking-tight normal-case">
@@ -76,6 +76,25 @@ export function Hero() {
             </span>
             , esthétiques et accessibles.
           </p>
+
+          {/* Skill badges */}
+          <div className="flex flex-wrap items-center gap-2 pt-2">
+            {[
+              { label: "UI/UX Design", bg: "var(--foreground)", color: "var(--background)" },
+              { label: "Branding", bg: "var(--magenta)", color: "var(--cream)" },
+              { label: "Lovable · Figma", bg: "var(--lime)", color: "var(--ink)" },
+              { label: "Storytelling", bg: "transparent", color: "var(--foreground)" },
+              { label: "FR · EN", bg: "transparent", color: "var(--foreground)" },
+            ].map((b) => (
+              <span
+                key={b.label}
+                className="px-4 py-2 text-xs font-bold uppercase tracking-wider border-brutal-thick rounded-full"
+                style={{ background: b.bg, color: b.color }}
+              >
+                {b.label}
+              </span>
+            ))}
+          </div>
 
           <div className="flex flex-wrap items-center gap-4 pt-2">
             <a
@@ -139,9 +158,9 @@ export function Hero() {
                 <span key={j} className="flex items-center gap-6">
                   Travaillons ensemble
                   <Star color="var(--cream)" size={16} />
-                  Dispo jusqu'en juin 2027
+                  Disponible · Liège → Canada
                   <Star color="var(--lime)" size={16} />
-                  Liège · Belgique
+                  Alternance 2025–2027
                   <Star color="var(--cream)" size={16} />
                 </span>
               ))}

@@ -50,8 +50,8 @@
   --radius: 2rem;
 
   /* INKLO playful palette: cream bg, magenta + orange + lime + lavender accents, ink */
-  --background: oklch(0.97 0.012 95);            /* #F4F1E6 warm cream */
-  --foreground: oklch(0.28 0.025 25);            /* warm aubergine ink, softer than #1A1A1A */
+  --background: oklch(0.985 0.004 95);           /* #F8F9F4 off-white — crisp, Sophisticated Pop */
+  --foreground: oklch(0.18 0.015 25);            /* near-black ink #0D0D0D — maximum contrast */
 
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.28 0.025 25);
@@ -59,8 +59,8 @@
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.28 0.025 25);
 
-  --primary: oklch(0.62 0.31 0);                 /* #ED0086 magenta */
-  --primary-foreground: oklch(0.97 0.012 95);
+  --primary: oklch(0.56 0.31 350);               /* #FF007F Electric Pink — CTA */
+  --primary-foreground: oklch(0.985 0.004 95);
 
   --secondary: oklch(0.92 0.04 300);             /* lavender soft */
   --secondary-foreground: oklch(0.28 0.025 25);
@@ -68,26 +68,26 @@
   --muted: oklch(0.93 0.015 95);
   --muted-foreground: oklch(0.42 0.02 30);
 
-  --accent: oklch(0.85 0.22 130);                /* #BCDE3F lime */
-  --accent-foreground: oklch(0.28 0.025 25);
+  --accent: oklch(0.94 0.27 124);                /* #CCFF00 Electric Lime — tags, highlights */
+  --accent-foreground: oklch(0.18 0.015 25);
 
   --destructive: oklch(0.65 0.24 30);
   --destructive-foreground: oklch(0.97 0 0);
 
-  --border: oklch(0.28 0.025 25);
-  --input: oklch(0.28 0.025 25);
-  --ring: oklch(0.62 0.31 0);
+  --border: oklch(0.18 0.015 25);
+  --input: oklch(0.18 0.015 25);
+  --ring: oklch(0.56 0.31 350);
 
-  /* Brand tokens — Spark & Marnee inspired: hot pink, bubblegum, orange, cream */
-  --violet: oklch(0.65 0.27 5);                  /* hot pink #FF2E7E (was electric violet) */
-  --yellow: oklch(0.72 0.21 50);                 /* warm orange #F25823 (was solar yellow) */
-  --magenta: oklch(0.65 0.27 5);                 /* #FF2E7E hot pink */
-  --pink: oklch(0.82 0.13 5);                    /* #FFB6C8 bubblegum */
+  /* Brand tokens — Sophisticated Pop / Neo-brutalist */
+  --violet: oklch(0.56 0.31 350);                /* #FF007F Electric Pink — primary CTA */
+  --yellow: oklch(0.72 0.21 50);                 /* #F25823 fire orange */
+  --magenta: oklch(0.56 0.31 350);               /* #FF007F Electric Pink */
+  --pink: oklch(0.82 0.13 5);                    /* #FFB6C8 bubblegum — soft decorative blob */
   --orange: oklch(0.72 0.21 50);                 /* #F25823 fire orange */
-  --lime: oklch(0.85 0.22 130);                  /* #BCDE3F lime punch */
+  --lime: oklch(0.94 0.27 124);                  /* #CCFF00 Electric Lime — skills, accents */
   --lavender: oklch(0.86 0.06 295);              /* #D6CFF8 lavender */
-  --ink: oklch(0.28 0.025 25);                   /* soft aubergine ink */
-  --cream: oklch(0.96 0.025 80);                 /* #FBEFD9 warm cream */
+  --ink: oklch(0.18 0.015 25);                   /* near-black #0D0D0D — borders, text */
+  --cream: oklch(0.97 0.018 90);                 /* warm off-white for text on dark */
   --ptb-red: oklch(0.55 0.24 28);                /* #E60012 PTB red */
 
   --shadow-brutal: 6px 6px 0 0 var(--ink);

@@ -2,34 +2,36 @@ import { Link } from "@tanstack/react-router";
 import p1 from "@/assets/project-1.jpg";
 import p2 from "@/assets/project-2.jpg";
 import p3 from "@/assets/project-3.jpg";
+import krouselSplit from "@/assets/krousel-split.png";
+import krouselTraiteurMockup from "@/assets/krousel-traiteur-mockup.png";
 
 const others = [
   {
-    title: "Bloom",
-    category: "App mobile · Bien-être",
-    year: "2024",
+    title: "ShowShanks",
+    category: "Direction artistique · 2025",
+    year: "2025",
     image: p1,
-    accent: "bg-[var(--lime)]",
+    accent: "bg-foreground",
     rotate: "-rotate-1",
-    tags: ["UX Research", "Mobile"],
+    tags: ["Direction artistique", "Typographie"],
   },
   {
-    title: "Atelier Camélia",
-    category: "E-shop · Bijouterie",
-    year: "2024",
+    title: "Affiche Festival",
+    category: "Événementiel · 2025",
+    year: "2025",
     image: p2,
     accent: "bg-[var(--magenta)]",
     rotate: "rotate-1",
-    tags: ["Webflow", "UI Design"],
+    tags: ["Branding", "Identité visuelle"],
   },
   {
-    title: "Maison Lila",
-    category: "Identité · Branding",
-    year: "2024",
+    title: "Ce Portfolio",
+    category: "HTML/CSS · GitHub Pages · 2025",
+    year: "2025",
     image: p3,
-    accent: "bg-[var(--orange)]",
+    accent: "bg-[var(--lime)]",
     rotate: "-rotate-1",
-    tags: ["Branding", "Print"],
+    tags: ["HTML · CSS", "GitHub Pages"],
   },
 ];
 
@@ -97,7 +99,7 @@ export function Projects() {
                 à 15°, copywriting sourcé, savoir-faire assumé.
               </p>
               <div className="flex flex-wrap gap-2 pt-2">
-                {["UI Design", "Direction artistique", "Copywriting", "Branding"].map((t) => (
+                {["UI Design", "Branding", "Lovable", "Copywriting", "Direction artistique"].map((t) => (
                   <span
                     key={t}
                     className="text-xs font-bold uppercase tracking-wider px-3 py-1.5 bg-background text-foreground border-brutal"
@@ -116,28 +118,28 @@ export function Projects() {
             </div>
 
             <div className="md:col-span-6 relative">
-              {/* Main image — soft blob shape */}
+              {/* Main image — K'Rousel split-screen design */}
               <div
                 className="relative bg-background border-brutal-square overflow-hidden shadow-brutal"
                 style={{ borderRadius: "62% 38% 55% 45% / 50% 60% 40% 50%" }}
               >
                 <img
-                  src={p1}
-                  alt="Mockup principal de The K'Rousel"
+                  src={krouselSplit}
+                  alt="Split screen diagonal du site The K'Rousel"
                   width={1200}
                   height={800}
                   loading="lazy"
                   className="w-full h-auto object-cover"
                 />
               </div>
-              {/* Floating secondary — small organic blob */}
+              {/* Floating secondary — traiteur mockup */}
               <div
                 className="hidden md:block absolute -bottom-8 -right-4 w-44 bg-background border-brutal-square rotate-6 shadow-brutal overflow-hidden"
                 style={{ borderRadius: "55% 45% 40% 60% / 45% 60% 40% 55%" }}
               >
                 <img
-                  src={p2}
-                  alt="Vue secondaire"
+                  src={krouselTraiteurMockup}
+                  alt="Mockup section traiteur"
                   width={400}
                   height={300}
                   loading="lazy"
@@ -156,7 +158,7 @@ export function Projects() {
             + Autres projets
           </h3>
           <span className="text-sm font-bold uppercase tracking-widest text-muted-foreground">
-            03 → 06
+            03 → 05
           </span>
         </div>
 
@@ -177,8 +179,19 @@ export function Projects() {
               </h4>
               <p className="text-sm font-medium mt-4 max-w-md" style={{ opacity: 0.95 }}>
                 Une refonte mobile-first axée sur l'accessibilité et
-                l'engagement citoyen.
+                l'engagement citoyen — navigation en étoile des valeurs.
               </p>
+              <div className="flex flex-wrap gap-2 mt-4">
+                {["UX Strategy", "Figma", "Accessibilité", "Mobile-first"].map((t) => (
+                  <span
+                    key={t}
+                    className="text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full border border-[rgba(255,255,255,0.4)]"
+                    style={{ color: "var(--cream)" }}
+                  >
+                    {t}
+                  </span>
+                ))}
+              </div>
               <Link
                 to="/projets/ptb"
                 className="inline-flex items-center gap-2 mt-5 px-5 py-3 text-xs font-bold uppercase tracking-widest border-brutal-thick hover-pop rounded-full"
@@ -201,38 +214,7 @@ export function Projects() {
           </div>
         </article>
 
-        {/* Design publicitaire — wide */}
-        <article className="bg-foreground text-background border-brutal-thick mb-12 grid md:grid-cols-12 hover-pop overflow-hidden">
-          <div className="md:col-span-5 p-6 flex items-center justify-center border-r-[3px] border-foreground" style={{ background: "var(--magenta)" }}>
-            <img
-              src={p3}
-              alt="Design publicitaire"
-              width={500}
-              height={400}
-              loading="lazy"
-              className="w-full h-auto object-cover border-brutal-square shadow-brutal"
-              style={{ borderRadius: "45% 55% 60% 40% / 55% 45% 55% 45%" }}
-            />
-          </div>
-          <div className="md:col-span-7 p-8 flex flex-col justify-between min-h-[280px]">
-            <div className="text-xs font-bold tracking-[0.3em] uppercase" style={{ color: "var(--lime)" }}>
-              Direction artistique · Print · 2024
-            </div>
-            <div>
-              <h4 className="font-display text-4xl md:text-5xl uppercase leading-[0.9]">
-                Design
-                <br />
-                publicitaire
-              </h4>
-              <p className="text-sm font-medium mt-4 max-w-md text-background/85">
-                Série d'affiches synthétisant des messages de marque
-                percutants — typographie forte, palette maîtrisée.
-              </p>
-            </div>
-          </div>
-        </article>
-
-        {/* Dynamic 3-grid: Bloom, Camélia, Lila */}
+        {/* Dynamic 3-grid: ShowShanks, Festival, Portfolio */}
         <div className="grid md:grid-cols-3 gap-8">
           {others.map((p) => (
             <article

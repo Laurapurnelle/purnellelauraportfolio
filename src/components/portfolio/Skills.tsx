@@ -15,9 +15,11 @@ const skills: Tag[] = [
   { label: "Illustrator", variant: "lime" },
   { label: "Photoshop", variant: "outline" },
   { label: "InDesign", variant: "magenta" },
+  { label: "Lovable", variant: "lime" },
   { label: "Webflow", variant: "ink" },
   { label: "Framer", variant: "orange" },
   { label: "HTML / CSS", variant: "lavender" },
+  { label: "GitHub", variant: "ink" },
   { label: "Design Thinking", variant: "magenta" },
   { label: "Tests utilisateurs", variant: "ink" },
   { label: "WCAG · A11y", variant: "lime" },
@@ -33,6 +35,7 @@ const softwares: Software[] = [
   { name: "Figma", level: 4, color: "var(--magenta)" },
   { name: "Adobe Illustrator", level: 4, color: "var(--orange)" },
   { name: "Adobe Photoshop", level: 3, color: "var(--lime)" },
+  { name: "Lovable (AI Dev)", level: 5, color: "var(--lime)" },
   { name: "Google AI Essentials", level: 4, color: "var(--lavender)" },
 ];
 

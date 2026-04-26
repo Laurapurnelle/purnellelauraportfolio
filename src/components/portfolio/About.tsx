@@ -61,14 +61,18 @@ export function About() {
             <p style={{ color: "color-mix(in oklab, var(--ink) 75%, transparent)" }}>
               Mon terrain de jeu : la recherche utilisateur, le prototypage
               haute fidélité et la direction artistique. J'aime quand un projet
-              a du caractère — pas juste un beau pixel.
+              a du caractère — pas juste un beau pixel. Actuellement en route
+              vers le{" "}
+              <strong style={{ color: "var(--magenta)" }}>Canada</strong>
+              , je cherche à collaborer avec des équipes qui croient que le
+              design peut vraiment changer les choses.
             </p>
 
             <div className="grid grid-cols-3 gap-4 pt-8">
               {[
                 { num: "2027", label: "Diplôme UX/UI", bg: "var(--cream)", txt: "var(--magenta)" },
                 { num: "FR · EN", label: "Langues", bg: "var(--magenta)", txt: "var(--cream)" },
-                { num: "Liège", label: "& alentours", bg: "var(--orange)", txt: "var(--cream)" },
+                { num: "Liège →", label: "Canada", bg: "var(--orange)", txt: "var(--cream)" },
               ].map((s) => (
                 <div
                   key={s.label}

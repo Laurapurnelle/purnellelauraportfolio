@@ -7,7 +7,7 @@ import traiteurFull from "@/assets/krousel-traiteur-full.jpg";
 import burgerKlorquet from "@/assets/burger-klorquet.jpg";
 import burgerLiegeois from "@/assets/burger-liegeois.jpg";
 
-const SITE_URL = "#"; // TODO: remplacer par l'URL réelle du site The K'Rousel
+const SITE_URL = "https://krousel-kinetic-kitchen.lovable.app";
 
 export const Route = createFileRoute("/krousel")({
   head: () => ({
