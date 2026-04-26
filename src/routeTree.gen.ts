@@ -11,9 +11,9 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as KrouselRouteImport } from './routes/krousel'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ProjetsShowshanksRouteImport } from './routes/projets.showshanks'
 import { Route as ProjetsPtbRouteImport } from './routes/projets.ptb'
 import { Route as ProjetsFestiSafeRouteImport } from './routes/projets.festi-safe'
-import { Route as ProjetsShowshanksRouteImport } from './routes/projets.showshanks'
 
 const KrouselRoute = KrouselRouteImport.update({
   id: '/krousel',
@@ -23,6 +23,11 @@ const KrouselRoute = KrouselRouteImport.update({
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProjetsShowshanksRoute = ProjetsShowshanksRouteImport.update({
+  id: '/projets/showshanks',
+  path: '/projets/showshanks',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ProjetsPtbRoute = ProjetsPtbRouteImport.update({
@@ -35,47 +40,58 @@ const ProjetsFestiSafeRoute = ProjetsFestiSafeRouteImport.update({
   path: '/projets/festi-safe',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ProjetsShowshanksRoute = ProjetsShowshanksRouteImport.update({
-  id: '/projets/showshanks',
-  path: '/projets/showshanks',
-  getParentRoute: () => rootRouteImport,
-} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/krousel': typeof KrouselRoute
-  '/projets/ptb': typeof ProjetsPtbRoute
   '/projets/festi-safe': typeof ProjetsFestiSafeRoute
+  '/projets/ptb': typeof ProjetsPtbRoute
   '/projets/showshanks': typeof ProjetsShowshanksRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/krousel': typeof KrouselRoute
-  '/projets/ptb': typeof ProjetsPtbRoute
   '/projets/festi-safe': typeof ProjetsFestiSafeRoute
+  '/projets/ptb': typeof ProjetsPtbRoute
   '/projets/showshanks': typeof ProjetsShowshanksRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/krousel': typeof KrouselRoute
-  '/projets/ptb': typeof ProjetsPtbRoute
   '/projets/festi-safe': typeof ProjetsFestiSafeRoute
+  '/projets/ptb': typeof ProjetsPtbRoute
   '/projets/showshanks': typeof ProjetsShowshanksRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/krousel' | '/projets/ptb' | '/projets/festi-safe' | '/projets/showshanks'
+  fullPaths:
+    | '/'
+    | '/krousel'
+    | '/projets/festi-safe'
+    | '/projets/ptb'
+    | '/projets/showshanks'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/krousel' | '/projets/ptb' | '/projets/festi-safe' | '/projets/showshanks'
-  id: '__root__' | '/' | '/krousel' | '/projets/ptb' | '/projets/festi-safe' | '/projets/showshanks'
+  to:
+    | '/'
+    | '/krousel'
+    | '/projets/festi-safe'
+    | '/projets/ptb'
+    | '/projets/showshanks'
+  id:
+    | '__root__'
+    | '/'
+    | '/krousel'
+    | '/projets/festi-safe'
+    | '/projets/ptb'
+    | '/projets/showshanks'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   KrouselRoute: typeof KrouselRoute
-  ProjetsPtbRoute: typeof ProjetsPtbRoute
   ProjetsFestiSafeRoute: typeof ProjetsFestiSafeRoute
+  ProjetsPtbRoute: typeof ProjetsPtbRoute
   ProjetsShowshanksRoute: typeof ProjetsShowshanksRoute
 }
 
@@ -95,6 +111,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/projets/showshanks': {
+      id: '/projets/showshanks'
+      path: '/projets/showshanks'
+      fullPath: '/projets/showshanks'
+      preLoaderRoute: typeof ProjetsShowshanksRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/projets/ptb': {
       id: '/projets/ptb'
       path: '/projets/ptb'
@@ -109,21 +132,14 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProjetsFestiSafeRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/projets/showshanks': {
-      id: '/projets/showshanks'
-      path: '/projets/showshanks'
-      fullPath: '/projets/showshanks'
-      preLoaderRoute: typeof ProjetsShowshanksRouteImport
-      parentRoute: typeof rootRouteImport
-    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   KrouselRoute: KrouselRoute,
-  ProjetsPtbRoute: ProjetsPtbRoute,
   ProjetsFestiSafeRoute: ProjetsFestiSafeRoute,
+  ProjetsPtbRoute: ProjetsPtbRoute,
   ProjetsShowshanksRoute: ProjetsShowshanksRoute,
 }
 export const routeTree = rootRouteImport
