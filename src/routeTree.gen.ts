@@ -12,6 +12,8 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as KrouselRouteImport } from './routes/krousel'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ProjetsPtbRouteImport } from './routes/projets.ptb'
+import { Route as ProjetsFestiSafeRouteImport } from './routes/projets.festi-safe'
+import { Route as ProjetsShowshanksRouteImport } from './routes/projets.showshanks'
 
 const KrouselRoute = KrouselRouteImport.update({
   id: '/krousel',
@@ -28,35 +30,53 @@ const ProjetsPtbRoute = ProjetsPtbRouteImport.update({
   path: '/projets/ptb',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ProjetsFestiSafeRoute = ProjetsFestiSafeRouteImport.update({
+  id: '/projets/festi-safe',
+  path: '/projets/festi-safe',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProjetsShowshanksRoute = ProjetsShowshanksRouteImport.update({
+  id: '/projets/showshanks',
+  path: '/projets/showshanks',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/krousel': typeof KrouselRoute
   '/projets/ptb': typeof ProjetsPtbRoute
+  '/projets/festi-safe': typeof ProjetsFestiSafeRoute
+  '/projets/showshanks': typeof ProjetsShowshanksRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/krousel': typeof KrouselRoute
   '/projets/ptb': typeof ProjetsPtbRoute
+  '/projets/festi-safe': typeof ProjetsFestiSafeRoute
+  '/projets/showshanks': typeof ProjetsShowshanksRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/krousel': typeof KrouselRoute
   '/projets/ptb': typeof ProjetsPtbRoute
+  '/projets/festi-safe': typeof ProjetsFestiSafeRoute
+  '/projets/showshanks': typeof ProjetsShowshanksRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/krousel' | '/projets/ptb'
+  fullPaths: '/' | '/krousel' | '/projets/ptb' | '/projets/festi-safe' | '/projets/showshanks'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/krousel' | '/projets/ptb'
-  id: '__root__' | '/' | '/krousel' | '/projets/ptb'
+  to: '/' | '/krousel' | '/projets/ptb' | '/projets/festi-safe' | '/projets/showshanks'
+  id: '__root__' | '/' | '/krousel' | '/projets/ptb' | '/projets/festi-safe' | '/projets/showshanks'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   KrouselRoute: typeof KrouselRoute
   ProjetsPtbRoute: typeof ProjetsPtbRoute
+  ProjetsFestiSafeRoute: typeof ProjetsFestiSafeRoute
+  ProjetsShowshanksRoute: typeof ProjetsShowshanksRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -82,6 +102,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProjetsPtbRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/projets/festi-safe': {
+      id: '/projets/festi-safe'
+      path: '/projets/festi-safe'
+      fullPath: '/projets/festi-safe'
+      preLoaderRoute: typeof ProjetsFestiSafeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/projets/showshanks': {
+      id: '/projets/showshanks'
+      path: '/projets/showshanks'
+      fullPath: '/projets/showshanks'
+      preLoaderRoute: typeof ProjetsShowshanksRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -89,8 +123,9 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   KrouselRoute: KrouselRoute,
   ProjetsPtbRoute: ProjetsPtbRoute,
+  ProjetsFestiSafeRoute: ProjetsFestiSafeRoute,
+  ProjetsShowshanksRoute: ProjetsShowshanksRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-

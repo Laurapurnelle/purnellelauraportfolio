@@ -1,7 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import krouselMockup from "@/assets/krousel-mockup.png";
+import krouselSplit from "@/assets/krousel-split.png";
 import friterieFull from "@/assets/krousel-friterie-full.jpg";
-import traiteurFull from "@/assets/krousel-traiteur-full.jpg";
+import traiteurFull from "@/assets/krousel-traiteur-mockup.png";
 import burgerKlorquet from "@/assets/burger-klorquet.jpg";
 import burgerLiegeois from "@/assets/burger-liegeois.jpg";
 
@@ -81,7 +82,7 @@ function KrouselCaseStudy() {
         <div className="max-w-6xl mx-auto">
           <div className="bg-violet border-brutal-thick p-3 shadow-brutal-lg">
             <img
-              src={p1}
+              src={krouselSplit}
               alt="Aperçu de l'interface The K'Rousel"
               className="w-full h-auto object-cover border-brutal"
               loading="eager"

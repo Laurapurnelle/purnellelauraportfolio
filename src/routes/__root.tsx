@@ -1,4 +1,5 @@
 import { Outlet, Link, createRootRoute } from "@tanstack/react-router";
+import { useState, useEffect } from "react";
 
 function NotFoundComponent() {
   return (
@@ -24,7 +25,65 @@ function NotFoundComponent() {
   );
 }
 
+function FlowerIcon() {
+  return (
+    <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" width="26" height="26" aria-hidden="true">
+      {[0, 60, 120, 180, 240, 300].map((angle) => (
+        <ellipse
+          key={angle}
+          cx="16"
+          cy="7"
+          rx="4"
+          ry="6.5"
+          fill="var(--lime)"
+          transform={`rotate(${angle} 16 16)`}
+        />
+      ))}
+      <circle cx="16" cy="16" r="6" fill="var(--magenta)" />
+      <path
+        d="M16 19 L16 13 M13 16 L16 13 L19 16"
+        stroke="white"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
+function ScrollToTopButton() {
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setVisible(window.scrollY > 300);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  if (!visible) return null;
+
+  return (
+    <button
+      onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+      className="fixed bottom-6 right-6 z-50 w-14 h-14 border-brutal-thick shadow-brutal hover-pop flex items-center justify-center cursor-pointer"
+      style={{ background: "var(--background)" }}
+      aria-label="Retour en haut"
+    >
+      <FlowerIcon />
+    </button>
+  );
+}
+
+function Root() {
+  return (
+    <>
+      <Outlet />
+      <ScrollToTopButton />
+    </>
+  );
+}
+
 export const Route = createRootRoute({
-  component: () => <Outlet />,
+  component: Root,
   notFoundComponent: NotFoundComponent,
 });

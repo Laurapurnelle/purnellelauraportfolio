@@ -5,9 +5,21 @@ import p3 from "@/assets/project-3.jpg";
 import krouselSplit from "@/assets/krousel-split.png";
 import krouselTraiteurMockup from "@/assets/krousel-traiteur-mockup.png";
 
-const others = [
+type OtherProject = {
+  title: string;
+  href?: "/projets/showshanks" | "/projets/festi-safe";
+  category: string;
+  year: string;
+  image: string;
+  accent: string;
+  rotate: string;
+  tags: string[];
+};
+
+const others: OtherProject[] = [
   {
     title: "ShowShanks",
+    href: "/projets/showshanks",
     category: "Direction artistique · 2025",
     year: "2025",
     image: p1,
@@ -16,7 +28,8 @@ const others = [
     tags: ["Direction artistique", "Typographie"],
   },
   {
-    title: "Affiche Festival",
+    title: "Festi'Safe",
+    href: "/projets/festi-safe",
     category: "Événementiel · 2025",
     year: "2025",
     image: p2,
@@ -60,7 +73,11 @@ export function Projects() {
 
       {/* FOCUS PROJECT — The K'rousel */}
       <div className="max-w-7xl mx-auto mb-32">
-        <div className="relative border-brutal-thick p-6 pt-10 md:p-12 md:pt-14 shadow-brutal-lg overflow-visible" style={{ background: "var(--lavender)" }}>
+        <Link
+          to="/krousel"
+          className="block relative border-brutal-thick p-6 pt-10 md:p-12 md:pt-14 shadow-brutal-lg overflow-visible hover-pop cursor-pointer"
+          style={{ background: "var(--lavender)" }}
+        >
           <div className="absolute -top-5 right-3 md:-top-6 md:right-6 border-brutal-thick px-4 py-1.5 rotate-3 shadow-brutal rounded-full z-20" style={{ background: "var(--magenta)", color: "var(--cream)" }}>
             <span className="font-display text-xs uppercase tracking-widest whitespace-nowrap">★ Featured Project</span>
           </div>
@@ -102,23 +119,21 @@ export function Projects() {
                 {["UI Design", "Branding", "Lovable", "Copywriting", "Direction artistique"].map((t) => (
                   <span
                     key={t}
-                    className="text-xs font-bold uppercase tracking-wider px-3 py-1.5 bg-background text-foreground border-brutal"
+                    className="text-xs font-bold uppercase tracking-wider px-3 py-1 bg-background text-foreground border border-foreground/40 rounded-sm"
                   >
                     {t}
                   </span>
                 ))}
               </div>
-              <Link
-                to="/krousel"
-                className="inline-flex items-center gap-2 px-6 py-4 text-sm font-bold uppercase tracking-widest border-brutal-thick hover-pop mt-4 rounded-full"
+              <div
+                className="inline-flex items-center gap-2 px-6 py-4 text-sm font-bold uppercase tracking-widest border-brutal-thick rounded-full mt-4"
                 style={{ background: "var(--magenta)", color: "var(--cream)" }}
               >
                 Découvrir l'étude de cas →
-              </Link>
+              </div>
             </div>
 
             <div className="md:col-span-6 relative">
-              {/* Main image — K'Rousel split-screen design */}
               <div
                 className="relative bg-background border-brutal-square overflow-hidden shadow-brutal"
                 style={{ borderRadius: "62% 38% 55% 45% / 50% 60% 40% 50%" }}
@@ -132,7 +147,6 @@ export function Projects() {
                   className="w-full h-auto object-cover"
                 />
               </div>
-              {/* Floating secondary — traiteur mockup */}
               <div
                 className="hidden md:block absolute -bottom-8 -right-4 w-44 bg-background border-brutal-square rotate-6 shadow-brutal overflow-hidden"
                 style={{ borderRadius: "55% 45% 40% 60% / 45% 60% 40% 55%" }}
@@ -148,7 +162,7 @@ export function Projects() {
               </div>
             </div>
           </div>
-        </div>
+        </Link>
       </div>
 
       {/* Grid of others */}
@@ -163,7 +177,10 @@ export function Projects() {
         </div>
 
         {/* PTB — Digitaliser l'activisme */}
-        <article className="bg-background border-brutal-thick mb-8 grid md:grid-cols-12 hover-pop overflow-hidden">
+        <Link
+          to="/projets/ptb"
+          className="block bg-background border-brutal-thick mb-8 grid md:grid-cols-12 hover-pop overflow-hidden cursor-pointer"
+        >
           <div
             className="md:col-span-7 border-b-[3px] md:border-b-0 md:border-r-[3px] border-foreground p-8 flex flex-col justify-between min-h-[280px]"
             style={{ background: "var(--ptb-red)", color: "var(--cream)" }}
@@ -192,13 +209,12 @@ export function Projects() {
                   </span>
                 ))}
               </div>
-              <Link
-                to="/projets/ptb"
-                className="inline-flex items-center gap-2 mt-5 px-5 py-3 text-xs font-bold uppercase tracking-widest border-brutal-thick hover-pop rounded-full"
+              <div
+                className="inline-flex items-center gap-2 mt-5 px-5 py-3 text-xs font-bold uppercase tracking-widest border-brutal-thick rounded-full"
                 style={{ background: "var(--cream)", color: "var(--ptb-red)" }}
               >
                 Voir l'étude de cas →
-              </Link>
+              </div>
             </div>
           </div>
           <div className="md:col-span-5 p-6 flex items-center justify-center bg-background">
@@ -212,45 +228,63 @@ export function Projects() {
               <span className="font-display text-8xl md:text-9xl" style={{ color: "var(--cream)" }}>★</span>
             </div>
           </div>
-        </article>
+        </Link>
 
-        {/* Dynamic 3-grid: ShowShanks, Festival, Portfolio */}
+        {/* Dynamic 3-grid: ShowShanks, Festi'Safe, Portfolio */}
         <div className="grid md:grid-cols-3 gap-8">
-          {others.map((p) => (
-            <article
-              key={p.title}
-              className={`bg-background border-brutal-thick hover-pop overflow-hidden ${p.rotate}`}
-            >
-              <div className={`${p.accent} border-b-[3px] border-foreground p-4`}>
-                <img
-                  src={p.image}
-                  alt={p.title}
-                  width={500}
-                  height={400}
-                  loading="lazy"
-                  className="w-full h-48 object-cover border-brutal-square shadow-brutal"
-                  style={{ borderRadius: "55% 45% 60% 40% / 50% 60% 40% 50%" }}
-                />
-              </div>
-              <div className="p-5 space-y-3">
-                <div className="flex items-center justify-between text-[10px] font-bold uppercase tracking-widest">
-                  <span>{p.category}</span>
-                  <span className="text-muted-foreground">{p.year}</span>
+          {others.map((p) => {
+            const inner = (
+              <>
+                <div className={`${p.accent} border-b-[3px] border-foreground p-4`}>
+                  <img
+                    src={p.image}
+                    alt={p.title}
+                    width={500}
+                    height={400}
+                    loading="lazy"
+                    className="w-full h-48 object-cover border-brutal-square shadow-brutal"
+                    style={{ borderRadius: "55% 45% 60% 40% / 50% 60% 40% 50%" }}
+                  />
                 </div>
-                <h4 className="font-display text-2xl uppercase">{p.title}</h4>
-                <div className="flex flex-wrap gap-1.5">
-                  {p.tags.map((t) => (
-                    <span
-                      key={t}
-                      className="text-[10px] font-bold uppercase tracking-wider px-2 py-1 bg-secondary border border-foreground"
-                    >
-                      {t}
-                    </span>
-                  ))}
+                <div className="p-5 space-y-3">
+                  <div className="flex items-center justify-between text-[10px] font-bold uppercase tracking-widest">
+                    <span>{p.category}</span>
+                    <span className="text-muted-foreground">{p.year}</span>
+                  </div>
+                  <h4 className="font-display text-2xl uppercase">{p.title}</h4>
+                  <div className="flex flex-wrap gap-1.5">
+                    {p.tags.map((t) => (
+                      <span
+                        key={t}
+                        className="text-[10px] font-bold uppercase tracking-wider px-2 py-1 bg-secondary border border-foreground/40 rounded-sm"
+                      >
+                        {t}
+                      </span>
+                    ))}
+                  </div>
+                  {p.href && (
+                    <div className="text-xs font-bold uppercase tracking-widest pt-1" style={{ color: "var(--magenta)" }}>
+                      Voir le projet →
+                    </div>
+                  )}
                 </div>
-              </div>
-            </article>
-          ))}
+              </>
+            );
+
+            return p.href ? (
+              <Link
+                key={p.title}
+                to={p.href}
+                className={`block bg-background border-brutal-thick hover-pop cursor-pointer overflow-hidden ${p.rotate}`}
+              >
+                {inner}
+              </Link>
+            ) : (
+              <article key={p.title} className={`bg-background border-brutal-thick overflow-hidden ${p.rotate}`}>
+                {inner}
+              </article>
+            );
+          })}
         </div>
       </div>
     </section>
