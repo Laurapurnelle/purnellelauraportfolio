@@ -124,7 +124,7 @@ function ShowshanksCaseStudy() {
               </p>
               <ul className="space-y-3 text-sm font-medium">
                 {[
-                  "La pioche remplace le "T" — l'outil devient lettre",
+                  "La pioche remplace le «T» — l'outil devient lettre",
                   "Photographie N&B — prison, intemporalité, film noir",
                   "Grain et texture — le temps qui passe, la roche usée",
                   "Silhouette bras ouverts — l'instant de la libération",

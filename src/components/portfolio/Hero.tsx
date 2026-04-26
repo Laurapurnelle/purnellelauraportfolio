@@ -148,6 +148,7 @@ export function Hero() {
 
       {/* Bottom marquee strip — pink */}
       <div
+        aria-hidden="true"
         className="absolute bottom-0 left-0 right-0 border-t-[3px] border-foreground overflow-hidden"
         style={{ background: "var(--magenta)" }}
       >

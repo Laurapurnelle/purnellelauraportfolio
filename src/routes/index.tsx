@@ -13,7 +13,7 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   return (
-    <main className="bg-background text-foreground overflow-x-hidden">
+    <main id="main-content" className="bg-background text-foreground overflow-x-hidden">
       <Navbar />
       <Hero />
       <About />

@@ -170,6 +170,12 @@
     transform: translate(-3px, -3px);
     box-shadow: 9px 9px 0 0 var(--ink);
   }
+  &:focus-visible {
+    outline: 3px solid var(--magenta);
+    outline-offset: 3px;
+    transform: translate(-3px, -3px);
+    box-shadow: 9px 9px 0 0 var(--ink);
+  }
 }
 
 @utility marquee-track {
@@ -240,4 +246,27 @@
 
 @utility spin-slow {
   animation: spin-slow 20s linear infinite;
+}
+
+/* Global focus-visible for keyboard navigation */
+@layer base {
+  :focus-visible {
+    outline: 3px solid var(--magenta);
+    outline-offset: 2px;
+  }
+}
+
+/* Respect user motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none !important;
+  }
+  .spin-slow {
+    animation: none !important;
+  }
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

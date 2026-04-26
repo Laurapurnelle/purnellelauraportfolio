@@ -67,7 +67,7 @@ function ScrollToTopButton() {
       onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
       className="fixed bottom-6 right-6 z-50 w-14 h-14 border-brutal-thick shadow-brutal hover-pop flex items-center justify-center cursor-pointer"
       style={{ background: "var(--background)" }}
-      aria-label="Retour en haut"
+      aria-label="Retour en haut de la page"
     >
       <FlowerIcon />
     </button>
@@ -77,6 +77,14 @@ function ScrollToTopButton() {
 function Root() {
   return (
     <>
+      {/* Skip to main content — accessibility */}
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[200] focus:px-4 focus:py-2 focus:rounded-full focus:font-bold focus:text-sm focus:uppercase focus:border-brutal-thick"
+        style={{ background: "var(--lime)", color: "var(--ink)" }}
+      >
+        Aller au contenu principal
+      </a>
       <Outlet />
       <ScrollToTopButton />
     </>

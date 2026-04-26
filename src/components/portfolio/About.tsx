@@ -76,7 +76,7 @@ export function About() {
               ].map((s) => (
                 <div
                   key={s.label}
-                  className="border-brutal-thick p-4 hover-pop blob-flower"
+                  className="border-brutal-thick p-4 blob-flower"
                   style={{ background: s.bg, color: "var(--ink)" }}
                 >
                   <p className="font-display text-3xl md:text-4xl" style={{ color: s.txt }}>
@@ -93,6 +93,7 @@ export function About() {
 
         {/* Bottom marquee — cream on orange */}
         <div
+          aria-hidden="true"
           className="absolute bottom-0 left-0 right-0 overflow-hidden border-t-[3px] border-foreground"
           style={{ background: "var(--cream)" }}
         >

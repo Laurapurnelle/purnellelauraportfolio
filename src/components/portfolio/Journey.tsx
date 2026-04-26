@@ -48,7 +48,7 @@ function TimelineCard({ item, index }: { item: Item; index: number }) {
   const rot = index % 2 === 0 ? "-rotate-1" : "rotate-1";
   return (
     <article
-      className={`border-brutal-thick rounded-3xl p-5 md:p-6 shadow-brutal hover-pop ${rot}`}
+      className={`border-brutal-thick rounded-3xl p-5 md:p-6 shadow-brutal ${rot}`}
       style={{ background: item.color, color: item.textColor ?? "var(--ink)" }}
     >
       <span className="inline-block text-[10px] md:text-xs font-bold tracking-widest uppercase px-2.5 py-1 rounded-full bg-background text-foreground border-brutal mb-3">
