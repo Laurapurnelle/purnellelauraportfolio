@@ -1,6 +1,4 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import p1 from "@/assets/project-1.jpg";
-
 import krouselMockup from "@/assets/krousel-mockup.png";
 import friterieFull from "@/assets/krousel-friterie-full.jpg";
 import traiteurFull from "@/assets/krousel-traiteur-full.jpg";
@@ -10,24 +8,6 @@ import burgerLiegeois from "@/assets/burger-liegeois.jpg";
 const SITE_URL = "https://krousel-kinetic-kitchen.lovable.app";
 
 export const Route = createFileRoute("/krousel")({
-  head: () => ({
-    meta: [
-      { title: "The K'Rousel — Étude de cas · Laura Purnelle" },
-      {
-        name: "description",
-        content:
-          "Étude de cas UX/UI : The K'Rousel, identité hybride entre friterie itinérante et traiteur haut de gamme à Liège. Split screen diagonal, copywriting sourcé, savoir-faire.",
-      },
-      { property: "og:title", content: "The K'Rousel — Étude de cas UI/UX" },
-      {
-        property: "og:description",
-        content:
-          "Une identité hybride pour Kassandra Lorquet : friterie itinérante & traiteur haut de gamme. Split screen à 15°, copywriting raffiné.",
-      },
-      { property: "og:image", content: p1 },
-      { name: "twitter:image", content: p1 },
-    ],
-  }),
   component: KrouselCaseStudy,
 });
 

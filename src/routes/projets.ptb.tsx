@@ -1,22 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/projets/ptb")({
-  head: () => ({
-    meta: [
-      { title: "PTB — Digitaliser l'activisme · Étude de cas · Laura Purnelle" },
-      {
-        name: "description",
-        content:
-          "Étude de cas UX/UI : refonte mobile-first du site du PTB. Une étoile des valeurs, du fact-checking et une UX d'urgence pour transformer un programme politique en outil d'action.",
-      },
-      { property: "og:title", content: "PTB — Digitaliser l'activisme" },
-      {
-        property: "og:description",
-        content:
-          "Refonte mobile-first du site du PTB : étoile des valeurs, Fakto, UX d'urgence. Une expérience pensée comme un moteur d'engagement citoyen.",
-      },
-    ],
-  }),
   component: PtbCaseStudy,
 });
 
