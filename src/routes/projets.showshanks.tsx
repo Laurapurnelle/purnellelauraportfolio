@@ -108,7 +108,7 @@ function ShowshanksCaseStudy() {
             className="leading-[0.95] mb-12"
             style={{ fontFamily: "var(--font-serif)", fontWeight: 700, fontSize: "clamp(2.25rem, 4.5vw, 4rem)" }}
           >
-            La pioche comme lettre.
+            La pioche & l'œil du corbeau.
           </h2>
           <div className="grid md:grid-cols-2 gap-10">
             <div className="space-y-6">
@@ -118,13 +118,17 @@ function ShowshanksCaseStudy() {
                 Un objet minuscule, un résultat colossal.
               </p>
               <p className="text-lg leading-relaxed">
-                L'idée centrale : remplacer le <strong>T de "THE"</strong> par une pioche.
-                L'outil d'évasion devient la lettre de l'histoire. La typographie ne décrit plus
+                L'idée centrale : remplacer le <strong>T de "THE"</strong> par une pioche —
+                la petite tenaille du film, l'outil d'évasion devenu lettre. Mais c'est la combinaison
+                avec l'<strong>œil du corbeau</strong>, intégré à la composition, qui crée l'effet :
+                deux symboles, une seule image. La surveillance et la liberté. La typographie ne décrit plus
                 le film — elle <em>est</em> le film.
               </p>
               <ul className="space-y-3 text-sm font-medium">
                 {[
-                  "La pioche remplace le «T» — l'outil devient lettre",
+                  "La petite tenaille remplace le «T» — l'outil devient lettre",
+                  "L'œil du corbeau — regard perçant, symbole de vigilance et d'évasion",
+                  "Le combo tenaille + œil — deux éléments, un seul récit visuel",
                   "Photographie N&B — prison, intemporalité, film noir",
                   "Grain et texture — le temps qui passe, la roche usée",
                   "Silhouette bras ouverts — l'instant de la libération",
@@ -153,9 +157,10 @@ function ShowshanksCaseStudy() {
               <div className="border-brutal-thick p-6" style={{ background: "var(--lime)" }}>
                 <div className="text-[10px] font-bold uppercase tracking-widest mb-3">Ma réinterprétation</div>
                 <p className="text-sm leading-relaxed">
-                  Supprimer tout ce qui n'est pas l'essentiel : l'outil, le corps, le mot.
-                  Pas de grilles, pas de couloir sombre, pas de garde. Juste la liberté —
-                  abstraite, typographique, totale.
+                  Supprimer tout ce qui n'est pas l'essentiel : l'outil, l'œil, le corps, le mot.
+                  La tenaille (liberté) et le corbeau (surveillance) cohabitent — c'est leur tension
+                  qui porte l'affiche. Pas de grilles, pas de couloir sombre. Juste les deux symboles
+                  et le corps libéré.
                 </p>
               </div>
             </div>
@@ -190,8 +195,9 @@ function ShowshanksCaseStudy() {
             <div className="border-brutal-thick p-6 space-y-3" style={{ background: "var(--lime)" }}>
               <div className="text-[10px] font-bold uppercase tracking-widest">L'arc narratif</div>
               <p className="text-sm leading-relaxed">
-                L'affiche se lit de haut en bas comme un récit : l'outil (pioche) → le chemin (THE) →
-                le nom (SHAWSHANKS) → la liberté (REDEMPTION). Une seule image, une histoire entière.
+                L'affiche se lit de haut en bas comme un récit : l'œil (vigilance/corbeau) →
+                l'outil (tenaille/THE) → le nom (SHAWSHANKS) → la liberté (REDEMPTION).
+                Deux symboles visuels, une seule histoire entière.
               </p>
             </div>
           </div>

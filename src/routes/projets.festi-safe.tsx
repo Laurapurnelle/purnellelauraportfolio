@@ -27,11 +27,19 @@ function FestiSafeCaseStudy() {
       {/* Hero */}
       <section className="px-6 pt-16 pb-24">
         <div className="max-w-6xl mx-auto">
-          <div
-            className="inline-block border-brutal-thick px-4 py-1.5 -rotate-2 shadow-brutal mb-8"
-            style={{ background: "var(--lime)" }}
-          >
-            <span className="font-display text-xs uppercase tracking-widest">★ Direction artistique · 2025</span>
+          <div className="flex flex-wrap items-center gap-3 mb-8">
+            <div
+              className="inline-block border-brutal-thick px-4 py-1.5 -rotate-2 shadow-brutal"
+              style={{ background: "var(--lime)" }}
+            >
+              <span className="font-display text-xs uppercase tracking-widest">★ Direction artistique · 2025</span>
+            </div>
+            <div
+              className="inline-block border-brutal-thick px-4 py-1.5 rotate-1"
+              style={{ background: "var(--magenta)", color: "var(--cream)" }}
+            >
+              <span className="font-display text-xs uppercase tracking-widest">Projet scolaire · Festival fictif</span>
+            </div>
           </div>
           <h1
             className="uppercase leading-[0.85] tracking-tight"
@@ -47,8 +55,8 @@ function FestiSafeCaseStudy() {
           </p>
           <div className="grid md:grid-cols-3 gap-6 mt-14 max-w-4xl">
             {[
-              { label: "Type", value: "Affiche événementielle" },
-              { label: "Lieu", value: "Liège, BE" },
+              { label: "Type", value: "Projet scolaire · fictif" },
+              { label: "Contexte", value: "École · IFAPME · 2025" },
               { label: "Disciplines", value: "Typo · Identité · Print" },
             ].map(({ label, value }) => (
               <div key={label} className="border-brutal-thick p-4 bg-background">
@@ -87,6 +95,18 @@ function FestiSafeCaseStudy() {
             >
               Un safe space qui n'a pas peur de crier.
             </h2>
+            <div
+              className="border-[2px] border-[var(--lime)] px-4 py-3 rounded-sm mb-2"
+              style={{ background: "rgba(255,255,255,0.08)" }}
+            >
+              <p className="text-xs font-bold uppercase tracking-widest" style={{ color: "var(--lime)" }}>
+                ✦ Note — Festival fictif · Exercice scolaire IFAPME 2025
+              </p>
+              <p className="text-sm text-background/80 mt-1">
+                Festi'Safe est un festival imaginaire créé dans le cadre d'un cours de direction artistique.
+                Tous les artistes, lieux et informations sont fictifs.
+              </p>
+            </div>
             <p className="text-lg leading-relaxed text-background/85">
               Le défi de Festi'Safe : concevoir une communication visuelle à la fois{" "}
               <span className="px-1.5" style={{ background: "var(--lime)", color: "var(--foreground)" }}>festive et engagée</span>
