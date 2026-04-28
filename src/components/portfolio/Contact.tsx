@@ -87,6 +87,22 @@ export function Contact() {
             </a>
           </div>
 
+          {/* CV download */}
+          <div className="mt-10 flex flex-col items-center gap-3">
+            <a
+              href={`${import.meta.env.BASE_URL}cv-laura-purnelle.pdf`}
+              download="CV-Laura-Purnelle.pdf"
+              className="inline-flex items-center gap-3 px-8 py-4 text-sm font-bold uppercase tracking-widest border-brutal-thick hover-pop rounded-full"
+              style={{ background: "var(--cream)", color: "var(--ink)" }}
+              aria-label="Télécharger le CV créatif de Laura Purnelle (PDF)"
+            >
+              ↓ Télécharger mon CV créatif (PDF)
+            </a>
+            <p className="text-xs font-bold uppercase tracking-widest opacity-60">
+              CV réalisé en Photoshop · Octobre 2025 · Version initiale
+            </p>
+          </div>
+
           <div
             className="mt-20 pt-8 border-t-[3px] border-foreground flex flex-col md:flex-row items-center justify-between gap-4 text-xs font-bold uppercase tracking-widest"
           >

@@ -110,6 +110,15 @@ export function Hero() {
             >
               Me contacter
             </a>
+            <a
+              href={`${import.meta.env.BASE_URL}cv-laura-purnelle.pdf`}
+              download="CV-Laura-Purnelle.pdf"
+              className="inline-flex items-center gap-2 px-6 py-4 text-sm font-bold uppercase tracking-widest border-brutal-thick hover-pop rounded-full"
+              style={{ background: "var(--lime)", color: "var(--ink)" }}
+              aria-label="Télécharger le CV créatif de Laura Purnelle (PDF)"
+            >
+              ↓ CV créatif
+            </a>
           </div>
         </div>
 
