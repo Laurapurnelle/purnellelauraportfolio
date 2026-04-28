@@ -46,7 +46,7 @@ const others: OtherProject[] = [
 
 export function Projects() {
   return (
-    <section id="projects" className="py-32 px-6 relative" style={{ background: "var(--cream)" }}>
+    <section id="projects" className="py-20 md:py-32 px-4 md:px-6 relative overflow-hidden" style={{ background: "var(--cream)" }}>
       {/* Header */}
       <div className="max-w-6xl mx-auto mb-20">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
@@ -193,7 +193,7 @@ export function Projects() {
                 UX Mobile-first · Engagement civique · 2025
               </div>
               <div>
-                <h4 className="font-display text-4xl md:text-5xl uppercase leading-[0.9]">
+                <h4 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl uppercase leading-[0.9]">
                   PTB : Digitaliser
                   <br />
                   l'activisme

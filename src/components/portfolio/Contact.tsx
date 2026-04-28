@@ -98,7 +98,7 @@ export function Contact() {
             >
               ↓ Télécharger mon CV créatif (PDF)
             </a>
-            <p className="text-xs font-bold uppercase tracking-widest opacity-60">
+            <p className="text-xs font-bold uppercase tracking-widest opacity-60 text-center">
               CV réalisé en Photoshop · Octobre 2025 · Version initiale
             </p>
           </div>

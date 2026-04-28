@@ -5,7 +5,7 @@ export function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center pt-32 pb-32 overflow-hidden"
+      className="relative min-h-screen flex items-center pt-40 md:pt-32 pb-24 md:pb-32 overflow-hidden"
       style={{ background: "var(--cream)" }}
     >
       {/* Sprinkled stars & blobs */}
@@ -44,7 +44,7 @@ export function Hero() {
             style={{ background: "var(--lime)" }}
           >
             <span className="w-2 h-2 bg-foreground rounded-full animate-pulse" />
-            Disponible · Liège → Canada
+            Disponible · Liège
           </div>
 
           <h1 className="font-display text-foreground uppercase">
@@ -130,7 +130,7 @@ export function Hero() {
               alt="Portrait de Laura Purnelle, designer UI/UX"
               width={1024}
               height={1280}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover object-top"
             />
           </FlowerFrame>
 
@@ -168,7 +168,7 @@ export function Hero() {
                 <span key={j} className="flex items-center gap-6">
                   Travaillons ensemble
                   <Star color="var(--cream)" size={16} />
-                  Disponible · Liège → Canada
+                  Disponible · Liège
                   <Star color="var(--lime)" size={16} />
                   Alternance 2025–2027
                   <Star color="var(--cream)" size={16} />

@@ -75,7 +75,7 @@ export function Skills() {
             <span style={{ color: "var(--magenta)" }}>savoir-faire</span>
           </h2>
           <p className="text-foreground font-medium pt-2">
-            Méthodes apprises à l'IFAPME · outils en progression continue.
+            Outils maîtrisés de manière autonome · en progression continue.
           </p>
         </div>
 

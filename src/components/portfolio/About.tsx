@@ -4,7 +4,7 @@ import { FlowerSticker, Star, WavyDivider } from "./FlowerFrame";
 const stats = [
   { num: "2027", label: "Diplôme UX/UI", bg: "var(--cream)", txt: "var(--magenta)" },
   { num: "FR · EN", label: "Langues", bg: "var(--magenta)", txt: "var(--cream)" },
-  { num: "✈", label: "Liège · Canada", bg: "var(--orange)", txt: "var(--cream)" },
+  { num: "Liège", label: "& alentours", bg: "var(--orange)", txt: "var(--cream)" },
 ];
 
 export function About() {
@@ -77,19 +77,18 @@ export function About() {
             <p style={{ color: "color-mix(in oklab, var(--ink) 75%, transparent)" }}>
               Mon terrain de jeu : la recherche utilisateur, le prototypage
               haute fidélité et la direction artistique. J'aime quand un projet
-              a du caractère, pas juste un beau pixel. Actuellement en route
-              vers le{" "}
-              <strong style={{ color: "var(--magenta)" }}>Canada</strong>
-              , je cherche à collaborer avec des équipes qui croient que le
-              design peut vraiment changer les choses.
+              a du caractère, pas juste un beau pixel. Ouverte à l'alternance
+              à Liège et aux opportunités à distance, je cherche à collaborer
+              avec des équipes qui croient que le design peut vraiment changer
+              les choses.
             </p>
 
             {/* Animated stat pills */}
-            <div ref={statsRef} className="grid grid-cols-3 gap-4 pt-8">
+            <div ref={statsRef} className="grid grid-cols-3 gap-3 pt-8">
               {stats.map((s, i) => (
                 <div
                   key={s.label}
-                  className="border-brutal-thick p-4 blob-flower"
+                  className="border-brutal-thick p-3 md:p-4 blob-flower"
                   style={{
                     background: s.bg,
                     color: "var(--ink)",
@@ -100,12 +99,12 @@ export function About() {
                   }}
                 >
                   <p
-                    className="font-display text-3xl md:text-4xl"
+                    className="font-display text-lg sm:text-2xl md:text-3xl leading-none"
                     style={{ color: s.txt }}
                   >
                     {s.num}
                   </p>
-                  <p className="text-xs font-bold uppercase tracking-wider mt-1">
+                  <p className="text-[9px] sm:text-xs font-bold uppercase tracking-wider mt-1 leading-tight">
                     {s.label}
                   </p>
                 </div>

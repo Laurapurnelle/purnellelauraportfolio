@@ -36,7 +36,7 @@ const formation: Item[] = [
     date: "2019",
     title: "Certificat d'Étude Secondaire",
     org: "Institut de la Providence, Herve",
-    desc: "Enseignement secondaire général.",
+    desc: "Enseignement secondaire technique de qualification.",
     color: "var(--orange)",
     textColor: "var(--cream)",
   },
