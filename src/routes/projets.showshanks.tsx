@@ -24,52 +24,52 @@ function ShowshanksCaseStudy() {
         </div>
       </header>
 
-      {/* Hero */}
-      <section className="px-6 pt-16 pb-24">
+      {/* Hero + Poster */}
+      <section className="px-6 pt-16 pb-12">
         <div className="max-w-6xl mx-auto">
           <div
-            className="inline-block border-brutal-thick px-4 py-1.5 rotate-1 shadow-brutal mb-8"
+            className="inline-block border-brutal-thick px-4 py-1.5 rotate-1 shadow-brutal mb-10"
             style={{ background: "var(--foreground)", color: "var(--background)" }}
           >
             <span className="font-display text-xs uppercase tracking-widest">★ Cours de création visuelle · 2025</span>
           </div>
-          <h1
-            className="uppercase leading-[0.85] tracking-tight"
-            style={{ fontFamily: "var(--font-serif)", fontWeight: 900, fontSize: "clamp(3rem, 10vw, 9rem)" }}
-          >
-            Show<br />Shanks
-          </h1>
-          <p
-            className="mt-6 italic text-foreground/80 max-w-3xl"
-            style={{ fontFamily: "var(--font-serif)", fontWeight: 400, fontSize: "clamp(1.5rem, 3vw, 2.5rem)", lineHeight: 1.15 }}
-          >
-            Réinterpréter un classique du cinéma par le storytelling typographique.
-          </p>
-          <div className="grid md:grid-cols-3 gap-6 mt-14 max-w-4xl">
-            {[
-              { label: "Type", value: "Affiche de cinéma" },
-              { label: "Contexte", value: "Cours · École" },
-              { label: "Disciplines", value: "Typo · DA · Print" },
-            ].map(({ label, value }) => (
-              <div key={label} className="border-brutal-thick p-4 bg-background">
-                <div className="text-[10px] font-bold uppercase tracking-widest" style={{ color: "var(--magenta)" }}>{label}</div>
-                <div className="font-display text-lg uppercase mt-1">{value}</div>
+          <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-start">
+            {/* Left — title + meta */}
+            <div>
+              <h1
+                className="uppercase leading-[0.85] tracking-tight"
+                style={{ fontFamily: "var(--font-serif)", fontWeight: 900, fontSize: "clamp(3rem, 8vw, 7rem)" }}
+              >
+                Show<br />Shanks
+              </h1>
+              <p
+                className="mt-5 italic text-foreground/75"
+                style={{ fontFamily: "var(--font-serif)", fontWeight: 400, fontSize: "clamp(1.1rem, 2.2vw, 1.6rem)", lineHeight: 1.25 }}
+              >
+                Réinterpréter un classique du cinéma par le storytelling typographique.
+              </p>
+              <div className="grid grid-cols-3 gap-3 mt-10">
+                {[
+                  { label: "Type", value: "Affiche de cinéma" },
+                  { label: "Contexte", value: "Cours · École" },
+                  { label: "Disciplines", value: "Typo · DA · Print" },
+                ].map(({ label, value }) => (
+                  <div key={label} className="border border-foreground/25 p-4 bg-background">
+                    <div className="text-[10px] font-bold uppercase tracking-widest" style={{ color: "var(--magenta)" }}>{label}</div>
+                    <div className="font-display text-sm md:text-base uppercase mt-1 leading-tight">{value}</div>
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Poster */}
-      <section className="px-6 pb-24">
-        <div className="max-w-sm mx-auto">
-          <div className="border-brutal-thick p-3 shadow-brutal-lg bg-foreground">
-            <img
-              src={showshanksPoster}
-              alt="Affiche ShowShanks — réinterprétation de The Shawshank Redemption"
-              className="w-full h-auto object-cover border-brutal"
-              loading="eager"
-            />
+            </div>
+            {/* Right — poster, thin border */}
+            <div className="flex justify-center md:justify-start pt-2">
+              <img
+                src={showshanksPoster}
+                alt="Affiche ShowShanks — réinterprétation de The Shawshank Redemption"
+                className="w-full max-w-[300px] md:max-w-full border border-foreground/20"
+                loading="eager"
+              />
+            </div>
           </div>
         </div>
       </section>

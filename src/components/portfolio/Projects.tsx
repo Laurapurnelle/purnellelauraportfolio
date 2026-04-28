@@ -35,12 +35,12 @@ const others: OtherProject[] = [
     tags: ["Branding", "Identité visuelle", "Affiche"],
   },
   {
-    title: "Ce Portfolio",
-    category: "HTML/CSS · GitHub Pages · 2025",
+    title: "Projet DAFA",
+    category: "À développer · 2025–2026",
     year: "2025",
     image: p3,
     accentClass: "bg-[var(--lime)]",
-    tags: ["HTML · CSS", "GitHub Pages", "React"],
+    tags: ["En développement", "UI/UX", "À venir"],
   },
 ];
 
@@ -187,9 +187,9 @@ export function Projects() {
           <div className="flex flex-col md:flex-row min-h-[220px]">
             <div
               className="md:w-2/5 shrink-0 border-b-[3px] md:border-b-0 md:border-r-[3px] border-foreground p-8 flex flex-col justify-between"
-              style={{ background: "var(--ptb-red)", color: "var(--cream)" }}
+              style={{ background: "var(--foreground)", color: "var(--background)" }}
             >
-              <div className="text-xs font-bold tracking-[0.3em] uppercase" style={{ opacity: 0.9 }}>
+              <div className="text-xs font-bold tracking-[0.3em] uppercase" style={{ opacity: 0.7 }}>
                 UX Mobile-first · Engagement civique · 2025
               </div>
               <div>
@@ -202,8 +202,8 @@ export function Projects() {
                   {["UX Strategy", "Figma", "Accessibilité", "Mobile-first"].map((t) => (
                     <span
                       key={t}
-                      className="text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full border border-[rgba(255,255,255,0.4)]"
-                      style={{ color: "var(--cream)" }}
+                      className="text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full border border-[rgba(255,255,255,0.3)]"
+                      style={{ color: "var(--background)" }}
                     >
                       {t}
                     </span>
@@ -211,7 +211,7 @@ export function Projects() {
                 </div>
                 <div
                   className="inline-flex items-center gap-2 mt-5 px-5 py-3 text-xs font-bold uppercase tracking-widest border-brutal-thick rounded-full"
-                  style={{ background: "var(--cream)", color: "var(--ptb-red)" }}
+                  style={{ background: "var(--lime)", color: "var(--ink)" }}
                 >
                   Voir l'étude de cas →
                 </div>
@@ -220,36 +220,34 @@ export function Projects() {
             <div className="md:col-span-5 p-6 flex items-center justify-center bg-background">
               <div
                 className="relative w-full aspect-[4/5] max-w-[200px] border-brutal-square shadow-brutal flex items-center justify-center"
-                style={{ background: "var(--ptb-red)", borderRadius: "58% 42% 50% 50% / 45% 55% 45% 55%" }}
+                style={{ background: "var(--lavender)", borderRadius: "58% 42% 50% 50% / 45% 55% 45% 55%" }}
               >
-                <span className="font-display text-7xl md:text-8xl" style={{ color: "var(--cream)" }}>★</span>
+                <span className="font-display text-7xl md:text-8xl text-foreground">★</span>
               </div>
             </div>
           </div>
         </Link>
 
-        {/* Landscape banners — ShowShanks, Festi'Safe, Ce Portfolio */}
+        {/* Landscape banners — ShowShanks, Festi'Safe, Projet DAFA */}
         <div className="space-y-5">
           {others.map((p, i) => {
             const rotate = i === 1 ? "rotate-[0.4deg]" : i === 2 ? "-rotate-[0.4deg]" : "";
 
             const inner = (
-              <div className="flex flex-col sm:flex-row overflow-hidden" style={{ minHeight: "200px" }}>
-                {/* Image */}
+              <div className="flex flex-row overflow-hidden" style={{ minHeight: "160px" }}>
+                {/* Image — narrow strip */}
                 <div
-                  className={`sm:w-[38%] shrink-0 border-b-[3px] sm:border-b-0 sm:border-r-[3px] border-foreground ${p.accentClass} overflow-hidden`}
-                  style={{ minHeight: "180px" }}
+                  className={`w-[20%] shrink-0 border-r-[3px] border-foreground ${p.accentClass} overflow-hidden`}
                 >
                   <img
                     src={p.image}
                     alt={p.title}
-                    className="w-full h-full object-cover"
-                    style={{ minHeight: "180px" }}
+                    className="w-full h-full object-cover object-center"
                     loading="lazy"
                   />
                 </div>
                 {/* Text */}
-                <div className="flex-1 p-6 md:p-8 flex flex-col justify-between">
+                <div className="flex-1 p-5 md:p-7 flex flex-col justify-between">
                   <div className="space-y-3">
                     <div className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground">
                       {p.category}
