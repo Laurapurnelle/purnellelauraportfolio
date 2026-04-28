@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import festiSafePoster from "@/assets/project-2.jpg";
+import festiSafePoster from "@/assets/projet-2.jpg";
 
 export const Route = createFileRoute("/projets/festi-safe")({
   component: FestiSafeCaseStudy,

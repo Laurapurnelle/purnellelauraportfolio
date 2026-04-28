@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
-import p1 from "@/assets/project-1.jpg";
-import p2 from "@/assets/project-2.jpg";
+import p1 from "@/assets/projet-1.jpg";
+import p2 from "@/assets/projet-2.jpg";
 import p3 from "@/assets/project-3.jpg";
 import krouselSplit from "@/assets/krousel-split.png";
 import krouselTraiteurMockup from "@/assets/krousel-traiteur-mockup.png";
